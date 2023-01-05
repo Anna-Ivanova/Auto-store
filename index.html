@@ -50,21 +50,21 @@
                             <div><span class="icon-car-1 icon-menu"></span>Cars</div>
                             <div class="dropdown-content">
                                 <li>View List</li>
-                                <li>Add New</li>
+                                <li class="addCar">Add New</li>
                             </div>
                         </div>
                         <div class="dropdown">
                             <div><span class="icon-wheel icon-menu"></span> Goods</div>
                             <div class="dropdown-content">
                                 <li>View List</li>
-                                <li>Add New</li>
+                                <li class="addNewAccessories">Add New</li>
                             </div>
                         </div>
                         <div class="dropdown">
                             <div><span class="icon-users1 icon-menu"></span>Customers</div>
                             <div class="dropdown-content">
                                 <li>View List</li>
-                                <li>Add New</li>
+                                <li class="addNewPeople">Add New</li>
                             </div>
                         </div>
                     </div>
@@ -97,14 +97,103 @@
                     </table>
                 </div>
             </section>
+
+            <section class="forms">
+                <div class="editAddPeople">
+                    <form class="formEditAddPeople">
+                        <input type="button" value="⛌" class="btnClose">
+                          <div class="blockForInput">
+                            <p class="textForm">Enter a name:</p>
+                            <input type="text" name="name" class="textName textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter a surname:</p>
+                            <input type="text" name="name" class="textSurname textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter age:</p>
+                            <input type="text" name="age" class="textAge textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter address:</p>
+                            <input type="text" name="address" class="textAddress textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter Email:</p>
+                            <input type="text" name="email" class="textEmail textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter mobile phone:</p>
+                            <input type="text" name="phone" class="textPhone textInput">
+                          </div>
+                          <input type="button" value="Save" class="btnSave">
+                    </form>
+                </div>
+                <!---->
+                <div class="editAddGoods">
+                    <form class="formEditAddGoods">
+                        <input type="button" value="⛌" class="btnCloseGoods">
+                          <div class="blockForInput">
+                            <p class="textForm">Enter product:</p>
+                            <input type="text" name="product" class="textProduct textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter a part number:</p>
+                            <input type="text" name="partNumber" class="textPartNumber textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter intende for cars:</p>
+                            <input type="text" name="intendeForCars" class="textIntendeForCars textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter price:</p>
+                            <input type="text" name="price" class="textPriceAccessories textInput">
+                          </div>
+                          <input type="button"  value="Save" class="btnSave">
+                    </form>
+                </div>
+                <!---->
+                <div class="editAddCar">
+                    <form class="formEditAddCar">
+                        <input type="button"  value="⛌" class="btnCloseCar">
+                          <div class="blockForInput">
+                            <p class="textForm">Enter a model:</p>
+                            <input type="text" name="model" class="textModel textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter body:</p>
+                            <input type="text" name="body" class="textBody textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter color:</p>
+                            <input type="text" name="color" class="textColor textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter engine:</p>
+                            <input type="text" name="engine" class="textEngine textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter transmission:</p>
+                            <input type="text" name="transmission" class="textTransmission textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter fuel:</p>
+                            <input type="text" name="fuel" class="textFuel textInput">
+                          </div>
+                          <div class="blockForInput">
+                            <p class="textForm">Enter price:</p>
+                            <input type="text" name="price" class="textPriceCar textInput">
+                          </div>
+                          <input type="button" value="Save" class="btnSave">
+                    </form>
+                </div>
+            </section>
         </main>
 
         <footer class="footer d-flex">
             <div class="container ">
                 <small> © 2023. All copyrights reserved </small>
             </div>
-    </div>
-
     </footer>
     </div>
     <script src="./js/slider.js"></script>
