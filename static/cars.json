@@ -8,9 +8,8 @@
             "engine": "1.3l EcoTech 122HP",
             "transmission": "6 AT",
             "fuel": "gas",
-            "price": "21567.00 Eur"
+            "price": "21567"
         },
-    
         {
             "id": "p308",
             "model": "308",
@@ -19,9 +18,8 @@
             "engine": "1.6l EP6 147HP",
             "transmission": "6 AT",
             "fuel": "gas",
-            "price": "32457.00 Eur"
+            "price": "32457"
         },
-    
         {
             "id": "p408",
             "model": "408",
@@ -30,9 +28,8 @@
             "engine": "2.0 Plug-in Hybrid 200HP",
             "transmission": "6 AT",
             "fuel": "disel",
-            "price": "35984.00 Eur"
+            "price": "35984"
         },
-    
         {
             "id": "p508",
             "model": "508",
@@ -41,9 +38,8 @@
             "engine": "2.0 Plug-in Hybrid 200HP",
             "transmission": "6 AT",
             "fuel": "disel",
-            "price": "38670.00 Eur"
+            "price": "38670"
         },
-    
         {
             "id": "p3008",
             "model": "3008",
@@ -54,7 +50,6 @@
             "fuel": "disel",
             "price": "41860"
         },
-    
         {
             "id": "p5008",
             "model": "5008",
@@ -63,7 +58,7 @@
             "engine": "2.0 Plug-in Hybrid 200HP",
             "transmission": "8 AT",
             "fuel": "disel",
-            "price": "48765.00 Eur"
+            "price": "48765"
         }
     ]
 }
