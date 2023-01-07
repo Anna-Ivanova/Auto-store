@@ -1,18 +1,14 @@
 
 async function getDetails(event) {
+
     const value = event.target.getAttribute('value');
     const detailsCars = document.querySelector('.details-cars');
     const detailsGoods = document.querySelector('.details-goods');
     const detailsClients = document.querySelector('.details-clients');
-    if (value === 'cars') {
-        // detailsCars.classList.toggle('hidden');
-        detailsCars.style.display = 'block';
-        detailsGoods.style.display = 'none';
-        detailsClients.style.display = 'none';
-    }
+
+
     if (value === 'accessories') {
 
-        // detailsGoods.classList.toggle('hidden');
         detailsGoods.style.display = 'block';
         detailsCars.style.display = 'none';
         detailsClients.style.display = 'none';
@@ -28,16 +24,32 @@ async function getDetails(event) {
     document.getElementById('tbody-clients').innerHTML = '';
     const response = await fetch(`static/${value}.json`);
     let data = await response.json();
-    showCars(data, value);
+    if (localStorage.getItem(value) === null) {
+        localStorage.setItem(value, JSON.stringify(data));
+    }
+    let dat = JSON.parse(localStorage.getItem(value));
+    if (value === 'cars') {
+        detailsCars.style.display = 'block';
+        detailsGoods.style.display = 'none';
+        detailsClients.style.display = 'none';
+        carInf = JSON.parse(localStorage.getItem('cars'));
+    }
+    console.log(dat);
+    showCars(dat, value);
 }
+let carInf = JSON.parse(localStorage.getItem('cars')) || [];
+
+
 const viewCars = document.querySelector('.viewCars');
 viewCars.addEventListener('click', getDetails);
 const viewGoods = document.querySelector('.viewAccessories');
 viewGoods.addEventListener('click', getDetails);
 const viewClients = document.querySelector('.viewClients');
 viewClients.addEventListener('click', getDetails);
+
 // featForm
 // форма і кнопка додати для людей
+
 const btnAddPeople = document.querySelector('.addNewPeople');
 btnAddPeople.addEventListener('click', createNewPeople);
 
@@ -64,14 +76,14 @@ function createNewAccessories() {
 // форма і кнопка додати для машини
 const btnAddCar = document.querySelector('.addCar');
 btnAddCar.addEventListener('click', createNewCar);
-
+/*
 function createNewCar() {
     const form = document.querySelector('.editAddCar');
     form.style.display = 'block';
 
     const btnClose = document.querySelector('.btnCloseCar');
     btnClose.addEventListener('click', closeForm);
-}
+}*/
 
 // кнопка закрити
 function closeForm() {

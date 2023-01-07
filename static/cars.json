@@ -1,64 +1,62 @@
-{
-    "cars": [
-        {
-            "id": "p208",
-            "model": "208",
-            "body": "hatchback",
-            "color": "blue ocean",
-            "engine": "1.3l EcoTech 122HP",
-            "transmission": "6 AT",
-            "fuel": "gas",
-            "price": "21567"
-        },
-        {
-            "id": "p308",
-            "model": "308",
-            "body": "hatchback",
-            "color": "black pearl",
-            "engine": "1.6l EP6 147HP",
-            "transmission": "6 AT",
-            "fuel": "gas",
-            "price": "32457"
-        },
-        {
-            "id": "p408",
-            "model": "408",
-            "body": "crossover",
-            "color": "pacific green",
-            "engine": "2.0 Plug-in Hybrid 200HP",
-            "transmission": "6 AT",
-            "fuel": "disel",
-            "price": "35984"
-        },
-        {
-            "id": "p508",
-            "model": "508",
-            "body": "sedan",
-            "color": "white pearl",
-            "engine": "2.0 Plug-in Hybrid 200HP",
-            "transmission": "6 AT",
-            "fuel": "disel",
-            "price": "38670"
-        },
-        {
-            "id": "p3008",
-            "model": "3008",
-            "body": "SUV",
-            "color": "diamond red",
-            "engine": "2.0 Plug-in Hybrid 200HP",
-            "transmission": "8 AT",
-            "fuel": "disel",
-            "price": "41860"
-        },
-        {
-            "id": "p5008",
-            "model": "5008",
-            "body": "SUV",
-            "color": "dark grey",
-            "engine": "2.0 Plug-in Hybrid 200HP",
-            "transmission": "8 AT",
-            "fuel": "disel",
-            "price": "48765"
-        }
-    ]
-}
+[
+    {
+        "id": "p208",
+        "model": "208",
+        "body": "hatchback",
+        "color": "blue ocean",
+        "engine": "1.3l EcoTech 122HP",
+        "transmission": "6 AT",
+        "fuel": "gas",
+        "price": "21567"
+    },
+    {
+        "id": "p308",
+        "model": "308",
+        "body": "hatchback",
+        "color": "black pearl",
+        "engine": "1.6l EP6 147HP",
+        "transmission": "6 AT",
+        "fuel": "gas",
+        "price": "32457"
+    },
+    {
+        "id": "p408",
+        "model": "408",
+        "body": "crossover",
+        "color": "pacific green",
+        "engine": "2.0 Plug-in Hybrid 200HP",
+        "transmission": "6 AT",
+        "fuel": "disel",
+        "price": "35984"
+    },
+    {
+        "id": "p508",
+        "model": "508",
+        "body": "sedan",
+        "color": "white pearl",
+        "engine": "2.0 Plug-in Hybrid 200HP",
+        "transmission": "6 AT",
+        "fuel": "disel",
+        "price": "38670"
+    },
+    {
+        "id": "p3008",
+        "model": "3008",
+        "body": "SUV",
+        "color": "diamond red",
+        "engine": "2.0 Plug-in Hybrid 200HP",
+        "transmission": "8 AT",
+        "fuel": "disel",
+        "price": "41860"
+    },
+    {
+        "id": "p5008",
+        "model": "5008",
+        "body": "SUV",
+        "color": "dark grey",
+        "engine": "2.0 Plug-in Hybrid 200HP",
+        "transmission": "8 AT",
+        "fuel": "disel",
+        "price": "48765"
+    }
+]

@@ -3,7 +3,8 @@ function showCars(data, value) {
     const tbodyGoods = document.getElementById('tbody-goods');
     const tbodyClients = document.getElementById('tbody-clients');
     if (value === 'cars') {
-        let cars = data.cars;
+        let cars = data;
+        console.log(cars);
         for (let i = 0; i < cars.length; i++) {
             const carRow = document.createElement('tr');
             carRow.setAttribute('id', cars[i].id);
