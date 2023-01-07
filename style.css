@@ -52,7 +52,7 @@ li {
 }
 
 .footer {
-    height: 50px;
+    height: 100px;
     background-color: rgb(228, 228, 228);
     justify-content: center;
     align-items: center;
@@ -147,7 +147,7 @@ main {
 .category_menu>div:hover {
     color: #00a3e0;
 
-}і
+}
 
 .table {
     margin: 0 auto;
@@ -258,7 +258,9 @@ thead th {
     cursor: pointer;
 }
 
-.editAddPeople, .editAddGoods, .editAddCar{
+.editAddPeople,
+.editAddGoods,
+.editAddCar {
     display: none;
     top: 0;
     left: 0;
@@ -266,10 +268,13 @@ thead th {
     bottom: 0;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.755);
+    z-index: 2000;
 }
 
-.formEditAddPeople, .formEditAddGoods, .formEditAddCar{
-    width: 30% ;
+.formEditAddPeople,
+.formEditAddGoods,
+.formEditAddCar {
+    width: 30%;
     background-color: #fff;
     position: absolute;
     top: 50%;
@@ -282,7 +287,9 @@ thead th {
     border-radius: 10px;
 }
 
-.btnClose, .btnCloseGoods, .btnCloseCar{
+.btnClose,
+.btnCloseGoods,
+.btnCloseCar {
     position: absolute;
     font-size: 24px;
     font-weight: bold;
@@ -295,17 +302,19 @@ thead th {
     cursor: pointer;
 }
 
-.btnClose:hover, .btnCloseGoods:hover, .btnCloseCar:hover{
+.btnClose:hover,
+.btnCloseGoods:hover,
+.btnCloseCar:hover {
     color: #ccc;
 }
 
-.blockForInput{
+.blockForInput {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.textInput{
+.textInput {
     border: 1px solid black;
     border-radius: 5px;
     width: 50%;
@@ -313,15 +322,15 @@ thead th {
     padding-top: 10px;
     padding-bottom: 5px;
     font-size: 14px;
-    border:1px solid rgb(177, 170, 170);
+    border: 1px solid rgb(177, 170, 170);
     transition: 0.3s linear;
 }
 
-.textInput:hover{
+.textInput:hover {
     border: 2px solid #00a3e0;
 }
 
-.btnSave{
+.btnSave {
     font-size: 20px;
     margin-top: 20px;
     margin-right: auto;
@@ -337,11 +346,15 @@ thead th {
     transition: 0.5s linear;
 }
 
-.btnSave:hover{
+.btnSave:hover {
     background-color: #ccc;
 }
 
-.textForm{
+.textForm {
     display: flex;
     align-self: center;
+}
+
+.hidden {
+    display: none;
 }
