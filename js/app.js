@@ -1,10 +1,23 @@
-
 async function getCars() {
     const response = await fetch('static/cars.json');
     let data = await response.json();
-    showCars(data);
+    const dataCars = data.cars;
+    if (localStorage.getItem("cars") === null) {
+        localStorage.setItem('cars', JSON.stringify(dataCars));
+    }
 }
+
 getCars();
+
+let carInf = JSON.parse(localStorage.getItem('cars')) || [];
+console.log(carInf);
+
+showCars();
+
+// форма і кнопка додати для машини
+const btnAddCar = document.querySelector('.addCar');
+btnAddCar.addEventListener('click', createNewCar);
+
 // featForm
 // форма і кнопка додати для людей
 const btnAddPeople = document.querySelector('.addNewPeople');
@@ -30,18 +43,6 @@ function createNewAccessories(){
     btnClose.addEventListener('click', closeForm);
 }
 
-// форма і кнопка додати для машини
-const btnAddCar = document.querySelector('.addCar');
-btnAddCar.addEventListener('click', createNewCar);
-
-function createNewCar(){
-    const form = document.querySelector('.editAddCar');
-    form.style.display = 'block';
-    
-    const btnClose = document.querySelector('.btnCloseCar');
-    btnClose.addEventListener('click', closeForm);
-}
-
 // кнопка закрити
 function closeForm(){
     const formPeople = document.querySelector('.editAddPeople');
@@ -51,7 +52,7 @@ function closeForm(){
     const formCar = document.querySelector('.editAddCar');
     formCar.style.display = 'none';
 }
-=======
+
 
 
 
