@@ -1,51 +1,17 @@
-
-async function getDetails(event) {
-
-    const value = event.target.getAttribute('value');
-    const detailsCars = document.querySelector('.details-cars');
-    const detailsGoods = document.querySelector('.details-goods');
-    const detailsClients = document.querySelector('.details-clients');
-
-
-    if (value === 'accessories') {
-
-        detailsGoods.style.display = 'block';
-        detailsCars.style.display = 'none';
-        detailsClients.style.display = 'none';
-    }
-    if (value === 'people') {
-        detailsClients.style.display = 'block';
-        detailsCars.style.display = 'none';
-        detailsGoods.style.display = 'none';
-    }
-
-    document.getElementById('tbody').innerHTML = '';
-    document.getElementById('tbody-goods').innerHTML = '';
-    document.getElementById('tbody-clients').innerHTML = '';
-    const response = await fetch(`static/${value}.json`);
-    let data = await response.json();
-    if (localStorage.getItem(value) === null) {
-        localStorage.setItem(value, JSON.stringify(data));
-    }
-    let dat = JSON.parse(localStorage.getItem(value));
-    if (value === 'cars') {
-        detailsCars.style.display = 'block';
-        detailsGoods.style.display = 'none';
-        detailsClients.style.display = 'none';
-        carInf = JSON.parse(localStorage.getItem('cars'));
-    }
-    console.log(dat);
-    showCars(dat, value);
-}
 let carInf = JSON.parse(localStorage.getItem('cars')) || [];
+let goodsInf = JSON.parse(localStorage.getItem('accessories')) || [];
+let peopleInf = JSON.parse(localStorage.getItem('people')) || [];
 
+getCarstoLocalStor();
+getGoodstoLocalStor();
+getPeopletoLocalStor();
 
 const viewCars = document.querySelector('.viewCars');
-viewCars.addEventListener('click', getDetails);
+viewCars.addEventListener('click', showCars);
 const viewGoods = document.querySelector('.viewAccessories');
-viewGoods.addEventListener('click', getDetails);
+viewGoods.addEventListener('click', showGoods);
 const viewClients = document.querySelector('.viewClients');
-viewClients.addEventListener('click', getDetails);
+viewClients.addEventListener('click', showPeople);
 
 // featForm
 // форма і кнопка додати для людей
@@ -76,14 +42,6 @@ function createNewAccessories() {
 // форма і кнопка додати для машини
 const btnAddCar = document.querySelector('.addCar');
 btnAddCar.addEventListener('click', createNewCar);
-/*
-function createNewCar() {
-    const form = document.querySelector('.editAddCar');
-    form.style.display = 'block';
-
-    const btnClose = document.querySelector('.btnCloseCar');
-    btnClose.addEventListener('click', closeForm);
-}*/
 
 // кнопка закрити
 function closeForm() {

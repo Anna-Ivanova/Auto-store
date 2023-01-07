@@ -43,5 +43,5 @@ function saveNewCar() {
     localStorage.setItem('cars', JSON.stringify(carInf));
     const form = document.querySelector('.editAddCar');
     form.style.display = 'none';
-    showCars(carInf, 'cars');
+    showCars();
 }
