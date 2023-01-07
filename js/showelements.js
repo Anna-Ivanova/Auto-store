@@ -2,6 +2,9 @@ function showCars(data, value) {
     const tbody = document.getElementById('tbody');
     const tbodyGoods = document.getElementById('tbody-goods');
     const tbodyClients = document.getElementById('tbody-clients');
+    tbody.innerHTML = '';
+    tbodyGoods.innerHTML = '';
+    tbodyClients.innerHTML = '';
     if (value === 'cars') {
         let cars = data;
         console.log(cars);
