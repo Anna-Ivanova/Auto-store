@@ -9,10 +9,11 @@ function createNewCar() {
     document.querySelector('.textTransmission').value = '';
     document.querySelector('.textFuel').value = '';
     document.querySelector('.textPriceCar').value = '';
+    document.querySelector('.textQuantityCars').value = '';
 
     const btnSaveCar = document.querySelector('.btnSaveCar');
     btnSaveCar.addEventListener('click', saveNewCar);
-    console.log('click');
+
     const btnClose = document.querySelector('.btnCloseCar');
     btnClose.addEventListener('click', closeForm);
 
@@ -27,6 +28,7 @@ function saveNewCar() {
     const newTransmission = document.querySelector('.textTransmission').value;
     const newFuel = document.querySelector('.textFuel').value;
     const newPrice = document.querySelector('.textPriceCar').value;
+    const newQuantity = document.querySelector('.textQuantityCars').value;
 
     const newCar = {
         id: `p${newModel}`,
@@ -36,12 +38,98 @@ function saveNewCar() {
         engine: newEngine,
         transmission: newTransmission,
         fuel: newFuel,
-        price: newPrice
+        price: newPrice,
+        quantity: newQuantity
     }
-    console.log(carInf);
+
     carInf.push(newCar);
     localStorage.setItem('cars', JSON.stringify(carInf));
     const form = document.querySelector('.editAddCar');
     form.style.display = 'none';
     showCars();
+}
+
+function createNewAccessories() {
+    const form = document.querySelector('.editAddGoods');
+    form.style.display = 'block';
+
+    document.querySelector('.textProduct').value = '';
+    document.querySelector('.textPartNumber').value = '';
+    document.querySelector('.textIntendeForCars').value = '';
+    document.querySelector('.textPriceAccessories').value = '';
+    document.querySelector('.textQuantityGoods').value = '';
+
+    const btnSaveGoods = document.querySelector('.btnSaveGoods');
+    btnSaveGoods.addEventListener('click', saveNewAccessories);
+
+    const btnClose = document.querySelector('.btnCloseGoods');
+    btnClose.addEventListener('click', closeForm);
+}
+
+function saveNewAccessories(){
+    const newProduct = document.querySelector('.textProduct').value;
+    const newPartNumber = document.querySelector('.textPartNumber').value;
+    const newIntendeForCars = document.querySelector('.textIntendeForCars').value;
+    const newPriceAccessories = document.querySelector('.textPriceAccessories').value;
+    const newQuantity = document.querySelector('.textQuantityGoods').value;
+
+    const newAccessories = {
+        id: goodsInf[goodsInf.length - 1].id + 1,
+        product: newProduct,
+        part_number: newPartNumber,
+        intended_for_cars: newIntendeForCars,
+        price: newPriceAccessories,
+        quantity: newQuantity
+    }
+
+    goodsInf.push(newAccessories);
+    localStorage.setItem('accessories', JSON.stringify(goodsInf));
+    const form = document.querySelector('.editAddGoods');
+    form.style.display = 'none';
+    showGoods();
+}
+
+function createNewPeople() {
+    const form = document.querySelector('.editAddPeople');
+    form.style.display = 'block';
+
+    document.querySelector('.textName').value = '';
+    document.querySelector('.textSurname').value = '';
+    document.querySelector('.textAge').value = '';
+    document.querySelector('.textAddress').value = '';
+    document.querySelector('.textEmail').value = '';
+    document.querySelector('.textPhone').value = '';
+
+    const btnSavePeople = document.querySelector('.btnSavePeople');
+    btnSavePeople.addEventListener('click', saveNewPeople);
+
+    const btnClose = document.querySelector('.btnClose');
+    btnClose.addEventListener('click', closeForm);
+}
+
+function saveNewPeople(){
+    const newName = document.querySelector('.textName').value;
+    const newSurname = document.querySelector('.textSurname').value;
+    const newAge = document.querySelector('.textAge').value;
+    const newAddress = document.querySelector('.textAddress').value;
+    const newEmail = document.querySelector('.textEmail').value;
+    const newPhone = document.querySelector('.textPhone').value;
+
+    const newPerson = {
+        id: peopleInf[peopleInf.length - 1].id + 1,
+        name: newName,
+        surname: newSurname,
+        age: newAge,
+        address: newAddress,
+        email: newEmail,
+        phone_number: newPhone,
+        auto: [],
+        accessories: []
+    }
+
+    peopleInf.push(newPerson);
+    localStorage.setItem('people', JSON.stringify(peopleInf));
+    const form = document.querySelector('.editAddPeople');
+    form.style.display = 'none';
+    showPeople();
 }

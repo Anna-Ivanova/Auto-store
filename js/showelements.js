@@ -1,6 +1,7 @@
 const detailsCars = document.querySelector('.details-cars');
 const detailsGoods = document.querySelector('.details-goods');
 const detailsClients = document.querySelector('.details-clients');
+
 function showCars() {
     const tbody = document.getElementById('tbody');
     tbody.innerHTML = '';
@@ -17,6 +18,7 @@ function showCars() {
         }
     }
 }
+
 function showGoods() {
     detailsGoods.style.display = 'block';
     detailsCars.style.display = 'none';
@@ -27,12 +29,12 @@ function showGoods() {
         const goodsRow = document.createElement('tr');
         goodsRow.setAttribute('id', goodsInf[i].id);
         tbodyGoods.appendChild(goodsRow);
-        createElement('td', null, null, i + 1, goodsRow);
         for (let key in goodsInf[i]) {
             createElement('td', null, null, goodsInf[i][key], goodsRow);
         }
     }
 }
+
 function showPeople() {
     detailsClients.style.display = 'block';
     detailsCars.style.display = 'none';
@@ -43,7 +45,6 @@ function showPeople() {
         const clientsRow = document.createElement('tr');
         clientsRow.setAttribute('data-user', i);
         tbodyClients.appendChild(clientsRow);
-        createElement('td', null, null, i + 1, clientsRow);
         for (let key in peopleInf[i]) {
             if (typeof peopleInf[i][key] !== 'object') {
                 createElement('td', null, null, peopleInf[i][key], clientsRow);
