@@ -3,6 +3,7 @@ const detailsGoods = document.querySelector('.details-goods');
 const detailsClients = document.querySelector('.details-clients');
 
 function showCars() {
+
     const tbody = document.getElementById('tbody');
     tbody.innerHTML = '';
     detailsCars.style.display = 'block';
@@ -16,7 +17,11 @@ function showCars() {
         for (let key in carInf[i]) {
             createElement('td', null, null, carInf[i][key], carRow);
         }
+        const cellAction = createElement('td', { className: 'action d-flex' }, null, null, carRow);
+        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
+    window.scrollTo(0, 500);
 }
 
 function showGoods() {
@@ -32,7 +37,12 @@ function showGoods() {
         for (let key in goodsInf[i]) {
             createElement('td', null, null, goodsInf[i][key], goodsRow);
         }
+        const cellAction = createElement('td', { className: 'action d-flex' }, null, null, goodsRow);
+        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
+
+    window.scrollTo(0, 500);
 }
 
 function showPeople() {
@@ -59,8 +69,11 @@ function showPeople() {
 
             }
         }
+        const cellAction = createElement('td', { className: 'action d-flex' }, null, null, clientsRow);
+        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
-
+    window.scrollTo(0, 500);
 }
 
 
