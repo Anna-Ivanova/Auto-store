@@ -48,7 +48,7 @@ function saveNewCar() {
         hideForm();
         form.style.display = 'none';
         showCars();
-    } 
+    }
 }
 
 function createNewAccessories() {
@@ -68,7 +68,7 @@ function createNewAccessories() {
     btnClose.addEventListener('click', closeForm);
 }
 
-function saveNewAccessories(){
+function saveNewAccessories() {
     if (validateFormGoods()) {
         const newProduct = document.querySelector('.textProduct').value;
         const newPartNumber = document.querySelector('.textPartNumber').value;
@@ -91,7 +91,7 @@ function saveNewAccessories(){
         hideForm();
         form.style.display = 'none';
         showGoods();
-    } 
+    }
 }
 
 function createNewPeople() {
@@ -112,7 +112,7 @@ function createNewPeople() {
     btnClose.addEventListener('click', closeForm);
 }
 
-function saveNewPeople(){
+function saveNewPeople() {
     if (validateFormPeople()) {
         const newName = document.querySelector('.textName').value;
         const newSurname = document.querySelector('.textSurname').value;
