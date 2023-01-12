@@ -20,7 +20,7 @@ li {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 
 }
@@ -370,4 +370,16 @@ thead th {
     display: inline-block;
     font-size: 20px;
     cursor: pointer;
+}
+
+.btn-act:hover {
+    color: #00a3e0;
+}
+
+.action {
+    border: none;
+    border-top: 1px solid #dddddd;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
