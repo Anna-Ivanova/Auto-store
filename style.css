@@ -365,10 +365,6 @@ thead th {
     cursor: pointer;
 }
 
-.btn-act:hover {
-    color: #00a3e0;
-}
-
 .action {
     border: none;
     border-top: 1px solid #dddddd;

@@ -17,9 +17,8 @@ function showCars() {
         for (let key in carInf[i]) {
             createElement('td', null, null, carInf[i][key], carRow);
         }
-
-        const cellAction = createElement('td', { className: 'action d-flex', id: carInf[i].id }, null, null, carRow);
-        createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeCars }, null, cellAction);
+        const cellAction = createElement('td', { className: 'action d-flex' }, null, null, carRow);
+        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
     window.scrollTo(0, 500);
@@ -38,8 +37,8 @@ function showGoods() {
         for (let key in goodsInf[i]) {
             createElement('td', null, null, goodsInf[i][key], goodsRow);
         }
-        const cellAction = createElement('td', { className: 'action d-flex', id: goodsInf[i].id }, null, null, goodsRow);
-        createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeGoods }, null, cellAction);
+        const cellAction = createElement('td', { className: 'action d-flex' }, null, null, goodsRow);
+        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
 
@@ -70,8 +69,8 @@ function showPeople() {
 
             }
         }
-        const cellAction = createElement('td', { className: 'action d-flex', id: peopleInf[i].id }, null, null, clientsRow);
-        createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removePeople }, null, cellAction);
+        const cellAction = createElement('td', { className: 'action d-flex' }, null, null, clientsRow);
+        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
     window.scrollTo(0, 500);
