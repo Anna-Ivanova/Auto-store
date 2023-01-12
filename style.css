@@ -20,7 +20,7 @@ li {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 
 }
@@ -314,6 +314,13 @@ thead th {
     justify-content: space-between;
 }
 
+.blockForInput .error {
+    position: relative;
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
 .textInput {
     border: 1px solid black;
     border-radius: 5px;
@@ -359,20 +366,3 @@ thead th {
     display: none;
 }
 
-.btn-act {
-    display: inline-block;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.btn-act:hover {
-    color: #00a3e0;
-}
-
-.action {
-    border: none;
-    border-top: 1px solid #dddddd;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
