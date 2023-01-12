@@ -21,7 +21,7 @@ function showCars() {
         createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
-    window.scrollTo(0, 500);
+    //window.scrollTo(0, 500);
 }
 
 function showGoods() {
@@ -75,5 +75,3 @@ function showPeople() {
     }
     window.scrollTo(0, 500);
 }
-
-
