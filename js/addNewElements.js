@@ -18,7 +18,7 @@ function createNewCar() {
     btnClose.addEventListener('click', closeForm);
 
 }
-
+//leave comment
 function saveNewCar() {
 
     const newModel = document.querySelector('.textModel').value;
@@ -66,7 +66,7 @@ function createNewAccessories() {
     btnClose.addEventListener('click', closeForm);
 }
 
-function saveNewAccessories(){
+function saveNewAccessories() {
     const newProduct = document.querySelector('.textProduct').value;
     const newPartNumber = document.querySelector('.textPartNumber').value;
     const newIntendeForCars = document.querySelector('.textIntendeForCars').value;
@@ -107,7 +107,7 @@ function createNewPeople() {
     btnClose.addEventListener('click', closeForm);
 }
 
-function saveNewPeople(){
+function saveNewPeople() {
     const newName = document.querySelector('.textName').value;
     const newSurname = document.querySelector('.textSurname').value;
     const newAge = document.querySelector('.textAge').value;
