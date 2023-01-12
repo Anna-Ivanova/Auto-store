@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peugeot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./icomoon (2)/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container ">
+                <div class="header d-flex">
+                    <div class="header-logo">
+                        <img src="./img/logopeugeot.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <div class="slider_container">
+                <div class="slide">
+                    <img class="img" src="./img/1.jpg" alt="1">
+                    <img class="img" src="./img/2.jpg" alt="2">
+                    <img class="img" src="./img/3.jpg" alt="3">
+                    <img class="img" src="./img/4.jpg" alt="4">
+                    <img class="img" src="./img/5.jpg" alt="5">
+                </div>
+                <button class="back" type="button"><span class="icon- nav-icon">left</span> </button>
+                <button class="next" type="button"> <span class="icon- nav-icon">right</span> </button>
+
+            </div>
+
+            <section class="categories">
+                <div class="container">
+                    <div class="category_menu d-flex">
+                        <div class="dropdown">
+                            <div><span class="icon-car-1 icon-menu"></span>Cars</div>
+                            <div class="dropdown-content">
+                                <li class="viewCars" value="cars">View List</li>
+                                <li class="addCar">Add New</li>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <div><span class="icon-wheel icon-menu"></span> Goods</div>
+                            <div class="dropdown-content">
+                                <li class="viewAccessories" value="accessories">View List</li>
+                                <li class="addNewAccessories">Add New</li>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <div><span class="icon-users1 icon-menu"></span>Customers</div>
+                            <div class="dropdown-content">
+                                <li class="viewClients" value="people">View List</li>
+                                <li class="addNewPeople">Add New</li>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section class="details container">
+
+                <div class="details-cars hidden">
+                    <div class="details-header d-flex">
+                        <h2 class="details_title">Cars</h2>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr class="headrow">
+                                <th>Num</th>
+                                <th>ID</th>
+                                <th>Model</th>
+                                <th>Body</th>
+                                <th>Color</th>
+                                <th>Engine</th>
+                                <th>Trans-<br>mission</th>
+                                <th>Fuel type</th>
+                                <th>Price in <br> Euro</th>
+                                <th>Quantity</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="details-goods hidden">
+                    <div class="details-header d-flex">
+                        <h2 class="details_title">Goods</h2>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr class="headrow">
+                                <th>Num</th>
+                                <th>Product</th>
+                                <th>Part Number</th>
+                                <th>Intended<br>for model</th>
+                                <th>Price in <br> Euro</th>
+                                <th>Quantity</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-goods">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="details-clients hidden">
+                    <div class="details-header d-flex">
+                        <h2 class="details_title">Customers</h2>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr class="headrow">
+                                <th>Num</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Age</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Auto</th>
+                                <th>Accessories</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-clients">
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <section class="forms">
+                <div class="editAddPeople">
+                    <form class="form formEditAddPeople">
+                        <input type="button" value="⛌" class="btnClose">
+                        <div class="blockForInput">
+                            <p class="textForm">Enter a name:</p>
+                            <input type="text" name="name" class="textName textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter a surname:</p>
+                            <input type="text" name="name" class="textSurname textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter age:</p>
+                            <input type="text" name="age" class="textAge textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter address:</p>
+                            <input type="text" name="address" class="textAddress textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter Email:</p>
+                            <input type="text" name="email" class="textEmail textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter mobile phone:</p>
+                            <input type="text" name="phone" class="textPhone textInput">
+                            <div class="error"></div>
+                        </div>
+                        <input type="button" value="Save" class="btnSave btnSavePeople ">
+                    </form>
+                </div>
+                <!---->
+                <div class="editAddGoods">
+                    <form class=" form formEditAddGoods">
+                        <input type="button" value="⛌" class="btnCloseGoods">
+                        <div class="blockForInput">
+                            <p class="textForm">Enter product:</p>
+                            <input type="text" name="product" class="textProduct textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter a part number:</p>
+                            <input type="text" name="partNumber" class="textPartNumber textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter intende for cars:</p>
+                            <input type="text" name="intendeForCars" class="textIntendeForCars textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter price:</p>
+                            <input type="text" name="price" class="textPriceAccessories textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter quantity:</p>
+                            <input type="text" name="quantity" class="textQuantityGoods textInput">
+                            <div class="error"></div>
+                        </div>
+                        <input type="button" value="Save" class="btnSave btnSaveGoods">
+                    </form>
+                </div>
+                <!---->
+                <div class="editAddCar">
+                    <form class="form formEditAddCar">
+                        <input type="button" value="⛌" class="btnCloseCar">
+                        <div class="blockForInput">
+                            <p class="textForm">Enter a model:</p>
+                            <input type="text" name="model" class="textModel textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter body:</p>
+                            <input type="text" name="body" class="textBody textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter color:</p>
+                            <input type="text" name="color" class="textColor textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter engine:</p>
+                            <input type="text" name="engine" class="textEngine textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter transmission:</p>
+                            <input type="text" name="transmission" class="textTransmission textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter fuel:</p>
+                            <input type="text" name="fuel" class="textFuel textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter price:</p>
+                            <input type="text" name="price" class="textPriceCar textInput">
+                            <div class="error"></div>
+                        </div>
+                        <div class="blockForInput">
+                            <p class="textForm">Enter quantity:</p>
+                            <input type="text" name="quantity" class="textQuantityCars textInput">
+                            <div class="error"></div>
+                        </div>
+                        <input type="button" value="Save" class="btnSave btnSaveCar">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer d-flex">
+            <div class="container ">
+                <small> © 2023. All copyrights reserved </small>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/slider.js"></script>
+    <script src="./js/helpers.js"></script>
+    <script src="./js/getData.js"></script>
+    <script src="./js/removeElements.js"></script>
+    <script src="./js/showelements.js"></script>
+    <script src="./js/addNewElements.js"></script>
+    <script src="./js/close.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/validate.js"></script>
+
+</body>
+
+</html>
