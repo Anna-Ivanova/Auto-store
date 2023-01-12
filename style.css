@@ -20,7 +20,7 @@ li {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 
 }
@@ -312,10 +312,10 @@ thead th {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .blockForInput .error {
-    position: relative;
     color: #ff3860;
     font-size: 9px;
     height: 13px;
@@ -366,20 +366,3 @@ thead th {
     display: none;
 }
 
-.btn-act {
-    display: inline-block;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.btn-act:hover {
-    color: #00a3e0;
-}
-
-.action {
-    border: none;
-    border-top: 1px solid #dddddd;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
