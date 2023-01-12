@@ -24,6 +24,30 @@ btnAddAccessories.addEventListener('click', createNewAccessories);
 const btnAddCar = document.querySelector('.addCar');
 btnAddCar.addEventListener('click', createNewCar);
 
+const tableHead = document.querySelector('.headrow-cars');
+let columnDir = true;
+tableHead.addEventListener('click', function (event) {
+    let prop = event.target.getAttribute('data-col');
+    columnDir = !columnDir;
+    console.log(columnDir);
+    sortCars(prop, columnDir);
+    showCars();
+    console.log(carInf);
+})
+
+
+function sortCars(prop, columnDir) {
+    //const copyCarinf = [...carInf];
+    return carInf.sort(function (carA, carB) {
+
+        if (!columnDir ? carA[prop] < carB[prop] : carA[prop] > carB[prop]) return -1;
+
+
+    })
+}
+
+//console.log(sortCars('price'));
+
 
 
 
