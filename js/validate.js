@@ -1,7 +1,6 @@
 const setError = (element, message) => {
     const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
+    const errorDisplay = inputControl.nextElementSibling;
     errorDisplay.innerText = message;
     inputControl.classList.add('error');
     inputControl.classList.remove('success')
@@ -9,7 +8,7 @@ const setError = (element, message) => {
 
 const setSuccess = element => {
     const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
+    const errorDisplay = inputControl.nextElementSibling;
 
     errorDisplay.innerText = '';
     inputControl.classList.add('success');
@@ -32,7 +31,7 @@ const isValidAge = age => {
 }
 
 const isValidAddress = address => {
-    const re =  /^[a-zа-яA-ZА-Я0-9+_]{1,64}/;
+    const re = /^[a-zа-яA-ZА-Я0-9+_]{1,64}/;
     return re.test(String(address).toLowerCase());
 }
 
@@ -42,12 +41,12 @@ const isValidEmail = email => {
 }
 
 const isValidPhone = phone => {
-    const re = /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+    const re = /^[\d\][\d\(\)\ -]{9,10}\d$/;
     return re.test(String(phone).toLowerCase());
 }
 
 const isValidProduct = product => {
-    const re =  /^[a-zа-яA-ZА-Я0-9+_]{1,164}/;
+    const re = /^[a-zа-яA-ZА-Я0-9+_]{1,164}/;
     return re.test(String(product).toLowerCase());
 }
 
@@ -57,7 +56,7 @@ const isValidPartNumber = partNumber => {
 }
 
 const isValidIntende = intende => {
-    const re =  /^[a-zа-яA-ZА-Я0-9+_]{1,24}/;
+    const re = /^[a-zа-яA-ZА-Я0-9+_]{1,24}/;
     return re.test(String(intende).toLowerCase());
 }
 
@@ -67,12 +66,12 @@ const isValidPriceGoods = priceGoods => {
 }
 
 const isValidQuantityGoods = quantityGoods => {
-    const re =  /\d/;s
+    const re = /\d/;
     return re.test(String(quantityGoods).toLowerCase());
 }
 
 const isValidModel = model => {
-    const re =  /\d/;
+    const re = /\d/;
     return re.test(String(model).toLowerCase());
 }
 
@@ -81,22 +80,22 @@ const isValidBody = body => {
     return re.test(String(body).toLowerCase());
 }
 
-const isValidcolor = color => {
-    const re = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u;
+const isValidColor = color => {
+    const re = /^.{3,20}$/;
     return re.test(String(color).toLowerCase());
 }
 
-const isValidengine = engine => {
+const isValidEngine = engine => {
     const re = /^[a-zа-яA-ZА-Я0-9+_]{1,64}/;
     return re.test(String(engine).toLowerCase());
 }
 
-const isValidTransmission= transmission => {
+const isValidTransmission = transmission => {
     const re = /^[a-zа-яA-ZА-Я0-9+_]{1,64}/;
     return re.test(String(transmission).toLowerCase());
 }
 
-const isValidFuel= fuel => {
+const isValidFuel = fuel => {
     const re = /^[a-zа-яA-ZА-Я0-9+_]{1,10}/;
     return re.test(String(fuel).toLowerCase());
 }
@@ -107,13 +106,13 @@ const isValidPriceCar = priceCar => {
 }
 
 const isValidQuantityCar = quantityCar => {
-    const re =  /\d/;s
+    const re = /\d/;
     return re.test(String(quantityCar).toLowerCase());
 }
 
 /*---------------------------------*/
-function validateName (uname) {
-    if(uname.value === '') {
+function validateName(uname) {
+    if (uname.value === '') {
         setError(uname, 'User name cannot be blank');
         result = false;
     } else if (!isValidName(uname.value)) {
@@ -126,9 +125,9 @@ function validateName (uname) {
     return result;
     console.log(result);
 }
-    
-function validateSurname (surname) {
-    if(surname.value === '') {
+
+function validateSurname(surname) {
+    if (surname.value === '') {
         setError(surname, 'User surname cannot be blank');
         result = false;
     } else if (!isValidSurname(surname.value)) {
@@ -141,8 +140,8 @@ function validateSurname (surname) {
     return result;
 }
 
-function validateAge (age) {
-    if(age.value === '') {
+function validateAge(age) {
+    if (age.value === '') {
         setError(age, 'Age is required');
         result = false;
     } else if (!isValidAge(age.value)) {
@@ -154,9 +153,9 @@ function validateAge (age) {
     }
     return result;
 }
-    
-function validateAddress (address) {
-    if(address.value === '') {
+
+function validateAddress(address) {
+    if (address.value === '') {
         setError(address, 'Addres is required');
         result = false;
     } else if (!isValidAddress(address.value)) {
@@ -168,13 +167,13 @@ function validateAddress (address) {
     }
     return result;
 }
-    
-function validateEmail (email) {
-    if(email.value === '') {
+
+function validateEmail(email) {
+    if (email.value === '') {
         setError(email, 'Email is required');
         result = false;
     } else if (!isValidEmail(email.value)) {
-        setError(email, 'Provide a valid email address');
+        setError(email, 'Example john@example.com');
         result = false;
     } else {
         setSuccess(email);
@@ -182,13 +181,13 @@ function validateEmail (email) {
     }
     return result;
 }
-    
-function validatePhone (phone) {
-    if(phone.value === '') {
+
+function validatePhone(phone) {
+    if (phone.value === '') {
         setError(phone, 'Email is required');
         result = false;
     } else if (!isValidPhone(phone.value)) {
-        setError(phone, 'Provide a valid phone');
+        setError(phone, 'Example 0505555555')
         result = false;
     } else {
         setSuccess(phone);
@@ -197,8 +196,8 @@ function validatePhone (phone) {
     return result;
 }
 
-function validateProduct (product) {
-    if(product.value === '') {
+function validateProduct(product) {
+    if (product.value === '') {
         setError(product, 'The field must be filled in');
         result = false;
     } else if (!isValidProduct(product.value)) {
@@ -211,12 +210,12 @@ function validateProduct (product) {
     return result;
 }
 
-function validatePartNumber (partNumber) {
-    if(partNumber.value === '') {
+function validatePartNumber(partNumber) {
+    if (partNumber.value === '') {
         setError(partNumber, 'The field must be filled in');
         result = false;
     } else if (!isValidPartNumber(partNumber.value)) {
-        setError(partNumber, 'Enter a valid value');
+        setError(partNumber, 'Enter 10 digit number');
         result = false;
     } else {
         setSuccess(partNumber);
@@ -225,8 +224,8 @@ function validatePartNumber (partNumber) {
     return result;
 }
 
-function validateIntende (intende) {
-    if(intende.value === '') {
+function validateIntende(intende) {
+    if (intende.value === '') {
         setError(intende, 'The field must be filled in');
         result = false;
     } else if (!isValidIntende(intende.value)) {
@@ -239,8 +238,8 @@ function validateIntende (intende) {
     return result;
 }
 
-function validatePriceGoods (priceGoods) {
-    if(priceGoods.value === '') {
+function validatePriceGoods(priceGoods) {
+    if (priceGoods.value === '') {
         setError(priceGoods, 'The field must be filled in');
         result = false;
     } else if (!isValidPriceGoods(priceGoods.value)) {
@@ -253,8 +252,8 @@ function validatePriceGoods (priceGoods) {
     return result;
 }
 
-function validateQuantityGoods (quantityGoods) {
-    if(quantityGoods.value === '') {
+function validateQuantityGoods(quantityGoods) {
+    if (quantityGoods.value === '') {
         setError(quantityGoods, 'The field must be filled in');
         result = false;
     } else if (!isValidQuantityGoods(quantityGoods.value)) {
@@ -267,8 +266,8 @@ function validateQuantityGoods (quantityGoods) {
     return result;
 }
 
-function validateModel (model) {
-    if(model.value === '') {
+function validateModel(model) {
+    if (model.value === '') {
         setError(model, 'The field must be filled in');
         result = false;
     } else if (!isValidModel(model.value)) {
@@ -281,8 +280,8 @@ function validateModel (model) {
     return result;
 }
 
-function validateBody (body) {
-    if(body.value === '') {
+function validateBody(body) {
+    if (body.value === '') {
         setError(body, 'The field must be filled in');
         result = false;
     } else if (!isValidBody(body.value)) {
@@ -295,8 +294,8 @@ function validateBody (body) {
     return result;
 }
 
-function validateColor (color) {
-    if(color.value === '') {
+function validateColor(color) {
+    if (color.value === '') {
         setError(color, 'The field must be filled in');
         result = false;
     } else if (!isValidColor(color.value)) {
@@ -309,8 +308,8 @@ function validateColor (color) {
     return result;
 }
 
-function validateEngine (engine) {
-    if(engine.value === '') {
+function validateEngine(engine) {
+    if (engine.value === '') {
         setError(engine, 'The field must be filled in');
         result = false;
     } else if (!isValidEngine(engine.value)) {
@@ -323,8 +322,8 @@ function validateEngine (engine) {
     return result;
 }
 
-function validateTransmission (transmission) {
-    if(transmission.value === '') {
+function validateTransmission(transmission) {
+    if (transmission.value === '') {
         setError(transmission, 'The field must be filled in');
         result = false;
     } else if (!isValidTransmission(transmission.value)) {
@@ -337,8 +336,8 @@ function validateTransmission (transmission) {
     return result;
 }
 
-function validateFuel (fuel) {
-    if(fuel.value === '') {
+function validateFuel(fuel) {
+    if (fuel.value === '') {
         setError(fuel, 'The field must be filled in');
         result = false;
     } else if (!isValidFuel(fuel.value)) {
@@ -351,11 +350,11 @@ function validateFuel (fuel) {
     return result;
 }
 
-function validatePriceCar (priceCar) {
-    if(priceCar.value === '') {
+function validatePriceCar(priceCar) {
+    if (priceCar.value === '') {
         setError(priceCar, 'The field must be filled in');
         result = false;
-    } else if (!isValidPvalidatePriceCar(priceCar.value)) {
+    } else if (!isValidPriceCar(priceCar.value)) {
         setError(priceCar, 'Enter a valid value');
         result = false;
     } else {
@@ -365,11 +364,11 @@ function validatePriceCar (priceCar) {
     return result;
 }
 
-function validateQuantityCar (quantityCar) {
-    if(quantityCar.value === '') {
+function validateQuantityCar(quantityCar) {
+    if (quantityCar.value === '') {
         setError(quantityCar, 'The field must be filled in');
         result = false;
-    } else if (!isValidQuantityCarvalidateQuantityCar(quantityCar.value)) {
+    } else if (!isValidQuantityCar(quantityCar.value)) {
         setError(quantityCar, 'Enter a valid value');
         result = false;
     } else {
@@ -379,19 +378,19 @@ function validateQuantityCar (quantityCar) {
     return result;
 }
 /*---------------------------------*/
-function validateFormPeople () {
+function validateFormPeople() {
     const uname = document.querySelector('.textName');
     const surname = document.querySelector('.textSurname');
     const age = document.querySelector('.textAge');
     const address = document.querySelector('.textAddress');
     const email = document.querySelector('.textEmail');
     const phone = document.querySelector('.textPhone');
-    if (validateName(uname) && validateSurname(surname) && validateAge(age) && validateAddress(address) && validateEmail(email) && validatePhone (phone)) {
+    if (validateName(uname) && validateSurname(surname) && validateAge(age) && validateAddress(address) && validateEmail(email) && validatePhone(phone)) {
         return true;
     }
 }
 
-function validateFormGoods () {
+function validateFormGoods() {
     const product = document.querySelector('.textProduct');
     const partNumber = document.querySelector('.textPartNumber');
     const intende = document.querySelector('.textIntendeForCars');
@@ -402,7 +401,7 @@ function validateFormGoods () {
     }
 }
 
-function validateFormCars () {
+function validateFormCars() {
     const model = document.querySelector('.textModel');
     const body = document.querySelector('.textBody');
     const color = document.querySelector('.textColor');
@@ -415,6 +414,7 @@ function validateFormCars () {
         return true;
     }
 }
+
 function hideForm() {
     document.querySelector('.form').reset();
 }
