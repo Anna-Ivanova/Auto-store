@@ -385,3 +385,7 @@ thead th {
     align-items: center;
     gap: 20px;
 }
+
+.btnSaveEditCar, .btnSaveCar, .btnSaveGoods, .btnSaveEditGoods, .btnSavePeople, .btnSaveEditPeople{
+    display: none;
+}

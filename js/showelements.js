@@ -19,7 +19,7 @@ function showCars() {
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: carInf[i].id }, null, null, carRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeCars }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, {click: editCars}, null, cellAction);
     }
     console.log(carInf);
     //window.scrollTo(0, 500);
@@ -40,7 +40,7 @@ function showGoods() {
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: goodsInf[i].id }, null, null, goodsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeGoods }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, {click: editGoods}, null, cellAction);
     }
 
     // window.scrollTo(0, 500);
@@ -72,8 +72,11 @@ function showPeople() {
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: peopleInf[i].id }, null, null, clientsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removePeople }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
+
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, {click: editPerson}, null, cellAction);
+
         createElement('span', { className: 'icon-euro btn-buy btn-act' }, null, null, cellAction);
+
     }
     // window.scrollTo(0, 500);
 }
