@@ -3,10 +3,10 @@
         "id": 1,
         "name": "Mike",
         "surname": "Williams",
-        "age": 22,
+        "age": "22",
         "address": "2829 College St",
         "email": "mike.williams@gmail.com",
-        "phone_number": 8898144626,
+        "phone_number": "8898144626",
         "auto": [
             {
                 "id": "p208",
@@ -25,10 +25,10 @@
         "id": 2,
         "name": "Delores",
         "surname": "Freeman",
-        "age": 30,
+        "age": "30",
         "address": "485 W Gray St",
         "email": "delores.freeman@gmail.com",
-        "phone_number": 2447430251,
+        "phone_number": "2447430251",
         "auto": [
             {
                 "id": "p308",
@@ -38,7 +38,7 @@
                 "engine": "1.6l EP6 147HP",
                 "transmission": "6 AT",
                 "fuel": "gas",
-                "price": "32457.00 Eur"
+                "price": "32457"
             },
             {
                 "id": "p408",
@@ -48,7 +48,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "6 AT",
                 "fuel": "disel",
-                "price": "35984.00 Eur"
+                "price": "35984"
             }
         ],
         "accessories": [
@@ -57,28 +57,28 @@
                 "product": "dog guard",
                 "part number": "1658058380",
                 "intende for cars": "peugeot 308",
-                "price": "366.00 Eur"
+                "price": "366"
             },
             {
                 "id": "air",
                 "product": "front air deflectors",
                 "part number": "1680299780",
                 "intende for cars": "peugeot 308",
-                "price": "155.00 Eur"
+                "price": "155"
             },
             {
                 "id": "roof",
                 "product": "mid-length roof box",
                 "part number": "1609665780",
                 "intende for cars": "peugeot 308",
-                "price": "1247.00 Eur"
+                "price": "1247"
             },
             {
                 "id": "floor",
                 "product": "needle-pile floor mats-wagon",
                 "part number": "1680490580",
                 "intende for cars": "peugeot 308",
-                "price": "115.00 Eur"
+                "price": "115"
             }
         ]
     },
@@ -86,10 +86,10 @@
         "id": 3,
         "name": "Kim",
         "surname": "Wade",
-        "age": 42,
+        "age": "42",
         "address": "4268 Stevens Creek Blvd",
         "email": "kim.wade@gmail.com",
-        "phone_number": 8357469934,
+        "phone_number": "8357469934",
         "auto": [
             {
                 "id": "p308",
@@ -99,7 +99,7 @@
                 "engine": "1.6l EP6 147HP",
                 "transmission": "6 AT",
                 "fuel": "gas",
-                "price": "32457.00 Eur"
+                "price": "32457"
             }
         ],
         "accessories": [
@@ -108,14 +108,14 @@
                 "product": "front air deflectors",
                 "part number": "1680299780",
                 "intende for cars": "peugeot 308",
-                "price": "155.00 Eur"
+                "price": "155"
             },
             {
                 "id": "roof",
                 "product": "mid-length roof box",
                 "part number": "1609665780",
                 "intende for cars": "peugeot 308",
-                "price": "1247.00 Eur"
+                "price": "1247"
             }
         ]
     },
@@ -123,10 +123,10 @@
         "id": 4,
         "name": "Daniel",
         "surname": "Bell",
-        "age": 36,
+        "age": "36",
         "address": "1866 Groveland Terrace",
         "email": "daniel.bell@gmail.com",
-        "phone_number": 3243541682,
+        "phone_number": "3243541682",
         "auto": [
             {
                 "id": "p3008",
@@ -146,7 +146,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "8 AT",
                 "fuel": "disel",
-                "price": "48765.00 Eur"
+                "price": "48765"
             }
         ],
         "accessories": [
@@ -155,42 +155,42 @@
                 "product": "docking station for E-cick scooter",
                 "part number": "1620299480",
                 "intende for cars": "peugeot 3008",
-                "price": "484.00 Eur"
+                "price": "484"
             },
             {
                 "id": "cloth",
                 "product": "cleaning cloth for touchscreen",
                 "part number": "1628950980",
                 "intende for cars": "peugeot 3008",
-                "price": "9.00 Eur"
+                "price": "9"
             },
             {
                 "id": "caps",
                 "product": "set of 4 black centre caps for alloy wheels",
                 "part number": "1622961980",
                 "intende for cars": "peugeot 3008",
-                "price": "97.00 Eur"
+                "price": "97"
             },
             {
                 "id": "cases",
                 "product": "set of two chrome wing mirror cases",
                 "part number": "16118182680",
                 "intende for cars": "peugeot 3008",
-                "price": "115.00 Eur"
+                "price": "115"
             },
             {
                 "id": "towbar",
                 "product": "towbar( excluding wiring harness)",
                 "part number": "9160559",
                 "intende for cars": "peugeot 5008",
-                "price": "87.00 Eur"
+                "price": "87"
             },
             {
                 "id": "scooter",
                 "product": "E-kick scooter",
                 "part number": "1622150280",
                 "intende for cars": "peugeot 5008",
-                "price": "1733.00 Eur"
+                "price": "1733"
             }
         ]
     },
@@ -201,7 +201,7 @@
         "age": 39,
         "address": "1085 Hunters Creek Dr",
         "email": "shelly.webb@gmail.com",
-        "phone_number": 7973485177,
+        "phone_number": "7973485177",
         "auto": [
             {
                 "id": "p5008",
@@ -211,7 +211,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "8 AT",
                 "fuel": "disel",
-                "price": "48765.00 Eur"
+                "price": "48765"
             }
         ],
         "accessories": [
@@ -220,14 +220,14 @@
                 "product": "first aid & safety kit",
                 "part number": "1611561780",
                 "intende for cars": "peugeot 5008",
-                "price": "103.00 Eur"
+                "price": "103"
             },
             {
                 "id": "cover",
                 "product": "indoor car cover",
                 "part number": "1682174680",
                 "intende for cars": "peugeot 5008",
-                "price": "256.00 Eur"
+                "price": "256"
             }
         ]
     },
@@ -235,10 +235,10 @@
         "id": 6,
         "name": "Eugene",
         "surname": "Reed",
-        "age": 35,
+        "age": "35",
         "address": "7672 W Belt Line Rd",
         "email": "eugene.reed@gmail.com",
-        "phone_number": 2909901004,
+        "phone_number": "2909901004",
         "auto": [
             {
                 "id": "p508",
@@ -248,7 +248,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "6 AT",
                 "fuel": "disel",
-                "price": "38670.00 Eur"
+                "price": "38670"
             }
         ],
         "accessories": []
@@ -257,10 +257,10 @@
         "id": 7,
         "name": "Ann",
         "surname": "Simpson",
-        "age": 25,
+        "age": "25",
         "address": "6883 Prospect Rd",
         "email": "ann.simpson@gmail.com",
-        "phone_number": 3264207414,
+        "phone_number": "3264207414",
         "auto": [
             {
                 "id": "p308",
@@ -270,7 +270,7 @@
                 "engine": "1.6l EP6 147HP",
                 "transmission": "6 AT",
                 "fuel": "gas",
-                "price": "32457.00 Eur"
+                "price": "32457"
             },
             {
                 "id": "p408",
@@ -280,7 +280,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "6 AT",
                 "fuel": "disel",
-                "price": "35984.00 Eur"
+                "price": "35984"
             },
             {
                 "id": "p508",
@@ -290,7 +290,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "6 AT",
                 "fuel": "disel",
-                "price": "38670.00 Eur"
+                "price": "38670"
             }
         ],
         "accessories": [
@@ -299,28 +299,28 @@
                 "product": "needle-pile floor mats-wagon",
                 "part number": "1680490580",
                 "intende for cars": "peugeot 308",
-                "price": "115.00 Eur"
+                "price": "115"
             },
             {
                 "id": "bag",
                 "product": "charge cable storage bag",
                 "part number": "9837945080",
                 "intende for cars": "peugeot 508",
-                "price": "87.00 Eur"
+                "price": "87"
             },
             {
                 "id": "cable",
                 "product": "mode 2 charge cable for PHEV",
                 "part number": "9846744180",
                 "intende for cars": "peugeot 508",
-                "price": "1250.00 Eur"
+                "price": "1250"
             },
             {
                 "id": "wheels",
                 "product": "set of 4 19 inch Augusta alloy wheels",
                 "part number": "1638560280",
                 "intende for cars": "peugeot 508",
-                "price": "2228.00 Eur"
+                "price": "2228"
             }
         ]
     },
@@ -331,7 +331,7 @@
         "age": 47,
         "address": "1940 E Little York Rd",
         "email": "marion.lawrence@gmail.com",
-        "phone_number": 7668849141,
+        "phone_number": "7668849141",
         "auto": [
             {
                 "id": "p308",
@@ -341,7 +341,7 @@
                 "engine": "1.6l EP6 147HP",
                 "transmission": "6 AT",
                 "fuel": "gas",
-                "price": "32457.00 Eur"
+                "price": "32457"
             }
         ],
         "accessories": [
@@ -350,7 +350,7 @@
                 "product": "front air deflectors",
                 "part number": "1680299780",
                 "intende for cars": "peugeot 308",
-                "price": "155.00 Eur"
+                "price": "155"
             }
         ]
     },
@@ -358,10 +358,10 @@
         "id": 9,
         "name": "Jeffery",
         "surname": "Hughes",
-        "age": 19,
+        "age": "19",
         "address": "2847 Lovers Ln",
         "email": "jeffery.hughes@gmail.com",
-        "phone_number": 5655563711,
+        "phone_number": "5655563711",
         "auto": [
             {
                 "id": "p408",
@@ -371,7 +371,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "6 AT",
                 "fuel": "disel",
-                "price": "35984.00 Eur"
+                "price": "35984"
             }
         ],
         "accessories": []
@@ -380,10 +380,10 @@
         "id": 10,
         "name": "Christina",
         "surname": "Fields",
-        "age": 18,
+        "age": "18",
         "address": "9680 Plum St",
         "email": "christina.fields@example.com",
-        "phone_number": 3205463282,
+        "phone_number": "3205463282",
         "auto": [
             {
                 "id": "p508",
@@ -393,7 +393,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "6 AT",
                 "fuel": "disel",
-                "price": "38670.00 Eur"
+                "price": "38670"
             },
             {
                 "id": "p3008",
@@ -412,21 +412,21 @@
                 "product": "isotherm unit - 16 litres",
                 "part number": "945603",
                 "intende for cars": "peugeot 508",
-                "price": "242.00 Eur"
+                "price": "242"
             },
             {
                 "id": "station",
                 "product": "docking station for E-cick scooter",
                 "part number": "1620299480",
                 "intende for cars": "peugeot 3008",
-                "price": "484.00 Eur"
+                "price": "484"
             },
             {
                 "id": "cases",
                 "product": "set of two chrome wing mirror cases",
                 "part number": "16118182680",
                 "intende for cars": "peugeot 3008",
-                "price": "115.00 Eur"
+                "price": "115"
             }
         ]
     },
@@ -434,10 +434,10 @@
         "id": 11,
         "name": "Paul",
         "surname": "Gibson",
-        "age": 27,
+        "age": "27",
         "address": "6138 Nowlin Rd",
         "email": "paul.gibson@gmail.com",
-        "phone_number": 6997590055,
+        "phone_number": "6997590055",
         "auto": [
             {
                 "id": "p5008",
@@ -447,7 +447,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "8 AT",
                 "fuel": "disel",
-                "price": "48765.00 Eur"
+                "price": "48765"
             }
         ],
         "accessories": [
@@ -456,28 +456,28 @@
                 "product": "towbar( excluding wiring harness)",
                 "part number": "9160559",
                 "intende for cars": "peugeot 5008",
-                "price": "87.00 Eur"
+                "price": "87"
             },
             {
                 "id": "scooter",
                 "product": "E-kick scooter",
                 "part number": "1622150280",
                 "intende for cars": "peugeot 5008",
-                "price": "1733.00 Eur"
+                "price": "1733"
             },
             {
                 "id": "aid",
                 "product": "first aid & safety kit",
                 "part number": "1611561780",
                 "intende for cars": "peugeot 5008",
-                "price": "103.00 Eur"
+                "price": "103"
             },
             {
                 "id": "cover",
                 "product": "indoor car cover",
                 "part number": "1682174680",
                 "intende for cars": "peugeot 5008",
-                "price": "256.00 Eur"
+                "price": "256"
             }
         ]
     },
@@ -485,10 +485,10 @@
         "id": 12,
         "name": "Rodney",
         "surname": "Wright",
-        "age": 21,
+        "age": "21",
         "address": "9479 E Sandy Lake Rd",
         "email": "rodney.wright@gmail.com",
-        "phone_number": 4669032201,
+        "phone_number": "4669032201",
         "auto": [
             {
                 "id": "p508",
@@ -498,7 +498,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "6 AT",
                 "fuel": "disel",
-                "price": "38670.00 Eur"
+                "price": "38670"
             },
             {
                 "id": "p208",
@@ -508,7 +508,7 @@
                 "engine": "1.3l EcoTech 122HP",
                 "transmission": "6 AT",
                 "fuel": "gas",
-                "price": "21567.00 Eur"
+                "price": "21567"
             }
         ],
         "accessories": [
@@ -517,14 +517,14 @@
                 "product": "set of 4 19 inch Augusta alloy wheels",
                 "part number": "1638560280",
                 "intende for cars": "peugeot 508",
-                "price": "2228.00 Eur"
+                "price": "2228"
             },
             {
                 "id": "isotherm",
                 "product": "isotherm unit - 16 litres",
                 "part number": "945603",
                 "intende for cars": "peugeot 508",
-                "price": "242.00 Eur"
+                "price": "242"
             }
         ]
     },
@@ -535,7 +535,7 @@
         "age": 31,
         "address": "4367 Dogwood Ave",
         "email": "miriam.watts@gmail.com",
-        "phone_number": 4842896002,
+        "phone_number": "4842896002",
         "auto": [
             {
                 "id": "p408",
@@ -545,7 +545,7 @@
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "6 AT",
                 "fuel": "disel",
-                "price": "35984.00 Eur"
+                "price": "35984"
             }
         ],
         "accessories": []
@@ -554,10 +554,10 @@
         "id": 14,
         "name": "Mae",
         "surname": "Hunt",
-        "age": 19,
+        "age": "19",
         "address": "2921 Daisy Dr",
         "email": "mae.hunt@gmail.com",
-        "phone_number": 9142902480,
+        "phone_number": "9142902480",
         "auto": [
             {
                 "id": "p3008",
@@ -576,28 +576,28 @@
                 "product": "docking station for E-cick scooter",
                 "part number": "1620299480",
                 "intende for cars": "peugeot 3008",
-                "price": "484.00 Eur"
+                "price": "484"
             },
             {
                 "id": "cloth",
                 "product": "cleaning cloth for touchscreen",
                 "part number": "1628950980",
                 "intende for cars": "peugeot 3008",
-                "price": "9.00 Eur"
+                "price": "9"
             },
             {
                 "id": "caps",
                 "product": "set of 4 black centre caps for alloy wheels",
                 "part number": "1622961980",
                 "intende for cars": "peugeot 3008",
-                "price": "97.00 Eur"
+                "price": "97"
             },
             {
                 "id": "cases",
                 "product": "set of two chrome wing mirror cases",
                 "part number": "16118182680",
                 "intende for cars": "peugeot 3008",
-                "price": "115.00 Eur"
+                "price": "115"
             }
         ]
     }

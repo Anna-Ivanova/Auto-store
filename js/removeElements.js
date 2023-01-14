@@ -14,7 +14,7 @@ function removeGoods(event) {
         const index = goodsInf.findIndex(item => item.id === +goodId);
         goodsInf.splice(index, 1);
         localStorage.setItem('accessories', JSON.stringify(goodsInf));
-        console.log(goodsInf);
+
         showGoods();
     }
 }

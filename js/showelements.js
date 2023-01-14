@@ -21,6 +21,7 @@ function showCars() {
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeCars }, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
+    console.log(carInf);
     //window.scrollTo(0, 500);
 }
 
@@ -42,7 +43,7 @@ function showGoods() {
         createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
 
-    window.scrollTo(0, 500);
+    // window.scrollTo(0, 500);
 }
 
 function showPeople() {
@@ -73,5 +74,5 @@ function showPeople() {
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removePeople }, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
     }
-    window.scrollTo(0, 500);
+    // window.scrollTo(0, 500);
 }

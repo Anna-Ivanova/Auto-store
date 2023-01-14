@@ -25,28 +25,51 @@ const btnAddCar = document.querySelector('.addCar');
 btnAddCar.addEventListener('click', createNewCar);
 
 const tableHead = document.querySelector('.headrow-cars');
+const tableHeadGoods = document.querySelector('.headrow-goods');
+const tableHeadPeople = document.querySelector('.headrow-people');
 let columnDir = true;
 tableHead.addEventListener('click', function (event) {
     let prop = event.target.getAttribute('data-col');
     columnDir = !columnDir;
     console.log(columnDir);
-    sortCars(prop, columnDir);
-    showCars();
-    console.log(carInf);
+    if (prop !== null) {
+        sortDetails(carInf, prop, columnDir);
+        showCars();
+    }
+})
+tableHeadGoods.addEventListener('click', function (event) {
+    let prop = event.target.getAttribute('data-col');
+    console.log(prop);
+    columnDir = !columnDir;
+    if (prop !== null) {
+        sortDetails(goodsInf, prop, columnDir);
+        showGoods();
+    }
+})
+tableHeadPeople.addEventListener('click', function (event) {
+    let prop = event.target.getAttribute('data-col');
+    console.log(prop);
+    columnDir = !columnDir;
+    if (prop !== null) {
+        sortDetails(peopleInf, prop, columnDir);
+        showPeople();
+    }
 })
 
 
-function sortCars(prop, columnDir) {
+function sortDetails(arr, prop, columnDir) {
     //const copyCarinf = [...carInf];
-    return carInf.sort(function (carA, carB) {
-
-        if (!columnDir ? carA[prop] < carB[prop] : carA[prop] > carB[prop]) return -1;
-
-
+    return arr.sort(function (carA, carB) {
+        if (prop === 'id' || prop === 'model' || prop === 'transmission' || prop === 'price' || prop === 'quantity' || prop === 'part_number' || prop === 'age' || prop === 'phone_number') {
+            if (!columnDir ? Number(carA[prop]) < Number(carB[prop]) : Number(carA[prop]) > Number(carB[prop])) return -1;
+        }
+        else {
+            if (!columnDir ? carA[prop].toLowerCase() < carB[prop].toLowerCase() : carA[prop].toLowerCase() > carB[prop].toLowerCase()) return -1;
+        }
     })
 }
 
-//console.log(sortCars('price'));
+
 
 
 

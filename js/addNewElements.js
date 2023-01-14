@@ -75,6 +75,8 @@ function saveNewAccessories() {
         const newIntendeForCars = document.querySelector('.textIntendeForCars').value;
         const newPriceAccessories = document.querySelector('.textPriceAccessories').value;
         const newQuantity = document.querySelector('.textQuantityGoods').value;
+        goodsInf.sort((a, b) => a.id - b.id);
+
 
         const newAccessories = {
             id: goodsInf[goodsInf.length - 1].id + 1,
@@ -120,7 +122,7 @@ function saveNewPeople() {
         const newAddress = document.querySelector('.textAddress').value;
         const newEmail = document.querySelector('.textEmail').value;
         const newPhone = document.querySelector('.textPhone').value;
-
+        peopleInf.sort((a, b) => a.id - b.id);
         const newPerson = {
             id: peopleInf[peopleInf.length - 1].id + 1,
             name: newName,
@@ -134,6 +136,7 @@ function saveNewPeople() {
         }
 
         peopleInf.push(newPerson);
+        console.log(peopleInf);
         localStorage.setItem('people', JSON.stringify(peopleInf));
         const form = document.querySelector('.editAddPeople');
         hideForm();
