@@ -12,6 +12,9 @@ function createNewCar() {
     document.querySelector('.textQuantityCars').value = '';
 
     const btnSaveCar = document.querySelector('.btnSaveCar');
+    btnSaveCar.style.display = 'block';
+    const btnSaveEditCar = document.querySelector('.btnSaveEditCar');
+    btnSaveEditCar.style.display = 'none';
     btnSaveCar.addEventListener('click', saveNewCar);
 
     const btnClose = document.querySelector('.btnCloseCar');
@@ -62,6 +65,9 @@ function createNewAccessories() {
     document.querySelector('.textQuantityGoods').value = '';
 
     const btnSaveGoods = document.querySelector('.btnSaveGoods');
+    btnSaveGoods.style.display = 'block';
+    const btnSaveEditGoods = document.querySelector('.btnSaveEditGoods');
+    btnSaveEditGoods.style.display = 'none';
     btnSaveGoods.addEventListener('click', saveNewAccessories);
 
     const btnClose = document.querySelector('.btnCloseGoods');
@@ -106,6 +112,9 @@ function createNewPeople() {
     document.querySelector('.textPhone').value = '';
 
     const btnSavePeople = document.querySelector('.btnSavePeople');
+    btnSavePeople.style.display = 'block';
+    const btnSaveEditPeople = document.querySelector('.btnSaveEditPeople');
+    btnSaveEditPeople.style.display = 'none';
     btnSavePeople.addEventListener('click', saveNewPeople);
 
     const btnClose = document.querySelector('.btnClose');
