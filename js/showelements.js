@@ -73,6 +73,7 @@ function showPeople() {
         const cellAction = createElement('td', { className: 'action d-flex', id: peopleInf[i].id }, null, null, clientsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removePeople }, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act' }, null, null, cellAction);
+        createElement('span', { className: 'icon-euro btn-buy btn-act' }, null, null, cellAction);
     }
     // window.scrollTo(0, 500);
 }
