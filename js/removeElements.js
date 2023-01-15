@@ -24,8 +24,7 @@ function deleteCar(event){
     const blockQueryDelete = document.querySelector('.confirmation');
     blockQueryDelete.style.display = 'none';
     const id = event.target.getAttribute('id');
-    const actualOrders = JSON.parse(localStorage.getItem('cars')).filter(item => item.id != id);
-    carInf = actualOrders;
+    carInf = carInf.filter(item => item.id != id);
     localStorage.setItem('cars', JSON.stringify(carInf));
     showCars()
 }
@@ -39,8 +38,7 @@ function deleteGoods(event){
     const blockQueryDelete = document.querySelector('.confirmation');
     blockQueryDelete.style.display = 'none';
     const id = event.target.getAttribute('id');
-    const actualOrders = JSON.parse(localStorage.getItem('accessories')).filter(item => item.id != id);
-    goodsInf = actualOrders;
+    goodsInf = goodsInf.filter(item => item.id != id);
     localStorage.setItem('accessories', JSON.stringify(goodsInf));
     showGoods()
 }
@@ -54,8 +52,7 @@ function deletePeople(event){
     const blockQueryDelete = document.querySelector('.confirmation');
     blockQueryDelete.style.display = 'none';
     const id = event.target.getAttribute('id');
-    const actualOrders = JSON.parse(localStorage.getItem('people')).filter(item => item.id != id);
-    peopleInf = actualOrders;
+    peopleInf = peopleInf.filter(item => item.id != id);
     localStorage.setItem('people', JSON.stringify(peopleInf));
     showPeople()
 }
