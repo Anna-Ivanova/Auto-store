@@ -1,33 +1,58 @@
+function remove(ID, deleteEl) {
+    const blockQueryDelete = document.querySelector('.confirmation');
+    blockQueryDelete.style.display = 'block';
+
+    const buttonYes = document.querySelector('.yes');
+    buttonYes.setAttribute('id', ID);
+    buttonYes.addEventListener('click', deleteEl);
+
+    const buttonNO = document.querySelector('.no');
+    buttonNO.addEventListener('click', cancelDelete);
+}
+
+function cancelDelete() {
+    const blockQueryDelete = document.querySelector('.confirmation');
+    blockQueryDelete.style.display = 'none';
+}
+
 function removeCars(event) {
     const carId = event.target.parentNode.getAttribute('id');
-    if (window.confirm(`Do you really want to remove car model ${carId}?`)) {
-        const index = carInf.findIndex(item => item.id === carId);
-        carInf.splice(index, 1);
-        localStorage.setItem('cars', JSON.stringify(carInf));
-        showCars();
-    }
+    remove(carId, deleteCar)
 }
+
+function deleteCar(event){
+    const blockQueryDelete = document.querySelector('.confirmation');
+    blockQueryDelete.style.display = 'none';
+    const id = event.target.getAttribute('id');
+    carInf = carInf.filter(item => item.id != id);
+    localStorage.setItem('cars', JSON.stringify(carInf));
+    showCars()
+}
+
 function removeGoods(event) {
     const goodId = event.target.parentNode.getAttribute('id');
+    remove(goodId, deleteGoods)
+}
 
-    if (window.confirm(`Do you really want to remove position ${goodId}?`)) {
-        const index = goodsInf.findIndex(item => item.id === +goodId);
-        goodsInf.splice(index, 1);
-        localStorage.setItem('accessories', JSON.stringify(goodsInf));
-
-        showGoods();
-    }
+function deleteGoods(event){
+    const blockQueryDelete = document.querySelector('.confirmation');
+    blockQueryDelete.style.display = 'none';
+    const id = event.target.getAttribute('id');
+    goodsInf = goodsInf.filter(item => item.id != id);
+    localStorage.setItem('accessories', JSON.stringify(goodsInf));
+    showGoods()
 }
 
 function removePeople(event) {
     const peopleId = event.target.parentNode.getAttribute('id');
+    remove(peopleId, deletePeople)
+}
 
-    if (window.confirm(`Do you really want to remove customer ${peopleId}?`)) {
-        const index = peopleInf.findIndex(item => item.id === +peopleId);
-        peopleInf.splice(index, 1);
-        localStorage.setItem('people', JSON.stringify(peopleInf));
-        console.log(peopleInf);
-        showPeople();
-    }
-
+function deletePeople(event){
+    const blockQueryDelete = document.querySelector('.confirmation');
+    blockQueryDelete.style.display = 'none';
+    const id = event.target.getAttribute('id');
+    peopleInf = peopleInf.filter(item => item.id != id);
+    localStorage.setItem('people', JSON.stringify(peopleInf));
+    showPeople()
 }

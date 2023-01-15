@@ -260,7 +260,8 @@ thead th {
 
 .editAddPeople,
 .editAddGoods,
-.editAddCar {
+.editAddCar,
+.confirmation {
     display: none;
     top: 0;
     left: 0;
@@ -273,7 +274,8 @@ thead th {
 
 .formEditAddPeople,
 .formEditAddGoods,
-.formEditAddCar {
+.formEditAddCar,
+.blockDelete {
     width: 30%;
     background-color: #fff;
     position: absolute;
@@ -285,6 +287,12 @@ thead th {
     flex-direction: column;
     gap: 10px;
     border-radius: 10px;
+}
+
+.blockBtnDelete{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
 }
 
 .btnClose,
@@ -335,11 +343,18 @@ thead th {
     transition: 0.3s linear;
 }
 
+.textDelete{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
 .textInput:hover {
     border: 2px solid #00a3e0;
 }
 
-.btnSave {
+.btnSave, .yes, .no{
     font-size: 20px;
     margin-top: 20px;
     margin-right: auto;
@@ -355,7 +370,7 @@ thead th {
     transition: 0.5s linear;
 }
 
-.btnSave:hover {
+.btnSave:hover, .yes:hover, .no:hover {
     background-color: #ccc;
 }
 
