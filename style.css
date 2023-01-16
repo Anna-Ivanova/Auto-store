@@ -150,12 +150,12 @@ main {
 }
 
 .table {
+    display: inline-table;
     margin: 0 auto;
     width: 100%;
     margin-bottom: 20px;
     border: 1px solid #dddddd;
     border-collapse: collapse;
-
 }
 
 table td {
@@ -163,7 +163,6 @@ table td {
     font-size: 14px;
     font-weight: 400;
     border: 1px solid #dddddd;
-
 }
 
 thead {
@@ -403,4 +402,15 @@ thead th {
 
 .btnSaveEditCar, .btnSaveCar, .btnSaveGoods, .btnSaveEditGoods, .btnSavePeople, .btnSaveEditPeople{
     display: none;
+}
+
+.details-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.messageEmptyCar, .messageEmptyGoods, .messageEmptyPeople{
+    margin: 30px auto;
+    font-size: 30px;
+    font-weight: 500;
 }

@@ -3,7 +3,6 @@ const detailsGoods = document.querySelector('.details-goods');
 const detailsClients = document.querySelector('.details-clients');
 
 function showCars() {
-
     const tbody = document.getElementById('tbody');
     tbody.innerHTML = '';
     detailsCars.style.display = 'block';
@@ -22,6 +21,7 @@ function showCars() {
         createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, {click: editCars}, null, cellAction);
     }
     console.log(carInf);
+    emptyListCar();
     //window.scrollTo(0, 500);
 }
 
@@ -42,7 +42,7 @@ function showGoods() {
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeGoods }, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, {click: editGoods}, null, cellAction);
     }
-
+    emptyListGoods();
     // window.scrollTo(0, 500);
 }
 
@@ -78,5 +78,6 @@ function showPeople() {
         createElement('span', { className: 'icon-euro btn-buy btn-act' }, null, null, cellAction);
 
     }
+    emptyListPeople();
     // window.scrollTo(0, 500);
 }

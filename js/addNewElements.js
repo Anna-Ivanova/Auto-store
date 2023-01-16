@@ -83,7 +83,24 @@ function saveNewAccessories() {
         const newQuantity = document.querySelector('.textQuantityGoods').value;
         goodsInf.sort((a, b) => a.id - b.id);
 
+        if (goodsInf.length <= 0) {
+        const newAccessories = {
+            id: 1,
+            product: newProduct,
+            part_number: newPartNumber,
+            intended_for_cars: newIntendeForCars,
+            price: newPriceAccessories,
+            quantity: newQuantity
+        }
 
+        goodsInf.push(newAccessories);
+        localStorage.setItem('accessories', JSON.stringify(goodsInf));
+        const form = document.querySelector('.editAddGoods');
+        hideForm();
+        form.style.display = 'none';
+        showGoods();
+    }
+    else{
         const newAccessories = {
             id: goodsInf[goodsInf.length - 1].id + 1,
             product: newProduct,
@@ -99,6 +116,7 @@ function saveNewAccessories() {
         hideForm();
         form.style.display = 'none';
         showGoods();
+        }
     }
 }
 
@@ -132,8 +150,10 @@ function saveNewPeople() {
         const newEmail = document.querySelector('.textEmail').value;
         const newPhone = document.querySelector('.textPhone').value;
         peopleInf.sort((a, b) => a.id - b.id);
+
+        if (peopleInf.length <= 0) {
         const newPerson = {
-            id: peopleInf[peopleInf.length - 1].id + 1,
+            id: 1,
             name: newName,
             surname: newSurname,
             age: newAge,
@@ -151,5 +171,27 @@ function saveNewPeople() {
         hideForm();
         form.style.display = 'none';
         showPeople();
+        }
+        else{
+            const newPerson = {
+                id: peopleInf[peopleInf.length - 1].id + 1,
+                name: newName,
+                surname: newSurname,
+                age: newAge,
+                address: newAddress,
+                email: newEmail,
+                phone_number: newPhone,
+                auto: [],
+                accessories: []
+            }
+    
+            peopleInf.push(newPerson);
+            console.log(peopleInf);
+            localStorage.setItem('people', JSON.stringify(peopleInf));
+            const form = document.querySelector('.editAddPeople');
+            hideForm();
+            form.style.display = 'none';
+            showPeople();
+        }
     }
 }

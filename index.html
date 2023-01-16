@@ -75,10 +75,11 @@
 
                 <div class="details-cars hidden">
                     <div class="details-header d-flex">
-                        <h2 class="details_title">Cars</h2>
+                        <h2 class="details_title title_cars">Cars</h2>
+                        <div class="messageEmptyCar">The machine list is empty!</div>
                     </div>
-                    <table class="table">
-                        <thead>
+                    <table class="table table_car">
+                        <thead class="th_car">
                             <tr class="headrow-cars">
                                 <th>ID</th>
                                 <th>Model</th>
@@ -99,9 +100,10 @@
                 </div>
                 <div class="details-goods hidden">
                     <div class="details-header d-flex">
-                        <h2 class="details_title">Goods</h2>
+                        <h2 class="details_title title_goods">Goods</h2>
+                        <div class="messageEmptyGoods">The accessories list is empty!</div>
                     </div>
-                    <table class="table">
+                    <table class="table table_goods">
                         <thead>
                             <tr class="headrow-goods">
                                 <th data-col="id">Num</th>
@@ -119,9 +121,10 @@
                 </div>
                 <div class="details-clients hidden">
                     <div class="details-header d-flex">
-                        <h2 class="details_title">Customers</h2>
+                        <h2 class="details_title title_people">Customers</h2>
+                        <div class="messageEmptyPeople">The people list is empty!</div>
                     </div>
-                    <table class="table">
+                    <table class="table table_people">
                         <thead>
                             <tr class="headrow-people">
                                 <th data-col="id">Num</th>
@@ -287,6 +290,7 @@
     <script src="./js/showelements.js"></script>
     <script src="./js/addNewElements.js"></script>
     <script src="./js/close.js"></script>
+    <script src="./js/emptyLists.js"></script>
     <script src="./js/removeElements.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/validate.js"></script>
