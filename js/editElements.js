@@ -45,6 +45,7 @@ function saveNewEditCar(event){
     const newPrice = document.querySelector('.textPriceCar').value;
     const newQuantity = document.querySelector('.textQuantityCars').value;
 
+    cars.id = `p${newModel}`;
     cars.model = newModel;
     cars.body = newBody;
     cars.color = newColor;
