@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?jggphq');
-  src:  url('fonts/icomoon.eot?jggphq#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?jggphq') format('truetype'),
-    url('fonts/icomoon.woff?jggphq') format('woff'),
-    url('fonts/icomoon.svg?jggphq#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?kvqx7r');
+  src:  url('fonts/icomoon.eot?kvqx7r#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?kvqx7r') format('truetype'),
+    url('fonts/icomoon.woff?kvqx7r') format('woff'),
+    url('fonts/icomoon.svg?kvqx7r#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -53,8 +53,23 @@
 .icon-edit:before {
   content: "\e905";
 }
+.icon-add:before {
+  content: "\e931";
+}
+.icon-cart:before {
+  content: "\e93a";
+}
+.icon-euro:before {
+  content: "\e93c";
+}
+.icon-card:before {
+  content: "\e93f";
+}
 .icon-users:before {
   content: "\e972";
+}
+.icon-add-user:before {
+  content: "\e973";
 }
 .icon-delete:before {
   content: "\ea0d";
