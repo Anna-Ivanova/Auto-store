@@ -5,4 +5,7 @@ function closeForm() {
     formAccessories.style.display = 'none';
     const formCar = document.querySelector('.editAddCar');
     formCar.style.display = 'none';
+    const formSell = document.querySelector('.sellGoods');
+    formSell.style.display = 'none';
+
 }

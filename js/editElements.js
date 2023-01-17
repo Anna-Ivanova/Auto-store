@@ -1,4 +1,4 @@
-function editCars(event){
+function editCars(event) {
     const button = event.target.getAttribute('id');
     console.log(button);
 
@@ -8,7 +8,7 @@ function editCars(event){
     const cars = carInf[button];
     console.log(cars);
 
-    document.querySelector('.textModel').value = carInf.model  || cars.model;
+    document.querySelector('.textModel').value = carInf.model || cars.model;
     document.querySelector('.textBody').value = carInf.body || cars.body;
     document.querySelector('.textColor').value = carInf.color || cars.color;
     document.querySelector('.textEngine').value = carInf.engine || cars.engine;
@@ -29,7 +29,7 @@ function editCars(event){
     btnClose.addEventListener('click', closeForm);
 }
 
-function saveNewEditCar(event){
+function saveNewEditCar(event) {
     const button = event.target.getAttribute('id');
     console.log(button);
 
@@ -61,7 +61,7 @@ function saveNewEditCar(event){
     showCars();
 }
 
-function editGoods(event){
+function editGoods(event) {
     const button = event.target.getAttribute('id');
     console.log(button);
 
@@ -89,7 +89,7 @@ function editGoods(event){
     btnClose.addEventListener('click', closeForm);
 }
 
-function saveNewEditGoods(event){
+function saveNewEditGoods(event) {
     const button = event.target.getAttribute('id');
     console.log(button);
 
@@ -114,7 +114,7 @@ function saveNewEditGoods(event){
     showGoods();
 }
 
-function editPerson(event){
+function editPerson(event) {
     const button = event.target.getAttribute('id');
     console.log(button);
 
@@ -143,9 +143,9 @@ function editPerson(event){
     btnClose.addEventListener('click', closeForm);
 }
 
-function saveNewEditPerson(event){
+function saveNewEditPerson(event) {
     const button = event.target.getAttribute('id');
-    console.log(button);
+    console.log(event.target);
 
     const person = peopleInf[button];
     console.log(person);

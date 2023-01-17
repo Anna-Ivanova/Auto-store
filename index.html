@@ -266,17 +266,85 @@
                         <input type="button" value="Save" class="btnSave btnSaveEditCar">
                     </form>
                 </div>
+                <div class="sellGoods">
+                    <form class="form formSellGoods">
+                        <input type="button" value="⛌" class="btnCloseSell">
+                        <h1 class="sell-title">Sell</h1>
+                        <div class="sell-item">
+                            <p class="textForm">Customer:</p>
+                            <p class="sell-name"></p>
+                        </div>
+                        <div class="sell-item">
+                            <p class="textForm"> Sell Car
+                                <span class="icon-car-1 iconcarsell"></span>
+                            </p>
+                            <select class="select-carModel" name="model" id="model">
+                                <option value="model">Model</option>
+                            </select>
+                            <select class="select-carBody" id="body">
+                                <option>Body</option>
+                            </select>
+                            <button type="button" class="btn btn-sell">View</button>
+                        </div>
+                        <div class="sell-item">
+                            <p class="textForm"> Sell Goods
+                                <span class="icon-wheel"></span>
+                            </p>
+                            <select class="select-goodsModel" name="model" id="goods">
+                                <option value="model">For Model</option>
+                                <p class="textForm">
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="sellGoods">
+                    <form class="form formSellGoods">
+                        <input type="button" value="⛌" class="btnCloseSell">
+                        <h1 class="sell-title">Sell</h1>
+                        <div class="sell-item">
+                            <p class="textForm">Customer:</p>
+                            <p class="sell-name"></p>
+                        </div>
+                        <div class="sell-item">
+                            <p class="textForm"> Sell Car
+                                <span class="icon-car-1 iconcarsell"></span>
+                            </p>
+                            <select class="select-carModel" name="model" id="model">
+                                <option value="model">Model</option>
+                            </select>
+                            <select class="select-carBody" id="body">
+                                <option>Body</option>
+                            </select>
+                            <button type="button" class="btn btn-sell">View</button>
+                        </div>
+                        <div class="sell-item">
+                            <p class="textForm"> Sell Goods
+                                <span class="icon-wheel"></span>
+                            </p>
+                            <select class="select-goodsModel" name="model" id="goods">
+                                <option value="model">For Model</option>
+                                <p class="textForm">
+                        </div>
+
+                    </form>
+
+                </div>
                 <div class="confirmation">
                     <div class="blockDelete">
                         <p class="textDelete">Are you sure you want to delete data?</p>
-                       <div class="blockBtnDelete">
-                        <button class="yes"> Yes</button>
-                        <button class="no">No</button>
-                       </div>
+                        <div class="blockBtnDelete">
+                            <button class="yes"> Yes</button>
+                            <button class="no">No</button>
+                        </div>
                     </div>
             </section>
         </main>
-
+        <div class="sell-item">
+            <p>Orders History</p>
+            <div class="sell-carhistory"></div>
+            <div class="sell-goodshistory"></div>
+        </div>
         <footer class="footer d-flex">
             <div class="container ">
                 <small> © 2023. All copyrights reserved </small>
@@ -292,6 +360,7 @@
     <script src="./js/close.js"></script>
     <script src="./js/emptyLists.js"></script>
     <script src="./js/removeElements.js"></script>
+    <script src="./js/sellGoods.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/validate.js"></script>
 

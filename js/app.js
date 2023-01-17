@@ -58,13 +58,16 @@ tableHeadPeople.addEventListener('click', function (event) {
 
 
 function sortDetails(arr, prop, columnDir) {
-    //const copyCarinf = [...carInf];
-    return arr.sort(function (carA, carB) {
+
+    return arr.sort(function (propA, propB) {
         if (prop === 'id' || prop === 'model' || prop === 'transmission' || prop === 'price' || prop === 'quantity' || prop === 'part_number' || prop === 'age' || prop === 'phone_number') {
-            if (!columnDir ? Number(carA[prop]) < Number(carB[prop]) : Number(carA[prop]) > Number(carB[prop])) return -1;
+            if (!columnDir ? Number(propA[prop]) < Number(propB[prop]) : Number(propA[prop]) > Number(propB[prop])) return -1;
+        }
+        if (prop === 'intended_for_cars') {
+            if (!columnDir ? Number(propA[prop].split(' ').slice(-1)) < Number(propB[prop].split(' ').slice(-1)) : Number(propA[prop].split(' ').slice(-1)) > Number(propB[prop].split(' ').slice(-1))) return -1;
         }
         else {
-            if (!columnDir ? carA[prop].toLowerCase() < carB[prop].toLowerCase() : carA[prop].toLowerCase() > carB[prop].toLowerCase()) return -1;
+            if (!columnDir ? propA[prop].toLowerCase() < propB[prop].toLowerCase() : propA[prop].toLowerCase() > propB[prop].toLowerCase()) return -1;
         }
     })
 }

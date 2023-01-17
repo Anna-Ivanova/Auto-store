@@ -260,6 +260,7 @@ thead th {
 .editAddPeople,
 .editAddGoods,
 .editAddCar,
+.sellGoods,
 .confirmation {
     display: none;
     top: 0;
@@ -288,7 +289,21 @@ thead th {
     border-radius: 10px;
 }
 
-.blockBtnDelete{
+.formSellGoods {
+    width: 30%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+}
+
+.blockBtnDelete {
     display: flex;
     justify-content: space-between;
     gap: 50px;
@@ -296,7 +311,8 @@ thead th {
 
 .btnClose,
 .btnCloseGoods,
-.btnCloseCar {
+.btnCloseCar,
+.btnCloseSell {
     position: absolute;
     font-size: 24px;
     font-weight: bold;
@@ -342,7 +358,7 @@ thead th {
     transition: 0.3s linear;
 }
 
-.textDelete{
+.textDelete {
     font-size: 20px;
     font-weight: 500;
     text-align: center;
@@ -353,7 +369,9 @@ thead th {
     border: 2px solid #00a3e0;
 }
 
-.btnSave, .yes, .no{
+.btnSave,
+.yes,
+.no {
     font-size: 20px;
     margin-top: 20px;
     margin-right: auto;
@@ -369,7 +387,9 @@ thead th {
     transition: 0.5s linear;
 }
 
-.btnSave:hover, .yes:hover, .no:hover {
+.btnSave:hover,
+.yes:hover,
+.no:hover {
     background-color: #ccc;
 }
 
@@ -400,16 +420,42 @@ thead th {
     gap: 20px;
 }
 
-.btnSaveEditCar, .btnSaveCar, .btnSaveGoods, .btnSaveEditGoods, .btnSavePeople, .btnSaveEditPeople{
+.btnSaveEditCar,
+.btnSaveCar,
+.btnSaveGoods,
+.btnSaveEditGoods,
+.btnSavePeople,
+.btnSaveEditPeople {
     display: none;
 }
 
-.details-header{
+.sell-title {
+    align-self: center;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.sell-item {
+    display: flex;
+    gap: 40px;
+}
+
+.iconcarsell {
+    font-size: 20px;
+}
+
+.btn-sell {
+    padding: 4px 30px;
+}
+
+.details-header {
     display: flex;
     flex-direction: column;
 }
 
-.messageEmptyCar, .messageEmptyGoods, .messageEmptyPeople{
+.messageEmptyCar,
+.messageEmptyGoods,
+.messageEmptyPeople {
     margin: 30px auto;
     font-size: 30px;
     font-weight: 500;
