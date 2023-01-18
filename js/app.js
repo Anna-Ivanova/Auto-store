@@ -30,6 +30,7 @@ const tableHeadPeople = document.querySelector('.headrow-people');
 let columnDir = true;
 tableHead.addEventListener('click', function (event) {
     let prop = event.target.getAttribute('data-col');
+    console.log(prop);
     columnDir = !columnDir;
     console.log(columnDir);
     if (prop !== null) {
@@ -61,7 +62,14 @@ function sortDetails(arr, prop, columnDir) {
 
     return arr.sort(function (propA, propB) {
         if (prop === 'id' || prop === 'model' || prop === 'transmission' || prop === 'price' || prop === 'quantity' || prop === 'part_number' || prop === 'age' || prop === 'phone_number') {
-            if (!columnDir ? Number(propA[prop]) < Number(propB[prop]) : Number(propA[prop]) > Number(propB[prop])) return -1;
+            if (columnDir == false) {
+                return Number(propA[prop]) - Number(propB[prop])
+            }
+
+            if (columnDir == true) {
+                return Number(propB[prop]) - Number(propA[prop])
+            }
+
         }
         if (prop === 'intended_for_cars') {
             if (!columnDir ? Number(propA[prop].split(' ').slice(-1)) < Number(propB[prop].split(' ').slice(-1)) : Number(propA[prop].split(' ').slice(-1)) > Number(propB[prop].split(' ').slice(-1))) return -1;

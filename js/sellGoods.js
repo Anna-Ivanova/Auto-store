@@ -24,11 +24,13 @@ function showSellForm(event) {
         }
     }
     //filter and sort unique models
-
+    console.log(carInf);
     let carModels = filterUniqeModel(carInf, 'model');
     sortDetails(carModels, 'model', false);
+    //console.log(carModels);
     let goodsCarModels = filterUniqeModel(goodsInf, 'intended_for_cars');
     sortDetails(goodsCarModels, 'intended_for_cars', false);
+    //console.log(goodsCarModels);
     //---------------------------------------------------
     for (let i = 0; i < carModels.length; i++) {
         let carOptionModel = document.createElement('option');
@@ -83,7 +85,7 @@ function showSellForm(event) {
 function filterUniqeModel(array, prop) {
     let tmpArray = [];
     function itemCheck(item) {
-        console.log(prop);
+
         if (tmpArray.indexOf(item[prop]) === -1) {
             tmpArray.push(item[prop]);
             return true
