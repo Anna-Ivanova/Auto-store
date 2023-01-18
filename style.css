@@ -261,7 +261,8 @@ thead th {
 .editAddGoods,
 .editAddCar,
 .sellGoods,
-.confirmation {
+.confirmation,
+.selectedcar {
     display: none;
     top: 0;
     left: 0;
@@ -270,6 +271,21 @@ thead th {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.755);
     z-index: 2000;
+}
+
+.selectedcar-det {
+    width: 70%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+
 }
 
 .formEditAddPeople,
@@ -312,7 +328,8 @@ thead th {
 .btnClose,
 .btnCloseGoods,
 .btnCloseCar,
-.btnCloseSell {
+.btnCloseSell,
+.btnCloseSellDet {
     position: absolute;
     font-size: 24px;
     font-weight: bold;
@@ -389,7 +406,8 @@ thead th {
 
 .btnSave:hover,
 .yes:hover,
-.no:hover {
+.no:hover,
+.btnSell:hover {
     background-color: #ccc;
 }
 
@@ -459,4 +477,25 @@ thead th {
     margin: 30px auto;
     font-size: 30px;
     font-weight: 500;
+}
+
+.quantity {
+    width: 35px;
+}
+
+.actionsell {
+    justify-content: space-between;
+}
+
+.btnSell {
+    background-color: #00a3e0;
+    color: #F5F5FA;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 15px;
 }

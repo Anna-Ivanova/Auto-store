@@ -73,6 +73,8 @@ function showSellForm(event) {
                 const valBody = this.value;
                 const btnViewCarsForSell = document.querySelector('.btn-sell');
                 btnViewCarsForSell.addEventListener('click', function () {
+                    const sellCar = document.querySelector('.selectedcar');
+                    sellCar.style.display = 'block';
                     showCarsForSell(carInfChange, valModel, valBody);
                 });
 
@@ -97,15 +99,53 @@ function filterUniqeModel(array, prop) {
 }
 //------Show car for sell----------------------------------------
 function showCarsForSell(array, val1, val2) {
-    const sellCar = document.querySelector('.selectedcar');
-    console.log(sellCar);
+
+
+    const sellCar = document.querySelector('.selectedcar-table');
+    sellCar.innerHTML = "";
+    sellCar.innerHTML += `<table class="table table_car">
+<thead class="th_car">
+    <tr class="headrow-cars">
+        <th>ID</th>
+        <th>Model</th>
+        <th data-col="model">Num</th>
+        <th data-col="body">Body</th>
+        <th data-col="color">Color</th>
+        <th data-col="engine">Engine</th>
+        <th>Trans-<br>mission</th>
+        <th data-col="fuel">Fuel type</th>
+        <th data-col="price">Price in <br> Euro</th>
+        <th data-col="quantity">Quantity</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody id="tbodysell">
+</tbody>
+</table>`
+    const tbody = document.getElementById('tbodysell');
+    tbody.innerHTML = '';
+    const btnCloseSell = document.querySelector('.btnCloseSellDet');
+    btnCloseSell.addEventListener('click', function () {
+        const selectedcar = document.querySelector('.selectedcar');
+        selectedcar.style.display = 'none';
+    });
     let carSellResult = array.filter(function (item) {
         return item.body === val2;
     });
-    carSellResult.forEach(element => {
+    console.log(carSellResult);
+    carSellResult.forEach((element, index) => {
+        const carRow = document.createElement('tr');
+        carRow.setAttribute('id', element.id);
+        tbody.appendChild(carRow);
+        createElement('td', null, null, index + 1, carRow);
+
         for (let key in element) {
-            sellCar.textContent = `${key}:${element[key]}`;
+            createElement('td', null, null, element[key], carRow);
+
         }
+        const cellAction = createElement('td', { className: 'actionsell d-flex', id: element.id }, null, null, carRow);
+        createElement('input', { className: 'quantity', type: 'number' }, null, null, cellAction);
+        createElement('button', { className: 'btnSell' }, null, 'Sell', cellAction);
     });
 
 }
