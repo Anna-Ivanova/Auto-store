@@ -1,6 +1,8 @@
 const detailsCars = document.querySelector('.details-cars');
 const detailsGoods = document.querySelector('.details-goods');
 const detailsClients = document.querySelector('.details-clients');
+const detailsBoughtCars = document.querySelector('.details-bought-car');
+const detailsBoughtGoods = document.querySelector('.details-bought-goods');
 
 function showCars() {
     const tbody = document.getElementById('tbody');
@@ -8,6 +10,8 @@ function showCars() {
     detailsCars.style.display = 'block';
     detailsGoods.style.display = 'none';
     detailsClients.style.display = 'none';
+    detailsBoughtCars.style.display = 'none';
+    detailsBoughtGoods.style.display = 'none';
     for (let i = 0; i < carInf.length; i++) {
         const carRow = document.createElement('tr');
         carRow.setAttribute('id', carInf[i].id);
@@ -20,15 +24,62 @@ function showCars() {
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeCars }, null, cellAction);
         createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, { click: editCars }, null, cellAction);
     }
-    console.log(carInf);
     emptyListCar();
     //window.scrollTo(0, 500);
+}
+
+function showBoughtCars(){
+    const tbody = document.getElementById('tbody-bought-cars');
+    tbody.innerHTML = '';
+    detailsCars.style.display = 'none';
+    detailsGoods.style.display = 'none';
+    detailsClients.style.display = 'none';
+    detailsBoughtCars.style.display = 'block';
+    detailsBoughtGoods.style.display = 'none';
+
+    for (let i = 0; i < purchaseCarsInf.length; i++) {
+        const carRow = document.createElement('tr');
+        carRow.setAttribute('id', purchaseCarsInf[i].id);
+        tbody.appendChild(carRow);
+        createElement('td', null, null, i + 1, carRow);
+        for (let key in purchaseCarsInf[i]) {
+            createElement('td', null, null, purchaseCarsInf[i][key], carRow);
+        }
+        const cellAction = createElement('td', { className: 'action d-flex', id: purchaseCarsInf[i].id }, null, null, carRow);
+        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
+    }
+    emptyListPurchaseCars();
+}
+
+function showBoughtAccessories(){
+    const tbody = document.getElementById('tbody-bought-goods');
+    tbody.innerHTML = '';
+    detailsCars.style.display = 'none';
+    detailsGoods.style.display = 'none';
+    detailsClients.style.display = 'none';
+    detailsBoughtCars.style.display = 'none';
+    detailsBoughtGoods.style.display = 'block';
+
+    for (let i = 0; i < purchaseGoodsInf.length; i++) {
+        const carRow = document.createElement('tr');
+        carRow.setAttribute('id', purchaseGoodsInf[i].id);
+        tbody.appendChild(carRow);
+        createElement('td', null, null, i + 1, carRow);
+        for (let key in purchaseGoodsInf[i]) {
+            createElement('td', null, null, purchaseGoodsInf[i][key], carRow);
+        }
+        const cellAction = createElement('td', { className: 'action d-flex', id: purchaseGoodsInf[i].id }, null, null, carRow);
+        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
+    }
+    emptyListPurchaseGoods();
 }
 
 function showGoods() {
     detailsGoods.style.display = 'block';
     detailsCars.style.display = 'none';
     detailsClients.style.display = 'none';
+    detailsBoughtCars.style.display = 'none';
+    detailsBoughtGoods.style.display = 'none';
     const tbodyGoods = document.getElementById('tbody-goods');
     tbodyGoods.innerHTML = '';
     for (let i = 0; i < goodsInf.length; i++) {
@@ -50,6 +101,8 @@ function showPeople() {
     detailsClients.style.display = 'block';
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
+    detailsBoughtCars.style.display = 'none';
+    detailsBoughtGoods.style.display = 'none';
     const tbodyClients = document.getElementById('tbody-clients');
     tbodyClients.innerHTML = '';
     for (let i = 0; i < peopleInf.length; i++) {
@@ -63,9 +116,12 @@ function showPeople() {
             else {
                 let tdAuto = createElement('td', null, null, null, clientsRow);
                 peopleInf[i][key].forEach(element => {
-
-                    createElement('p', null, null, element.id, tdAuto);
-
+                    if(key === 'auto'){
+                        createElement('p', null, null, element.id + ", ", tdAuto);
+                    }
+                    if(key === 'accessories'){
+                        createElement('p', null, null, element.product + ", ", tdAuto);
+                    }
                 });
 
             }

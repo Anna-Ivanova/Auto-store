@@ -1,12 +1,10 @@
 function editCars(event) {
     const button = event.target.getAttribute('id');
-    console.log(button);
 
     const form = document.querySelector('.editAddCar');
     form.style.display = 'block';
 
     const cars = carInf[button];
-    console.log(cars);
 
     document.querySelector('.textModel').value = carInf.model || cars.model;
     document.querySelector('.textBody').value = carInf.body || cars.body;
@@ -31,10 +29,8 @@ function editCars(event) {
 
 function saveNewEditCar(event) {
     const button = event.target.getAttribute('id');
-    console.log(button);
 
     const cars = carInf[button];
-    console.log(cars);
 
     if (validateFormCars()) {
         const newModel = document.querySelector('.textModel').value;
@@ -67,13 +63,11 @@ function saveNewEditCar(event) {
 
 function editGoods(event) {
     const button = event.target.getAttribute('id');
-    console.log(button);
 
     const form = document.querySelector('.editAddGoods');
     form.style.display = 'block';
 
     const accesserios = goodsInf[button];
-    console.log(accesserios);
 
     document.querySelector('.textProduct').value = goodsInf.product || accesserios.product;
     document.querySelector('.textPartNumber').value = goodsInf.part_number || accesserios.part_number;
@@ -95,10 +89,8 @@ function editGoods(event) {
 
 function saveNewEditGoods(event) {
     const button = event.target.getAttribute('id');
-    console.log(button);
 
     const accesserios = goodsInf[button];
-    console.log(accesserios);
 
     if (validateFormGoods()) {
         const newProduct = document.querySelector('.textProduct').value;
@@ -124,13 +116,11 @@ function saveNewEditGoods(event) {
 
 function editPerson(event) {
     const button = event.target.getAttribute('id');
-    console.log(button);
 
     const form = document.querySelector('.editAddPeople');
     form.style.display = 'block';
 
     const person = peopleInf[button];
-    console.log(person);
 
     document.querySelector('.textName').value = peopleInf.name || person.name;
     document.querySelector('.textSurname').value = peopleInf.surname || person.surname;
@@ -153,10 +143,8 @@ function editPerson(event) {
 
 function saveNewEditPerson(event) {
     const button = event.target.getAttribute('id');
-    console.log(event.target);
 
     const person = peopleInf[button];
-    console.log(person);
 
     if (validateFormPeople()) {
         const newName = document.querySelector('.textName').value;
