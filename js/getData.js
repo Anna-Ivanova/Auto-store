@@ -27,3 +27,14 @@ async function getPeopletoLocalStor() {
         peopleInf = JSON.parse(localStorage.getItem('people'));
     }
 }
+
+async function initApplication() { 
+    await Promise.all([ 
+      getCarstoLocalStor(), 
+      getGoodstoLocalStor(), 
+      getPeopletoLocalStor(), 
+    ]); 
+   
+    addPurchaseCarsInData(); 
+    addPurchaseGoogsInData(); 
+  } 

@@ -1,10 +1,9 @@
 let carInf = JSON.parse(localStorage.getItem('cars')) || [];
 let goodsInf = JSON.parse(localStorage.getItem('accessories')) || [];
 let peopleInf = JSON.parse(localStorage.getItem('people')) || [];
+let purchaseCarsInf, purchaseGoodsInf ;
 
-getCarstoLocalStor();
-getGoodstoLocalStor();
-getPeopletoLocalStor();
+initApplication();
 
 const viewCars = document.querySelector('.viewCars');
 viewCars.addEventListener('click', showCars);
@@ -14,6 +13,12 @@ viewGoods.addEventListener('click', showGoods);
 
 const viewClients = document.querySelector('.viewClients');
 viewClients.addEventListener('click', showPeople);
+
+const viewBoughtCars = document.querySelector('.viewBoughtCars');
+viewBoughtCars.addEventListener('click', showBoughtCars);
+
+const viewBoughtAccessories = document.querySelector('.viewBoughtAccessories');
+viewBoughtAccessories.addEventListener('click', showBoughtAccessories);
 
 const btnAddPeople = document.querySelector('.addNewPeople');
 btnAddPeople.addEventListener('click', createNewPeople);
