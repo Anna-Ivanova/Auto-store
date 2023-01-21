@@ -54,5 +54,7 @@ function deletePeople(event){
     const id = event.target.getAttribute('id');
     peopleInf = peopleInf.filter(item => item.id != id);
     localStorage.setItem('people', JSON.stringify(peopleInf));
-    showPeople()
+    showPeople();
+    addPurchaseCarsInData();
+    addPurchaseGoogsInData();
 }

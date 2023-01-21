@@ -45,8 +45,6 @@ function showBoughtCars(){
         for (let key in purchaseCarsInf[i]) {
             createElement('td', null, null, purchaseCarsInf[i][key], carRow);
         }
-        const cellAction = createElement('td', { className: 'action d-flex', id: purchaseCarsInf[i].id }, null, null, carRow);
-        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
     }
     emptyListPurchaseCars();
 }
@@ -68,8 +66,6 @@ function showBoughtAccessories(){
         for (let key in purchaseGoodsInf[i]) {
             createElement('td', null, null, purchaseGoodsInf[i][key], carRow);
         }
-        const cellAction = createElement('td', { className: 'action d-flex', id: purchaseGoodsInf[i].id }, null, null, carRow);
-        createElement('span', { className: 'icon-delete btn-del btn-act' }, null, null, cellAction);
     }
     emptyListPurchaseGoods();
 }
