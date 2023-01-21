@@ -166,6 +166,8 @@ function saveNewEditPerson(event) {
         hideForm();
         form.style.display = 'none';
         showPeople();
+        addPurchaseCarsInData();
+        addPurchaseGoogsInData();
     }
     
 }

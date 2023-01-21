@@ -473,7 +473,9 @@ thead th {
 
 .messageEmptyCar,
 .messageEmptyGoods,
-.messageEmptyPeople {
+.messageEmptyPeople,
+.messageEmptyBoughtCar,
+.messageEmptyBoughtGoods {
     margin: 30px auto;
     font-size: 30px;
     font-weight: 500;
