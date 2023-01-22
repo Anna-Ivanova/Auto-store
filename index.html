@@ -325,11 +325,11 @@
                         <input type="button" value="⛌" class="btnCloseSell">
                         <h1 class="sell-title">Sell</h1>
                         <div class="sell-item">
-                            <p class="textForm">Customer:</p>
+                            <p class="textForm textSell">Customer:</p>
                             <p class="sell-name"></p>
                         </div>
                         <div class="sell-item">
-                            <p class="textForm"> Sell Car
+                            <p class="textForm textSell"> Sell Car
                                 <span class="icon-car-1 iconcarsell"></span>
                             </p>
                             <select class="select-carModel" name="model" id="model">
@@ -341,12 +341,13 @@
                             <button type="button" class="btn btn-sell">View</button>
                         </div>
                         <div class="sell-item">
-                            <p class="textForm"> Sell Goods
+                            <p class="textForm textSell"> Sell Goods
                                 <span class="icon-wheel"></span>
                             </p>
                             <select class="select-goodsModel" name="model" id="goods">
                                 <option value="model">For Model</option>
                             </select>
+                            <button type="button" class="btn btn-sellgoods">View</button>
                         </div>
 
                     </form>
@@ -356,6 +357,21 @@
                     <div class="selectedcar-det">
                         <input type="button" value="⛌" class="btnCloseSellDet">
                         <div class="selectedcar-table"></div>
+                        <div class='products hidden'>
+                            <div class='item-product'>Product</div>
+                            <div class='item-price'>Price</div>
+                            <div class='item-quantity'>Quantity</div>
+                            <div class='item-total'>Total(Eur)</div>
+                            <div class='item-delete'>Delete</div>
+                        </div>
+                        <div class="result-sell"></div>
+                        <div class="productsTotal">
+                            <div class='items-title'>Total</div>
+                            <div class='items-total'></div>
+                            <div class="confirm-btn">
+                                <button class="btnSell btnConfirm">Confirm</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="confirmation">

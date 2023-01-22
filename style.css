@@ -407,7 +407,9 @@ thead th {
 .btnSave:hover,
 .yes:hover,
 .no:hover,
-.btnSell:hover {
+.btn-sell:hover,
+.btnSell:hover,
+.btn-sellgoods:hover {
     background-color: #ccc;
 }
 
@@ -455,7 +457,7 @@ thead th {
 
 .sell-item {
     display: flex;
-    gap: 40px;
+    gap: 20px;
 }
 
 .iconcarsell {
@@ -464,6 +466,11 @@ thead th {
 
 .btn-sell {
     padding: 4px 30px;
+}
+
+.btn-sellgoods {
+    padding: 4px 30px;
+    margin-left: 100px;
 }
 
 .details-header {
@@ -482,7 +489,7 @@ thead th {
 }
 
 .quantity {
-    width: 35px;
+    width: 32px;
 }
 
 .actionsell {
@@ -500,4 +507,76 @@ thead th {
     text-align: center;
     border-radius: 10px;
     padding: 5px 15px;
+}
+
+.textSell {
+    width: 25%;
+}
+
+select {
+    height: 25px;
+    min-width: 82px;
+}
+
+.products {
+
+    display: flex;
+    border-bottom: 1px solid rgb(237, 237, 237);
+    line-height: 48px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.product-main {
+    display: flex;
+    border-bottom: 1px solid rgb(237, 237, 237);
+    line-height: 48px;
+    font-size: 14px;
+
+}
+
+.products {
+    display: none;
+}
+
+
+.item-product,
+.good-name {
+    width: 33%
+}
+
+.item-price,
+.item-quantity,
+.item-total,
+.item-delete,
+.good-price,
+.good-quantity,
+.good-total,
+.good-delete,
+.confirm-btn {
+    width: 20%;
+    text-align: center;
+}
+
+.delete {
+    padding-top: 15px;
+}
+
+.items-title,
+.items-total {
+    width: 15%;
+    text-align: center;
+}
+
+.productsTotal {
+    display: none;
+    justify-content: flex-end;
+    line-height: 48px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.result-sell {
+    overflow-y: auto;
+    max-height: 220px;
 }
