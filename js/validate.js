@@ -51,12 +51,12 @@ const isValidProduct = product => {
 }
 
 const isValidPartNumber = partNumber => {
-    const re = /^\d{10}$/;
+    const re = /^\d{6,10}$/;
     return re.test(String(partNumber).toLowerCase());
 }
 
 const isValidIntende = intende => {
-    const re = /^[a-zа-яA-ZА-Я0-9+_]{1,24}/;
+    const re = /peugeout \d{3,4}/;
     return re.test(String(intende).toLowerCase());
 }
 
@@ -91,12 +91,12 @@ const isValidEngine = engine => {
 }
 
 const isValidTransmission = transmission => {
-    const re = /^[a-zа-яA-ZА-Я0-9+_]{1,64}/;
+    const re = /^[a-zа-яA-ZА-Я0-9+_]{1,10}/;
     return re.test(String(transmission).toLowerCase());
 }
 
 const isValidFuel = fuel => {
-    const re = /^[a-zа-яA-ZА-Я0-9+_]{1,10}/;
+    const re = /(gas|diesel)/;
     return re.test(String(fuel).toLowerCase());
 }
 
@@ -215,7 +215,7 @@ function validatePartNumber(partNumber) {
         setError(partNumber, 'The field must be filled in');
         result = false;
     } else if (!isValidPartNumber(partNumber.value)) {
-        setError(partNumber, 'Enter 10 digit number');
+        setError(partNumber, 'Enter  correct part number');
         result = false;
     } else {
         setSuccess(partNumber);
