@@ -53,24 +53,28 @@
         ],
         "accessories": [
             {
+                "id": 1,
                 "product": "dog guard",
                 "part_number": "1658058380",
                 "intended_for_cars": "peugeot 308",
                 "price": "366"
             },
             {
+                "id": 2,
                 "product": "front air deflectors",
                 "part_number": "1680299780",
                 "intended_for_cars": "peugeot 308",
                 "price": "155"
             },
             {
+                "id": 3,
                 "product": "mid-length roof box",
                 "part_number": "1609665780",
                 "intended_for_cars": "peugeot 308",
                 "price": "1247"
             },
             {
+                "id": 4,
                 "product": "needle-pile floor mats-wagon",
                 "part_number": "1680490580",
                 "intended_for_cars": "peugeot 308",
@@ -100,36 +104,42 @@
         ],
         "accessories": [
             {
+                "id": 9,
                 "product": "docking station for E-cick scooter",
                 "part_number": "1620299480",
                 "intended_for_cars": "peugeot 3008",
                 "price": "484"
             },
             {
+                "id": 10,
                 "product": "cleaning cloth for touchscreen",
                 "part_number": "1628950980",
                 "intended_for_cars": "peugeot 3008",
                 "price": "9"
             },
             {
+                "id": 11,
                 "product": "set of 4 black centre caps for alloy wheels",
                 "part_number": "1622961980",
                 "intended_for_cars": "peugeot 3008",
                 "price": "97"
             },
             {
+                "id": 12,
                 "product": "set of two chrome wing mirror cases",
                 "part_number": "16118182680",
                 "intended_for_cars": "peugeot 3008",
                 "price": "115"
             },
             {
+                "id": 13,
                 "product": "towbar( excluding wiring harness)",
                 "part_number": "916055912",
                 "intended_for_cars": "peugeot 5008",
                 "price": "87"
             },
             {
+                "id": 14,
                 "product": "E-kick scooter",
                 "part_number": "1622150280",
                 "intended_for_cars": "peugeot 5008",
@@ -159,12 +169,14 @@
         ],
         "accessories": [
             {
+                "id": 15,
                 "product": "first aid & safety kit",
                 "part_number": "1611561780",
                 "intended_for_cars": "peugeot 5008",
                 "price": "103"
             },
             {
+                "id": 16,
                 "product": "indoor car cover",
                 "part_number": "1682174680",
                 "intended_for_cars": "peugeot 5008",
@@ -236,24 +248,28 @@
         ],
         "accessories": [
             {
+                "id": 4,
                 "product": "needle-pile floor mats-wagon",
                 "part_number": "1680490580",
                 "intended_for_cars": "peugeot 308",
                 "price": "115"
             },
             {
+                "id": 5,
                 "product": "charge cable storage bag",
                 "part_number": "9837945080",
                 "intended_for_cars": "peugeot 508",
                 "price": "87"
             },
             {
+                "id": 6,
                 "product": "mode 2 charge cable for PHEV",
                 "part_number": "9846744180",
                 "intended_for_cars": "peugeot 508",
                 "price": "1250"
             },
             {
+                "id": 7,
                 "product": "set of 4 19 inch Augusta alloy wheels",
                 "part_number": "1638560280",
                 "intended_for_cars": "peugeot 508",
@@ -283,6 +299,7 @@
         ],
         "accessories": [
             {
+                "id": 13,
                 "product": "towbar( excluding wiring harness)",
                 "part_number": "916055912",
                 "intended_for_cars": "peugeot 5008",
@@ -344,18 +361,21 @@
         ],
         "accessories": [
             {
+                "id": 7,
                 "product": "set of 4 19 inch Augusta alloy wheels",
                 "part_number": "1638560280",
                 "intended_for_cars": "peugeot 508",
                 "price": "2228"
             },
             {
+                "id": 8,
                 "product": "isotherm unit - 16 litres",
                 "part_number": "945603",
                 "intended_for_cars": "peugeot 508",
                 "price": "242"
             },
             {
+                "id": 9,
                 "product": "docking station for E-cick scooter",
                 "part_number": "1620299480",
                 "intended_for_cars": "peugeot 3008",
@@ -385,24 +405,28 @@
         ],
         "accessories": [
             {
+                "id": 10,
                 "product": "cleaning cloth for touchscreen",
                 "part_number": "1628950980",
                 "intended_for_cars": "peugeot 3008",
                 "price": "9"
             },
             {
+                "id": 11,
                 "product": "set of 4 black centre caps for alloy wheels",
                 "part_number": "1622961980",
                 "intended_for_cars": "peugeot 3008",
                 "price": "97"
             },
             {
+                "id": 12,
                 "product": "set of two chrome wing mirror cases",
                 "part_number": "16118182680",
                 "intended_for_cars": "peugeot 3008",
                 "price": "115"
             },
             {
+                "id": 13,
                 "product": "towbar( excluding wiring harness)",
                 "part_number": "916055912",
                 "intended_for_cars": "peugeot 5008",
@@ -442,12 +466,14 @@
         ],
         "accessories": [
             {
+                "id": 10,
                 "product": "cleaning cloth for touchscreen",
                 "part_number": "1628950980",
                 "intended_for_cars": "peugeot 3008",
                 "price": "9"
             },
             {
+                "id": 11,
                 "product": "set of 4 black centre caps for alloy wheels",
                 "part_number": "1622961980",
                 "intended_for_cars": "peugeot 3008",
@@ -499,24 +525,28 @@
         ],
         "accessories": [
             {
+                "id": 5,
                 "product": "charge cable storage bag",
                 "part_number": "9837945080",
                 "intended_for_cars": "peugeot 508",
                 "price": "87"
             },
             {
+                "id": 6,
                 "product": "mode 2 charge cable for PHEV",
                 "part_number": "9846744180",
                 "intended_for_cars": "peugeot 508",
                 "price": "1250"
             },
             {
+                "id": 7,
                 "product": "set of 4 19 inch Augusta alloy wheels",
                 "part_number": "1638560280",
                 "intended_for_cars": "peugeot 508",
                 "price": "2228"
             },
             {
+                "id": 8,
                 "product": "isotherm unit - 16 litres",
                 "part_number": "945603",
                 "intended_for_cars": "peugeot 508",
