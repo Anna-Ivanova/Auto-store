@@ -59,12 +59,14 @@ function showBoughtAccessories(){
     detailsBoughtGoods.style.display = 'block';
 
     for (let i = 0; i < purchaseGoodsInf.length; i++) {
-        const carRow = document.createElement('tr');
-        carRow.setAttribute('id', purchaseGoodsInf[i].id);
-        tbody.appendChild(carRow);
-        createElement('td', null, null, i + 1, carRow);
+        const goodsRow = document.createElement('tr');
+        goodsRow.setAttribute('id', purchaseGoodsInf[i].id);
+        tbody.appendChild(goodsRow);
+        createElement('td', null, null, i + 1, goodsRow);
         for (let key in purchaseGoodsInf[i]) {
-            createElement('td', null, null, purchaseGoodsInf[i][key], carRow);
+            if(key !== 'id'){
+                createElement('td', null, null, purchaseGoodsInf[i][key], goodsRow);
+            }
         }
     }
     emptyListPurchaseGoods();
@@ -82,8 +84,11 @@ function showGoods() {
         const goodsRow = document.createElement('tr');
         goodsRow.setAttribute('id', goodsInf[i].id);
         tbodyGoods.appendChild(goodsRow);
+        createElement('td', null, null, i + 1, goodsRow);
         for (let key in goodsInf[i]) {
-            createElement('td', null, null, goodsInf[i][key], goodsRow);
+            if(key !== 'id'){
+                createElement('td', null, null, goodsInf[i][key], goodsRow);
+            }
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: goodsInf[i].id }, null, null, goodsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeGoods }, null, cellAction);
@@ -105,9 +110,12 @@ function showPeople() {
         const clientsRow = document.createElement('tr');
         clientsRow.setAttribute('data-user', i);
         tbodyClients.appendChild(clientsRow);
+        createElement('td', null, null, i + 1, clientsRow);
         for (let key in peopleInf[i]) {
             if (typeof peopleInf[i][key] !== 'object') {
-                createElement('td', null, null, peopleInf[i][key], clientsRow);
+                if(key !== 'id'){
+                    createElement('td', null, null, peopleInf[i][key], clientsRow);
+                }
             }
             else {
                 let tdAuto = createElement('td', null, null, null, clientsRow);
