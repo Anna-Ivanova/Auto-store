@@ -153,7 +153,9 @@ function showCarsForSell(array, body) {
     const tbody = document.getElementById('tbodysell');
     tbody.innerHTML = '';
     const btnCloseSell = document.querySelector('.btnCloseSellDet');
-    btnCloseSell.addEventListener('click', function () {
+    btnCloseSell.addEventListener('click', closeCleanGoods);
+
+    /*function () {
         const selectedcar = document.querySelector('.selectedcar');
         selectedcar.style.display = 'none';
         sellCar.innerHTML = "";
@@ -163,7 +165,7 @@ function showCarsForSell(array, body) {
         selectBody.selectedIndex = 0;
         selectModel.selectedIndex = 0;
 
-    });
+    }); */
     let carSellResult = array.filter(function (item) {
         return item.body === body;
     });
@@ -242,19 +244,26 @@ function addCars(event) {
 
 
     }
-
-
-
+}
+function closeCleanGoods() {
+    document.querySelector('.result-sell').innerHTML = "";
+    document.querySelector('.selectedcar-table').innerHTML = '';
+    document.querySelector('.items-total').innerText = '';
+    document.querySelector('.productsTotal').style.display = 'none';
+    document.querySelector('.products').style.display = 'none';
+    document.querySelector('.selectedcar').style.display = 'none';
+    const selectModel = document.querySelector('.select-carModel');
+    const selectBody = document.querySelector('.select-carBody');
+    const selectGoodsModel = document.querySelector('.select-goodsModel');
+    selectBody.selectedIndex = 0;
+    selectModel.selectedIndex = 0;
+    selectGoodsModel.selectedIndex = 0;
 }
 //-----show GOODS for sell-----------------------------
 function showGoodsForSell(array, value) {
     const btnCloseSell = document.querySelector('.btnCloseSellDet');
     const sellCar = document.querySelector('.selectedcar-table');
-    btnCloseSell.addEventListener('click', function () {
-        const selectedcar = document.querySelector('.selectedcar');
-        selectedcar.style.display = 'none';
-        sellCar.innerHTML = "";
-    });
+    btnCloseSell.addEventListener('click', closeCleanGoods);
 
     sellCar.innerHTML = "";
     sellCar.innerHTML += `<table class="table table_goods">
@@ -382,7 +391,7 @@ function confirmSell() {
     console.log(peopleInf);
     localStorage.setItem('accessories', JSON.stringify(goodsInf));
     localStorage.setItem('people', JSON.stringify(peopleInf));
-
+    closeCleanGoods();
 }
 
 
