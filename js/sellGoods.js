@@ -134,9 +134,9 @@ function showCarsForSell(array, body) {
     sellCar.innerHTML += `<table class="table table_car">
 <thead class="th_car">
     <tr class="headrow-cars">
+        <th>Num</th>
         <th>ID</th>
-        <th>Model</th>
-        <th data-col="model">Num</th>
+        <th data-col="model">Model</th>
         <th data-col="body">Body</th>
         <th data-col="color">Color</th>
         <th data-col="engine">Engine</th>
@@ -195,7 +195,6 @@ function addCars(event) {
     let carId = carRow.querySelector('.id').innerText;
     console.log(quantityValue);
     const newSoldCar = {
-
         id: carRow.querySelector('.id').innerText,
         model: carRow.querySelector('.model').innerText,
         body: carRow.querySelector('.body').innerText,
@@ -306,6 +305,8 @@ function addGoods(event) {
     const newCartGood = {
         userid: personCartId,
         goodid: productRow.querySelector('.id').innerText,
+        part_number: productRow.querySelector('.part_number').innerText,
+        intended_for_cars: productRow.querySelector('.intended_for_cars').innerText,
         product: productRow.querySelector('.product').innerText,
         price: productRow.querySelector('.price').innerText,
         quantity: quantityValue
@@ -338,7 +339,7 @@ function addGoods(event) {
     }
     let priceElements = resultGoods.querySelectorAll('.good-total');
     const sumTotal = document.querySelector('.items-total');
-    console.log(cart);
+    // console.log(cart);
     //localStorage.setItem('cart', JSON.stringify(cart));
 
     let sum = 0;
@@ -353,9 +354,8 @@ function addGoods(event) {
 }
 function confirmSell() {
 
-
+    console.log(cart);
     for (let key in cart) {
-
         console.log(cart[key]['quantity']);
         for (let i = 0; i < goodsInf.length; i++) {
 
@@ -364,13 +364,24 @@ function confirmSell() {
                 goodsInf[i].quantity = parseInt(goodsInf[i].quantity) - parseInt(cart[key]['quantity']);
                 console.log(goodsInf[i].quantity);
             }
-
         }
-
-
+        for (let i = 0; i < peopleInf.length; i++) {
+            if (parseInt(cart[key]['userid']) == peopleInf[i].id) {
+                const Newgood = {
+                    id: +key,
+                    product: cart[key]["product"],
+                    part_number: cart[key]["part_number"],
+                    intended_for_cars: cart[key]["intended_for_cars"],
+                    price: cart[key]["price"],
+                    quantity: cart[key]['quantity']
+                }
+                peopleInf[i].accessories.push(Newgood);
+            }
+        }
     }
-
+    console.log(peopleInf);
     localStorage.setItem('accessories', JSON.stringify(goodsInf));
+    localStorage.setItem('people', JSON.stringify(peopleInf));
 
 }
 
