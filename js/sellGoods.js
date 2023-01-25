@@ -373,7 +373,7 @@ function confirmSell() {
                     part_number: cart[key]["part_number"],
                     intended_for_cars: cart[key]["intended_for_cars"],
                     price: cart[key]["price"],
-                    quantity: cart[key]['quantity']
+                    // quantity: cart[key]['quantity']
                 }
                 peopleInf[i].accessories.push(Newgood);
             }
