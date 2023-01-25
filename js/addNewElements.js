@@ -33,24 +33,46 @@ function saveNewCar() {
         const newPrice = document.querySelector('.textPriceCar').value;
         const newQuantity = document.querySelector('.textQuantityCars').value;
 
-        const newCar = {
-            id: `p${newModel}`,
-            model: newModel,
-            body: newBody,
-            color: newColor,
-            engine: newEngine,
-            transmission: newTransmission,
-            fuel: newFuel,
-            price: newPrice,
-            quantity: newQuantity
-        }
+        if (carInf.length <= 0) {
+            const newCar = {
+                id: 1,
+                model: newModel,
+                body: newBody,
+                color: newColor,
+                engine: newEngine,
+                transmission: newTransmission,
+                fuel: newFuel,
+                price: newPrice,
+                quantity: newQuantity
+            }
 
-        carInf.push(newCar);
-        localStorage.setItem('cars', JSON.stringify(carInf));
-        const form = document.querySelector('.editAddCar');
-        hideForm();
-        form.style.display = 'none';
-        showCars();
+            carInf.push(newCar);
+            localStorage.setItem('cars', JSON.stringify(carInf));
+            const form = document.querySelector('.editAddCar');
+            hideForm();
+            form.style.display = 'none';
+            showCars();
+        }
+        else {
+            const newCar = {
+                id: carInf[carInf.length - 1].id + 1,
+                model: newModel,
+                body: newBody,
+                color: newColor,
+                engine: newEngine,
+                transmission: newTransmission,
+                fuel: newFuel,
+                price: newPrice,
+                quantity: newQuantity
+            }
+
+            carInf.push(newCar);
+            localStorage.setItem('cars', JSON.stringify(carInf));
+            const form = document.querySelector('.editAddCar');
+            hideForm();
+            form.style.display = 'none';
+            showCars();
+        }
     }
 }
 
@@ -84,38 +106,38 @@ function saveNewAccessories() {
         goodsInf.sort((a, b) => a.id - b.id);
 
         if (goodsInf.length <= 0) {
-        const newAccessories = {
-            id: 1,
-            product: newProduct,
-            part_number: newPartNumber,
-            intended_for_cars: newIntendeForCars,
-            price: newPriceAccessories,
-            quantity: newQuantity
-        }
+            const newAccessories = {
+                id: 1,
+                product: newProduct,
+                part_number: newPartNumber,
+                intended_for_cars: newIntendeForCars,
+                price: newPriceAccessories,
+                quantity: newQuantity
+            }
 
-        goodsInf.push(newAccessories);
-        localStorage.setItem('accessories', JSON.stringify(goodsInf));
-        const form = document.querySelector('.editAddGoods');
-        hideForm();
-        form.style.display = 'none';
-        showGoods();
-    }
-    else{
-        const newAccessories = {
-            id: goodsInf[goodsInf.length - 1].id + 1,
-            product: newProduct,
-            part_number: newPartNumber,
-            intended_for_cars: newIntendeForCars,
-            price: newPriceAccessories,
-            quantity: newQuantity
+            goodsInf.push(newAccessories);
+            localStorage.setItem('accessories', JSON.stringify(goodsInf));
+            const form = document.querySelector('.editAddGoods');
+            hideForm();
+            form.style.display = 'none';
+            showGoods();
         }
+        else {
+            const newAccessories = {
+                id: goodsInf[goodsInf.length - 1].id + 1,
+                product: newProduct,
+                part_number: newPartNumber,
+                intended_for_cars: newIntendeForCars,
+                price: newPriceAccessories,
+                quantity: newQuantity
+            }
 
-        goodsInf.push(newAccessories);
-        localStorage.setItem('accessories', JSON.stringify(goodsInf));
-        const form = document.querySelector('.editAddGoods');
-        hideForm();
-        form.style.display = 'none';
-        showGoods();
+            goodsInf.push(newAccessories);
+            localStorage.setItem('accessories', JSON.stringify(goodsInf));
+            const form = document.querySelector('.editAddGoods');
+            hideForm();
+            form.style.display = 'none';
+            showGoods();
         }
     }
 }
@@ -152,27 +174,27 @@ function saveNewPeople() {
         peopleInf.sort((a, b) => a.id - b.id);
 
         if (peopleInf.length <= 0) {
-        const newPerson = {
-            id: 1,
-            name: newName,
-            surname: newSurname,
-            age: newAge,
-            address: newAddress,
-            email: newEmail,
-            phone_number: newPhone,
-            auto: [],
-            accessories: []
-        }
+            const newPerson = {
+                id: 1,
+                name: newName,
+                surname: newSurname,
+                age: newAge,
+                address: newAddress,
+                email: newEmail,
+                phone_number: newPhone,
+                auto: [],
+                accessories: []
+            }
 
-        peopleInf.push(newPerson);
-        console.log(peopleInf);
-        localStorage.setItem('people', JSON.stringify(peopleInf));
-        const form = document.querySelector('.editAddPeople');
-        hideForm();
-        form.style.display = 'none';
-        showPeople();
+            peopleInf.push(newPerson);
+            console.log(peopleInf);
+            localStorage.setItem('people', JSON.stringify(peopleInf));
+            const form = document.querySelector('.editAddPeople');
+            hideForm();
+            form.style.display = 'none';
+            showPeople();
         }
-        else{
+        else {
             const newPerson = {
                 id: peopleInf[peopleInf.length - 1].id + 1,
                 name: newName,
@@ -184,7 +206,7 @@ function saveNewPeople() {
                 auto: [],
                 accessories: []
             }
-    
+
             peopleInf.push(newPerson);
             console.log(peopleInf);
             localStorage.setItem('people', JSON.stringify(peopleInf));

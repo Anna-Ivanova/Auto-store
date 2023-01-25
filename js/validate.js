@@ -56,7 +56,7 @@ const isValidPartNumber = partNumber => {
 }
 
 const isValidIntende = intende => {
-    const re = /peugeout \d{3,4}/;
+    const re = /peugeot \d{3,4}/;
     return re.test(String(intende).toLowerCase());
 }
 

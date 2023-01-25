@@ -1,4 +1,13 @@
 let cart = {};
+function cleanOptions(selectorModel, clasname) {
+    if (selectorModel.contains(document.querySelector(`${clasname}`))) {
+        let modelOptions = document.querySelectorAll(`${clasname}`);
+        for (let i = 0; i < modelOptions.length; i++) {
+            modelOptions[i].remove();
+        }
+    }
+}
+
 function showSellForm(event) {
     const button = event.target.getAttribute('id');
     const form = document.querySelector('.sellGoods');
@@ -9,19 +18,17 @@ function showSellForm(event) {
     const person = peopleInf[button];
     //--------------------------
     const persId = person.id;
-
     //-----------------------
     document.querySelector('.sell-name').innerHTML = `${person.name} ${person.surname}`;
     const selectModel = document.querySelector('.select-carModel');
     const selectBody = document.querySelector('.select-carBody');
     const selectGoodsModel = document.querySelector('.select-goodsModel');
     //clean options
-    if (selectModel.contains(document.querySelector('.model-option'))) {
-        let modelOptions = document.querySelectorAll('.model-option');
-        for (let i = 0; i < modelOptions.length; i++) {
-            modelOptions[i].remove();
-        }
-    }
+
+    cleanOptions(selectModel, '.model-option');
+    cleanOptions(selectBody, '.body-option');
+
+
     if (selectGoodsModel.contains(document.querySelector('.formodel-option'))) {
         let formodelOptions = document.querySelectorAll('.formodel-option');
         for (let i = 0; i < formodelOptions.length; i++) {
@@ -32,6 +39,7 @@ function showSellForm(event) {
 
     let carModels = filterUniqeModel(carInf, 'model');
     sortDetails(carModels, 'model', false);
+
 
     let goodsCarModels = filterUniqeModel(goodsInf, 'intended_for_cars');
     sortDetails(goodsCarModels, 'intended_for_cars', false);
@@ -66,15 +74,17 @@ function showSellForm(event) {
             let carInfChange = carInf.filter(function (item) {
                 return item.model === valModel;
             });
-            //---------------------------------------------------
-            sortDetails(carInfChange, 'body', false);
-            for (let i = 0; i < carInfChange.length; i++) {
+            //-------BODY options unique filter--------------------------------------------
+            let carBodyOptions = filterUniqeModel(carInfChange, 'body');
+            sortDetails(carBodyOptions, 'body', false);
+            for (let i = 0; i < carBodyOptions.length; i++) {
                 let carOptionBody = document.createElement('option');
                 carOptionBody.classList.add('body-option');
-                carOptionBody.value = carInfChange[i].body;
-                carOptionBody.textContent = carInfChange[i].body;
+                carOptionBody.value = carBodyOptions[i].body;
+                carOptionBody.textContent = carBodyOptions[i].body;
                 selectBody.appendChild(carOptionBody);
             }
+            //-------BODY change eventlistener--------------------------------------------        
             selectBody.addEventListener('change', function () {
                 const valBody = this.value;
                 const btnViewCarsForSell = document.querySelector('.btn-sell');
@@ -82,13 +92,13 @@ function showSellForm(event) {
                 btnViewCarsForSell.addEventListener('click', function () {
                     const sellCar = document.querySelector('.selectedcar');
                     sellCar.style.display = 'block';
-                    showCarsForSell(carInfChange, valModel, valBody);
+                    showCarsForSell(carInfChange, valBody);
                 });
 
             })
         }
     });
-
+    //-------GOODS BY MODEL change eventlistener--------------------------------------------  
     selectGoodsModel.addEventListener('change', function () {
         const goodsBody = this.value;
         console.log(goodsBody);
@@ -118,7 +128,7 @@ function filterUniqeModel(array, prop) {
     return uniqueArray;
 }
 //------Show car for sell----------------------------------------
-function showCarsForSell(array, val1, val2) {
+function showCarsForSell(array, body) {
     const sellCar = document.querySelector('.selectedcar-table');
     sellCar.innerHTML = "";
     sellCar.innerHTML += `<table class="table table_car">
@@ -146,9 +156,16 @@ function showCarsForSell(array, val1, val2) {
     btnCloseSell.addEventListener('click', function () {
         const selectedcar = document.querySelector('.selectedcar');
         selectedcar.style.display = 'none';
+        sellCar.innerHTML = "";
+        tbody.innerHTML = '';
+        const selectModel = document.querySelector('.select-carModel');
+        const selectBody = document.querySelector('.select-carBody');
+        selectBody.selectedIndex = 0;
+        selectModel.selectedIndex = 0;
+
     });
     let carSellResult = array.filter(function (item) {
-        return item.body === val2;
+        return item.body === body;
     });
     carSellResult.forEach((element, index) => {
         const carRow = document.createElement('tr');
@@ -157,22 +174,89 @@ function showCarsForSell(array, val1, val2) {
         createElement('td', null, null, index + 1, carRow);
 
         for (let key in element) {
-            createElement('td', null, null, element[key], carRow);
+            createElement('td', { className: key }, null, element[key], carRow);
 
         }
         const cellAction = createElement('td', { className: 'actionsell d-flex', id: element.id }, null, null, carRow);
+        console.log(cellAction);
         createElement('input', { className: 'quantity', type: 'number', min: "1" }, null, null, cellAction);
-        createElement('button', { className: 'btnSell' }, null, 'Sell', cellAction);
+        createElement('button', { className: 'btnSellCar btnSell', id: element.id }, { click: addCars }, 'Sell', cellAction);
     });
 
 }
+//----Show CARS in cart-------------------------------------------------
+function addCars(event) {
+    console.log(event.target);
+    const personId = document.querySelector('.btn-sell').getAttribute('data-userid');
+    const products = document.querySelector('.products');
+    const resultGoods = document.querySelector('.result-sell');
+    let quantityValue = event.target.parentNode.firstChild.value;
+    const carRow = event.target.parentNode.parentNode;
+    let carId = carRow.querySelector('.id').innerText;
+    console.log(quantityValue);
+    const newSoldCar = {
+
+        id: carRow.querySelector('.id').innerText,
+        model: carRow.querySelector('.model').innerText,
+        body: carRow.querySelector('.body').innerText,
+        color: carRow.querySelector('.color').innerText,
+        engine: carRow.querySelector('.engine').innerText,
+        transmission: carRow.querySelector('.transmission').innerText,
+        fuel: carRow.querySelector('.fuel').innerText,
+        price: carRow.querySelector('.price').innerText
+    }
+
+    const carInCart = resultGoods.querySelector(`[data_prod="${newSoldCar.id}"]`);
+
+    if (quantityValue) {
+        products.style.display = 'flex';
+        document.querySelector('.productsTotal').style.display = 'flex';
+        if (carInCart) {
+            const countElement = carInCart.querySelector('.good-quantity');
+            const totalElement = carInCart.querySelector('.good-total');
+            countElement.innerText = Number(quantityValue) + Number(countElement.innerText);
+            totalElement.innerText = Number(countElement.innerText) * Number(newSoldCar.price);
+            //cart[goodId]['quantity'] = countElement.innerText;
+        }
+        else {
+            const index = carInf.findIndex(item => item.id === +event.target.id);
+            console.log(index);
+            const rowProduct = createElement('div', { className: 'product-main', data_prod: carInf[index].id }, null, null, resultGoods)
+            const goodName = createElement('div', { className: 'good-name' }, null, `${carInf[index].id} ${carInf[index].body} ${carInf[index].color} ${carInf[index].engine}`, rowProduct);
+            const goodPrice = createElement('div', { className: 'good-price' }, null, carInf[index].price, rowProduct);
+            createElement('div', { className: 'good-quantity' }, null, quantityValue, rowProduct);
+            let total = Number(carInf[index].price) * Number(quantityValue);
+            createElement('div', { className: 'good-total' }, null, total, rowProduct);
+            const deleteBlock = createElement('div', { className: 'good-delete' }, null, null, rowProduct);
+            createElement('span', { className: 'icon-delete btn-del btn-act delete' }, null, null, deleteBlock);
+        }
+        let priceElements = resultGoods.querySelectorAll('.good-total');
+        const sumTotal = document.querySelector('.items-total');
+        let sum = 0;
+        for (let i = 0; i < priceElements.length; i++) {
+            let priceElem = Number(priceElements[i].innerText);
+            sum += priceElem;
+        }
+        sumTotal.innerText = sum;
+        const btnSellConfirm = document.querySelector('.btnConfirm');
+        btnSellConfirm.addEventListener("click", confirmSell);
+
+
+    }
+
+
+
+}
+//-----show GOODS for sell-----------------------------
 function showGoodsForSell(array, value) {
     const btnCloseSell = document.querySelector('.btnCloseSellDet');
+    const sellCar = document.querySelector('.selectedcar-table');
     btnCloseSell.addEventListener('click', function () {
         const selectedcar = document.querySelector('.selectedcar');
         selectedcar.style.display = 'none';
+        sellCar.innerHTML = "";
     });
-    const sellCar = document.querySelector('.selectedcar-table');
+
     sellCar.innerHTML = "";
     sellCar.innerHTML += `<table class="table table_goods">
     <thead>
@@ -209,6 +293,7 @@ function showGoodsForSell(array, value) {
         createElement('button', { className: 'btnSell', id: element.id }, { click: addGoods }, 'Add', cellAction);
     });
 }
+//-----show GOODS in Cart-----------------------------
 function addGoods(event) {
     const products = document.querySelector('.products');
     // products.style.display = 'flex';
