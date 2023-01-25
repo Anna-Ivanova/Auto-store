@@ -9,7 +9,7 @@
         "phone_number": "8898144626",
         "auto": [
             {
-                "id": "p208",
+                "id": 1,
                 "model": "208",
                 "body": "hatchback",
                 "color": "blue ocean",
@@ -31,7 +31,7 @@
         "phone_number": "2447430251",
         "auto": [
             {
-                "id": "p308",
+                "id": 2,
                 "model": "308",
                 "body": "hatchback",
                 "color": "black pearl",
@@ -41,7 +41,7 @@
                 "price": "32457"
             },
             {
-                "id": "p408",
+                "id": 4,
                 "model": "408",
                 "body": "crossover",
                 "color": "pacific green",
@@ -92,7 +92,7 @@
         "phone_number": "8357469934",
         "auto": [
             {
-                "id": "p308",
+                "id": 2,
                 "model": "308",
                 "body": "hatchback",
                 "color": "black pearl",
@@ -157,7 +157,7 @@
         "phone_number": "7973485177",
         "auto": [
             {
-                "id": "p5008",
+                "id": 7,
                 "model": "5008",
                 "body": "SUV",
                 "color": "dark grey",
@@ -194,7 +194,7 @@
         "phone_number": "2909901004",
         "auto": [
             {
-                "id": "p508",
+                "id": 5,
                 "model": "508",
                 "body": "sedan",
                 "color": "white pearl",
@@ -216,7 +216,7 @@
         "phone_number": "3264207414",
         "auto": [
             {
-                "id": "p308",
+                "id": 2,
                 "model": "308",
                 "body": "hatchback",
                 "color": "black pearl",
@@ -226,7 +226,7 @@
                 "price": "32457"
             },
             {
-                "id": "p408",
+                "id": 4,
                 "model": "408",
                 "body": "crossover",
                 "color": "pacific green",
@@ -236,7 +236,7 @@
                 "price": "35984"
             },
             {
-                "id": "p508",
+                "id": 5,
                 "model": "508",
                 "body": "sedan",
                 "color": "white pearl",
@@ -287,7 +287,7 @@
         "phone_number": "7668849141",
         "auto": [
             {
-                "id": "p308",
+                "id": 2,
                 "model": "308",
                 "body": "hatchback",
                 "color": "black pearl",
@@ -317,7 +317,7 @@
         "phone_number": "5655563711",
         "auto": [
             {
-                "id": "p408",
+                "id": 4,
                 "model": "408",
                 "body": "crossover",
                 "color": "pacific green",
@@ -339,7 +339,7 @@
         "phone_number": "3205463282",
         "auto": [
             {
-                "id": "p508",
+                "id": 5,
                 "model": "508",
                 "body": "sedan",
                 "color": "white pearl",
@@ -349,7 +349,7 @@
                 "price": "38670"
             },
             {
-                "id": "p3008",
+                "id": 6,
                 "model": "3008",
                 "body": "SUV",
                 "color": "diamond red",
@@ -393,7 +393,7 @@
         "phone_number": "6997590055",
         "auto": [
             {
-                "id": "p5008",
+                "id": 7,
                 "model": "5008",
                 "body": "SUV",
                 "color": "dark grey",
@@ -444,7 +444,7 @@
         "phone_number": "4669032201",
         "auto": [
             {
-                "id": "p508",
+                "id": 5,
                 "model": "508",
                 "body": "sedan",
                 "color": "white pearl",
@@ -454,7 +454,7 @@
                 "price": "38670"
             },
             {
-                "id": "p208",
+                "id": 1,
                 "model": "208",
                 "body": "hatchback",
                 "color": "blue ocean",
@@ -491,7 +491,7 @@
         "phone_number": "4842896002",
         "auto": [
             {
-                "id": "p408",
+                "id": 4,
                 "model": "408",
                 "body": "crossover",
                 "color": "pacific green",
@@ -513,7 +513,7 @@
         "phone_number": "9142902480",
         "auto": [
             {
-                "id": "p3008",
+                "id": 6,
                 "model": "3008",
                 "body": "SUV",
                 "color": "diamond red",

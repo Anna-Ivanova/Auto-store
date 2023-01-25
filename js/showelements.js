@@ -28,7 +28,7 @@ function showCars() {
     //window.scrollTo(0, 500);
 }
 
-function showBoughtCars(){
+function showBoughtCars() {
     const tbody = document.getElementById('tbody-bought-cars');
     tbody.innerHTML = '';
     detailsCars.style.display = 'none';
@@ -49,7 +49,7 @@ function showBoughtCars(){
     emptyListPurchaseCars();
 }
 
-function showBoughtAccessories(){
+function showBoughtAccessories() {
     const tbody = document.getElementById('tbody-bought-goods');
     tbody.innerHTML = '';
     detailsCars.style.display = 'none';
@@ -64,7 +64,7 @@ function showBoughtAccessories(){
         tbody.appendChild(goodsRow);
         createElement('td', null, null, i + 1, goodsRow);
         for (let key in purchaseGoodsInf[i]) {
-            if(key !== 'id'){
+            if (key !== 'id') {
                 createElement('td', null, null, purchaseGoodsInf[i][key], goodsRow);
             }
         }
@@ -86,7 +86,7 @@ function showGoods() {
         tbodyGoods.appendChild(goodsRow);
         createElement('td', null, null, i + 1, goodsRow);
         for (let key in goodsInf[i]) {
-            if(key !== 'id'){
+            if (key !== 'id') {
                 createElement('td', null, null, goodsInf[i][key], goodsRow);
             }
         }
@@ -113,17 +113,17 @@ function showPeople() {
         createElement('td', null, null, i + 1, clientsRow);
         for (let key in peopleInf[i]) {
             if (typeof peopleInf[i][key] !== 'object') {
-                if(key !== 'id'){
+                if (key !== 'id') {
                     createElement('td', null, null, peopleInf[i][key], clientsRow);
                 }
             }
             else {
                 let tdAuto = createElement('td', null, null, null, clientsRow);
                 peopleInf[i][key].forEach(element => {
-                    if(key === 'auto'){
-                        createElement('p', null, null, element.id + ", ", tdAuto);
+                    if (key === 'auto') {
+                        createElement('p', null, null, element.model + ", ", tdAuto);
                     }
-                    if(key === 'accessories'){
+                    if (key === 'accessories') {
                         createElement('p', null, null, element.product + ", ", tdAuto);
                     }
                 });
