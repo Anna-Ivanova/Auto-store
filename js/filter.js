@@ -58,7 +58,9 @@ function showFilter(arr){
         tbodyCars.appendChild(carRow);
         createElement('td', null, null, i + 1, carRow);
         for (let key in newArr[i]) {
-            createElement('td', null, null, newArr[i][key], carRow);
+            if (key !== 'id') {
+                createElement('td', null, null, newArr[i][key], carRow);
+            }
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, carRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeCars }, null, cellAction);

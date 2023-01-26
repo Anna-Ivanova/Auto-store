@@ -23,7 +23,9 @@ function showCars() {
         tbody.appendChild(carRow);
         createElement('td', null, null, i + 1, carRow);
         for (let key in carInf[i]) {
-            createElement('td', null, null, carInf[i][key], carRow);
+            if (key !== 'id') {
+                createElement('td', null, null, carInf[i][key], carRow);
+            }
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: carInf[i].id }, null, null, carRow);
         createElement('span', { className: 'icon-delete btn-del btn-act'}, { click: removeCars }, null, cellAction);
