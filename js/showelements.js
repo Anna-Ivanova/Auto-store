@@ -6,7 +6,12 @@ const detailsBoughtGoods = document.querySelector('.details-bought-goods');
 
 function showCars() {
     const tbody = document.getElementById('tbody');
+    tbody.classList.remove("filterCars");
     tbody.innerHTML = '';
+
+    const tbodyCars = document.getElementById('tbody-filter-cars');
+    tbodyCars.classList.add('filterCars');
+
     detailsCars.style.display = 'block';
     detailsGoods.style.display = 'none';
     detailsClients.style.display = 'none';
@@ -21,8 +26,8 @@ function showCars() {
             createElement('td', null, null, carInf[i][key], carRow);
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: carInf[i].id }, null, null, carRow);
-        createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeCars }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, { click: editCars }, null, cellAction);
+        createElement('span', { className: 'icon-delete btn-del btn-act'}, { click: removeCars }, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: carInf[i].id }, { click: editCars }, null, cellAction);
     }
     emptyListCar();
     //window.scrollTo(0, 500);

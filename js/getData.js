@@ -36,5 +36,13 @@ async function initApplication() {
     ]); 
    
     addPurchaseCarsInData(); 
-    addPurchaseGoogsInData(); 
+    addPurchaseGoogsInData();
+     
+    const btnFilter= document.querySelector('.savefilter');
+    btnFilter.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilter(carInf);
+    });
+
+    showFilter(carInf);
   } 
