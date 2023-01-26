@@ -83,6 +83,17 @@
                 <div class="details-cars hidden">
                     <div class="details-header d-flex">
                         <h2 class="details_title title_cars">Cars</h2>
+                        <form class="formFilterCars">
+                            <input type="text" name="name" class="filterNum"  placeholder="Num">
+                            <input type="text" name="name" class="filterBody"  placeholder="Body">
+                            <input type="text" name="name" class="filterColor"  placeholder="Color">
+                            <input type="text" name="name" class="filterEngine"  placeholder="Engine">
+                            <input type="text" name="name" class="filterTransmission"  placeholder="Transmission">
+                            <input type="text" name="name" class="filterFuel"  placeholder="Fuel">
+                            <input type="text" name="name" class="filterPrice"  placeholder="Price">
+                            <input type="text" name="name" class="filterQuantity"  placeholder="Quantity">
+                            <button class="savefilter">Save</button>
+                        </form>
                         <div class="messageEmptyCar">The machine list is empty!</div>
                     </div>
                     <table class="table table_car">
@@ -102,6 +113,8 @@
                             </tr>
                         </thead>
                         <tbody id="tbody">
+                        </tbody>
+                        <tbody id="tbody-filter-cars">
                         </tbody>
                     </table>
                 </div>
@@ -405,6 +418,7 @@
     <script src="./js/slider.js"></script>
     <script src="./js/helpers.js"></script>
     <script src="./js/getData.js"></script>
+    <script src="./js/filter.js"></script>
     <script src="./js/showPurchase.js"></script>
     <script src="./js/editElements.js"></script>
     <script src="./js/showelements.js"></script>

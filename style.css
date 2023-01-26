@@ -580,3 +580,7 @@ select {
     overflow-y: auto;
     max-height: 220px;
 }
+
+.filterCars{
+    display: none;
+}

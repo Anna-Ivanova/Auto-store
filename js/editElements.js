@@ -4,7 +4,8 @@ function editCars(event) {
     const form = document.querySelector('.editAddCar');
     form.style.display = 'block';
 
-    const cars = carInf[button];
+
+     const cars = carInf.find(x => x.id === button);
 
     document.querySelector('.textModel').value = carInf.model || cars.model;
     document.querySelector('.textBody').value = carInf.body || cars.body;
@@ -30,7 +31,7 @@ function editCars(event) {
 function saveNewEditCar(event) {
     const button = event.target.getAttribute('id');
 
-    const cars = carInf[button];
+    const cars = carInf.find(x => x.id === button);
 
     if (validateFormCars()) {
         const newModel = document.querySelector('.textModel').value;
