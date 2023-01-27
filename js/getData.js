@@ -38,11 +38,19 @@ async function initApplication() {
     addPurchaseCarsInData(); 
     addPurchaseGoogsInData();
      
-    const btnFilter= document.querySelector('.savefilter');
-    btnFilter.addEventListener('click', function(event){
+    const btnFilterCars= document.querySelector('.savefilter');
+    btnFilterCars.addEventListener('click', function(event){
         event.preventDefault();
         showFilter(carInf);
     });
 
     showFilter(carInf);
+
+    const btnFilterGoods= document.querySelector('.saveFilterGoods');
+    btnFilterGoods.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterGoods(goodsInf);
+    });
+
+    showFilterGoods(goodsInf);
   } 

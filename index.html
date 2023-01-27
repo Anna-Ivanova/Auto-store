@@ -84,7 +84,7 @@
                     <div class="details-header d-flex">
                         <h2 class="details_title title_cars">Cars</h2>
                         <form class="formFilterCars">
-                            <input type="text" name="name" class="filterNum"  placeholder="Num">
+                            <input type="text" name="name" class="filterNum"  placeholder="Model">
                             <input type="text" name="name" class="filterBody"  placeholder="Body">
                             <input type="text" name="name" class="filterColor"  placeholder="Color">
                             <input type="text" name="name" class="filterEngine"  placeholder="Engine">
@@ -120,6 +120,14 @@
                 <div class="details-goods hidden">
                     <div class="details-header d-flex">
                         <h2 class="details_title title_goods">Goods</h2>
+                        <form class="formFilterGoods">
+                            <input type="text" name="name" class="filterProduct"  placeholder="Product">
+                            <input type="text" name="name" class="filterPartNumber"  placeholder="Part number">
+                            <input type="text" name="name" class="filterIntendedForModel"  placeholder="Intended for model">
+                            <input type="text" name="name" class="filterPriceGoods"  placeholder="Price">
+                            <input type="text" name="name" class="filterQuantityGoods"  placeholder="Quantity">
+                            <button class="saveFilterGoods">Save</button>
+                        </form>
                         <div class="messageEmptyGoods">The accessories list is empty!</div>
                     </div>
                     <table class="table table_goods">
@@ -135,6 +143,8 @@
                             </tr>
                         </thead>
                         <tbody id="tbody-goods">
+                        </tbody>
+                        <tbody id="tbody-filter-goods">
                         </tbody>
                     </table>
                 </div>

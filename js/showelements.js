@@ -85,12 +85,17 @@ function showGoods() {
     detailsClients.style.display = 'none';
     detailsBoughtCars.style.display = 'none';
     detailsBoughtGoods.style.display = 'none';
-    const tbodyGoods = document.getElementById('tbody-goods');
-    tbodyGoods.innerHTML = '';
+    const tbody = document.getElementById('tbody-goods');
+    tbody.classList.remove("filterCars");
+    tbody.innerHTML = '';
+
+    const tbodyGoods = document.getElementById('tbody-filter-goods');
+    tbodyGoods.classList.add('filterCars');
+
     for (let i = 0; i < goodsInf.length; i++) {
         const goodsRow = document.createElement('tr');
         goodsRow.setAttribute('id', goodsInf[i].id);
-        tbodyGoods.appendChild(goodsRow);
+        tbody.appendChild(goodsRow);
         createElement('td', null, null, i + 1, goodsRow);
         for (let key in goodsInf[i]) {
             if (key !== 'id') {
@@ -99,7 +104,7 @@ function showGoods() {
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: goodsInf[i].id }, null, null, goodsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeGoods }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, { click: editGoods }, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: goodsInf[i].id  }, { click: editGoods }, null, cellAction);
     }
     emptyListGoods();
     // window.scrollTo(0, 500);

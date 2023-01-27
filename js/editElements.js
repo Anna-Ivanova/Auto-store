@@ -62,12 +62,12 @@ function saveNewEditCar(event) {
 }
 
 function editGoods(event) {
-    const button = event.target.getAttribute('id');
+    const button =  +(event.target.getAttribute('id'));
 
     const form = document.querySelector('.editAddGoods');
     form.style.display = 'block';
 
-    const accesserios = goodsInf[button];
+    const accesserios = goodsInf.find(x => x.id === button);
 
     document.querySelector('.textProduct').value = goodsInf.product || accesserios.product;
     document.querySelector('.textPartNumber').value = goodsInf.part_number || accesserios.part_number;
@@ -88,9 +88,9 @@ function editGoods(event) {
 }
 
 function saveNewEditGoods(event) {
-    const button = event.target.getAttribute('id');
+    const button =  +(event.target.getAttribute('id'));
 
-    const accesserios = goodsInf[button];
+    const accesserios = goodsInf.find(x => x.id === button);
 
     if (validateFormGoods()) {
         const newProduct = document.querySelector('.textProduct').value;
