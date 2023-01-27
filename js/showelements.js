@@ -54,8 +54,8 @@ function showBoughtCars() {
         carRow.setAttribute('id', purchaseCarsInf[i].id);
         tbody.appendChild(carRow);
         createElement('td', null, null, i + 1, carRow);
-        for (let key in purchaseCarsInf[i]){
-            if (key !== 'id') {
+        for (let key in purchaseCarsInf[i]) {
+            if (key !== 'id' && key !== 'date') {
                 createElement('td', null, null, purchaseCarsInf[i][key], carRow);
             }
         }
@@ -116,7 +116,7 @@ function showGoods() {
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: goodsInf[i].id }, null, null, goodsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeGoods }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act', id: goodsInf[i].id  }, { click: editGoods }, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: goodsInf[i].id }, { click: editGoods }, null, cellAction);
     }
     emptyListGoods();
     // window.scrollTo(0, 500);
