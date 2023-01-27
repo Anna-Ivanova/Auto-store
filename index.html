@@ -195,7 +195,7 @@
                             <input type="text" name="name" class="filterTransmissionPurchases"  placeholder="Transmission">
                             <input type="text" name="name" class="filterFuelPurchases"  placeholder="Fuel">
                             <input type="text" name="name" class="filterPriceCarsPurchases"  placeholder="Price">
-                            <input type="text" name="name" class="filterCustomerPurchases"  placeholder="Customer">
+                            <input type="text" name="name" class="filterCustomerPurchasesCars"  placeholder="Customer">
                             <button class="searchfilterBoughtCars">Search</button>
                         </form>
                         <div class="messageEmptyBoughtCar">The purchases list is empty!</div>
@@ -225,6 +225,14 @@
                 <div class="details-bought-goods hidden">
                     <div class="details-header d-flex">
                         <h2 class="details_title title_bought_goods">Bought Accessories</h2>
+                        <form class="formFilterBoughtGoods">
+                            <input type="text" name="name" class="filterProductPurchases"  placeholder="Product">
+                            <input type="text" name="name" class="filterPartNumberPurchases"  placeholder="Part number">
+                            <input type="text" name="name" class="filterIntendedForModelPurchases"  placeholder="Intended for model">
+                            <input type="text" name="name" class="filterPriceGoodsPurchases"  placeholder="Price">
+                            <input type="text" name="name" class="filterCustomerPurchasesGoods"  placeholder="Customer">
+                            <button class="searchFilterPurchasesGoods">Search</button>
+                        </form>
                         <div class="messageEmptyBoughtGoods">The purchases list is empty!</div>
                     </div>
                     <table class="table table_bought_goods">
@@ -239,6 +247,8 @@
                             </tr>
                         </thead>
                         <tbody id="tbody-bought-goods">
+                        </tbody>
+                        <tbody id="tbody-filter-bought-goods">
                         </tbody>
                     </table>
                 </div>

@@ -65,7 +65,12 @@ function showBoughtCars() {
 
 function showBoughtAccessories() {
     const tbody = document.getElementById('tbody-bought-goods');
+    tbody.classList.remove("filterNone");
     tbody.innerHTML = '';
+
+    const tbodyPurchasesGoods = document.getElementById('tbody-filter-bought-goods');
+    tbodyPurchasesGoods.classList.add('filterNone');
+
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
     detailsClients.style.display = 'none';

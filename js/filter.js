@@ -182,7 +182,7 @@ function showFilterPurchasesCars(arr){
     const filterColorPurchases = document.querySelector('.filterColorPurchases').value;
     const filterEnginePurchases = document.querySelector('.filterEnginePurchases').value;
     const filterPriceCarsPurchases = document.querySelector('.filterPriceCarsPurchases').value;
-    const filterCustomerPurchases = document.querySelector('.filterCustomerPurchases').value;
+    const filterCustomerPurchasesCars = document.querySelector('.filterCustomerPurchasesCars').value;
     let newArr = [...arr];
     if( filterFuelPurchases !== ''){
         newArr = filter(newArr, 'fuel', filterFuelPurchases);
@@ -205,9 +205,43 @@ function showFilterPurchasesCars(arr){
     if( filterPriceCarsPurchases !== ''){
         newArr = filter(newArr, 'price', filterPriceCarsPurchases);
     }
-    if( filterCustomerPurchases !== ''){
-        newArr = filter(newArr, 'customer', filterCustomerPurchases);
+    if( filterCustomerPurchasesCars !== ''){
+        newArr = filter(newArr, 'customer', filterCustomerPurchasesCars);
     }
 
     createElementFilter(null, null, tbodyCars, newArr, 0, 1)
+}
+
+function showFilterPurchasesGoods(arr){
+    const tbody = document.getElementById('tbody-bought-goods');
+    tbody.classList.add('filterNone');
+
+    const tbodyGoods = document.getElementById('tbody-filter-bought-goods');
+    tbodyGoods.classList.remove('filterNone');
+    tbodyGoods.innerHTML = '';
+
+    const filterProductPurchases = document.querySelector('.filterProductPurchases').value;
+    const filterPartNumberPurchases = document.querySelector('.filterPartNumberPurchases').value;
+    const filterIntendedForModelPurchases = document.querySelector('.filterIntendedForModelPurchases').value;
+    const filterPriceGoodsPurchases = document.querySelector('.filterPriceGoodsPurchases').value;
+    const filterCustomerPurchasesGoods = document.querySelector('.filterCustomerPurchasesGoods').value;
+    let newArr = [...arr];
+    if( filterProductPurchases !== ''){
+        newArr = filter(newArr, 'product', filterProductPurchases);
+    }
+    if( filterPartNumberPurchases !== ''){
+        newArr = filter(newArr, 'part_number', filterPartNumberPurchases);
+    }
+    if( filterIntendedForModelPurchases !== ''){
+        newArr = filter(newArr, 'intended_for_cars', filterIntendedForModelPurchases);
+    }
+    if( filterPriceGoodsPurchases !== ''){
+        newArr = filter(newArr, 'price', filterPriceGoodsPurchases);
+    }
+    if( filterCustomerPurchasesGoods !== ''){
+        newArr = filter(newArr, 'customer', filterCustomerPurchasesGoods);
+        console.log(3);
+    }
+
+    createElementFilter(null, null, tbodyGoods, newArr, 0, 1)
 }

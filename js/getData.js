@@ -69,4 +69,12 @@ async function initApplication() {
     });
 
     showFilterPurchasesCars(purchaseCarsInf);
+
+    const btnFilterPurchasesGoods= document.querySelector('.searchFilterPurchasesGoods');
+    btnFilterPurchasesGoods.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterPurchasesGoods(purchaseGoodsInf);
+    });
+
+    showFilterPurchasesGoods(purchaseGoodsInf);
   }
