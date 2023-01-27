@@ -6,11 +6,11 @@ const detailsBoughtGoods = document.querySelector('.details-bought-goods');
 
 function showCars() {
     const tbody = document.getElementById('tbody');
-    tbody.classList.remove("filterCars");
+    tbody.classList.remove("filterNone");
     tbody.innerHTML = '';
 
     const tbodyCars = document.getElementById('tbody-filter-cars');
-    tbodyCars.classList.add('filterCars');
+    tbodyCars.classList.add('filterNone');
 
     detailsCars.style.display = 'block';
     detailsGoods.style.display = 'none';
@@ -37,7 +37,12 @@ function showCars() {
 
 function showBoughtCars() {
     const tbody = document.getElementById('tbody-bought-cars');
+    tbody.classList.remove("filterNone");
     tbody.innerHTML = '';
+
+    const tbodyPurchasesCars = document.getElementById('tbody-filter-bought-cars');
+    tbodyPurchasesCars.classList.add('filterNone');
+
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
     detailsClients.style.display = 'none';
@@ -49,8 +54,10 @@ function showBoughtCars() {
         carRow.setAttribute('id', purchaseCarsInf[i].id);
         tbody.appendChild(carRow);
         createElement('td', null, null, i + 1, carRow);
-        for (let key in purchaseCarsInf[i]) {
-            createElement('td', null, null, purchaseCarsInf[i][key], carRow);
+        for (let key in purchaseCarsInf[i]){
+            if (key !== 'id') {
+                createElement('td', null, null, purchaseCarsInf[i][key], carRow);
+            }
         }
     }
     emptyListPurchaseCars();
@@ -58,7 +65,12 @@ function showBoughtCars() {
 
 function showBoughtAccessories() {
     const tbody = document.getElementById('tbody-bought-goods');
+    tbody.classList.remove("filterNone");
     tbody.innerHTML = '';
+
+    const tbodyPurchasesGoods = document.getElementById('tbody-filter-bought-goods');
+    tbodyPurchasesGoods.classList.add('filterNone');
+
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
     detailsClients.style.display = 'none';
@@ -85,12 +97,17 @@ function showGoods() {
     detailsClients.style.display = 'none';
     detailsBoughtCars.style.display = 'none';
     detailsBoughtGoods.style.display = 'none';
-    const tbodyGoods = document.getElementById('tbody-goods');
-    tbodyGoods.innerHTML = '';
+    const tbody = document.getElementById('tbody-goods');
+    tbody.classList.remove("filterNone");
+    tbody.innerHTML = '';
+
+    const tbodyGoods = document.getElementById('tbody-filter-goods');
+    tbodyGoods.classList.add('filterNone');
+
     for (let i = 0; i < goodsInf.length; i++) {
         const goodsRow = document.createElement('tr');
         goodsRow.setAttribute('id', goodsInf[i].id);
-        tbodyGoods.appendChild(goodsRow);
+        tbody.appendChild(goodsRow);
         createElement('td', null, null, i + 1, goodsRow);
         for (let key in goodsInf[i]) {
             if (key !== 'id') {
@@ -99,7 +116,7 @@ function showGoods() {
         }
         const cellAction = createElement('td', { className: 'action d-flex', id: goodsInf[i].id }, null, null, goodsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeGoods }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, { click: editGoods }, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: goodsInf[i].id  }, { click: editGoods }, null, cellAction);
     }
     emptyListGoods();
     // window.scrollTo(0, 500);
@@ -111,12 +128,17 @@ function showPeople() {
     detailsGoods.style.display = 'none';
     detailsBoughtCars.style.display = 'none';
     detailsBoughtGoods.style.display = 'none';
-    const tbodyClients = document.getElementById('tbody-clients');
-    tbodyClients.innerHTML = '';
+    const tbody = document.getElementById('tbody-clients');
+    tbody.classList.remove("filterNone");
+    tbody.innerHTML = '';
+
+    const tbodyClients = document.getElementById('tbody-filter-people');
+    tbodyClients.classList.add('filterNone');
+
     for (let i = 0; i < peopleInf.length; i++) {
         const clientsRow = document.createElement('tr');
         clientsRow.setAttribute('data-user', i);
-        tbodyClients.appendChild(clientsRow);
+        tbody.appendChild(clientsRow);
         createElement('td', null, null, i + 1, clientsRow);
         for (let key in peopleInf[i]) {
             if (typeof peopleInf[i][key] !== 'object') {
@@ -140,7 +162,7 @@ function showPeople() {
         const cellAction = createElement('td', { className: 'action d-flex', id: peopleInf[i].id }, null, null, clientsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removePeople }, null, cellAction);
 
-        createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, { click: editPerson }, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: peopleInf[i].id }, { click: editPerson }, null, cellAction);
 
         createElement('span', { className: 'icon-euro btn-buy btn-act', id: i }, { click: showSellForm }, null, cellAction);
 

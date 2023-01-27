@@ -62,12 +62,12 @@ function saveNewEditCar(event) {
 }
 
 function editGoods(event) {
-    const button = event.target.getAttribute('id');
+    const button =  +(event.target.getAttribute('id'));
 
     const form = document.querySelector('.editAddGoods');
     form.style.display = 'block';
 
-    const accesserios = goodsInf[button];
+    const accesserios = goodsInf.find(x => x.id === button);
 
     document.querySelector('.textProduct').value = goodsInf.product || accesserios.product;
     document.querySelector('.textPartNumber').value = goodsInf.part_number || accesserios.part_number;
@@ -88,9 +88,9 @@ function editGoods(event) {
 }
 
 function saveNewEditGoods(event) {
-    const button = event.target.getAttribute('id');
+    const button =  +(event.target.getAttribute('id'));
 
-    const accesserios = goodsInf[button];
+    const accesserios = goodsInf.find(x => x.id === button);
 
     if (validateFormGoods()) {
         const newProduct = document.querySelector('.textProduct').value;
@@ -115,12 +115,12 @@ function saveNewEditGoods(event) {
 }
 
 function editPerson(event) {
-    const button = event.target.getAttribute('id');
+    const button =  +(event.target.getAttribute('id'));
 
     const form = document.querySelector('.editAddPeople');
     form.style.display = 'block';
 
-    const person = peopleInf[button];
+    const person = peopleInf.find(x => x.id === button);
 
     document.querySelector('.textName').value = peopleInf.name || person.name;
     document.querySelector('.textSurname').value = peopleInf.surname || person.surname;
@@ -142,9 +142,9 @@ function editPerson(event) {
 }
 
 function saveNewEditPerson(event) {
-    const button = event.target.getAttribute('id');
+    const button =  +(event.target.getAttribute('id'));
 
-    const person = peopleInf[button];
+    const person = peopleInf.find(x => x.id === button);
 
     if (validateFormPeople()) {
         const newName = document.querySelector('.textName').value;

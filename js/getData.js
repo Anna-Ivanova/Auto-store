@@ -38,11 +38,43 @@ async function initApplication() {
     addPurchaseCarsInData(); 
     addPurchaseGoogsInData();
      
-    const btnFilter= document.querySelector('.savefilter');
-    btnFilter.addEventListener('click', function(event){
+    const btnFilterCars= document.querySelector('.searchfilterCars');
+    btnFilterCars.addEventListener('click', function(event){
         event.preventDefault();
-        showFilter(carInf);
+        showFilterCars(carInf);
     });
 
-    showFilter(carInf);
-  } 
+    showFilterCars(carInf);
+     
+    const btnFilterGoods= document.querySelector('.searchFilterGoods');
+    btnFilterGoods.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterGoods(goodsInf);
+    });
+
+    showFilterGoods(goodsInf);
+
+    const btnFilterPeople= document.querySelector('.searchFilterPeople');
+    btnFilterPeople.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterPeople(peopleInf);
+    });
+
+    showFilterPeople(peopleInf);
+
+    const btnFilterPurchasesCars= document.querySelector('.searchfilterBoughtCars');
+    btnFilterPurchasesCars.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterPurchasesCars(purchaseCarsInf);
+    });
+
+    showFilterPurchasesCars(purchaseCarsInf);
+
+    const btnFilterPurchasesGoods= document.querySelector('.searchFilterPurchasesGoods');
+    btnFilterPurchasesGoods.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterPurchasesGoods(purchaseGoodsInf);
+    });
+
+    showFilterPurchasesGoods(purchaseGoodsInf);
+  }
