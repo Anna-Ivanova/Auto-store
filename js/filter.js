@@ -10,15 +10,34 @@ function filter(arr, prop, value){
    return newElements;
 }
 
-function createElementFilter(removeElements, editElements, tbody, newArr, addIcon){
+function createElementFilter(removeElements, editElements, tbody, newArr, withoutArr, withArr, addIcon){
     for (let i = 0; i < newArr.length; i++) {
         const row = document.createElement('tr');
         row.setAttribute('id', newArr[i].id);
         tbody.appendChild(row);
         createElement('td', null, null, i + 1, row);
         for (let key in newArr[i]) {
-            if (key !== 'id') {
-                createElement('td', null, null, newArr[i][key], row);
+            if(withoutArr){
+                if (key !== 'id') {
+                    createElement('td', null, null, newArr[i][key], row);
+                }
+            }
+            if(withArr){
+                if (key !== 'id' && key !== 'auto' && key !== 'accessories') {
+                    createElement('td', null, null, newArr[i][key], row);
+                }
+                if(key === 'auto'){
+                    let tdAuto = createElement('td', null, null, null, row);
+                    newArr[i]['auto'].forEach(element => {
+                        createElement('p', null, null, element.model + ", ", tdAuto);
+                    });
+                }
+                if(key === 'accessories'){
+                    let tdAuto = createElement('td', null, null, null, row);
+                    newArr[i]['accessories'].forEach(element => {
+                        createElement('p', null, null, element.product + ", ", tdAuto);
+                    });
+                }
             }
         }
             const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, row);
@@ -72,7 +91,7 @@ function showFilterCars(arr){
         newArr = filter(newArr, 'quantity', filterQuantityCars);
     }
 
-    createElementFilter(removeCars,editCars, tbodyCars, newArr)
+    createElementFilter(removeCars,editCars, tbodyCars, newArr, 1)
 }
 
 function showFilterPeople(arr){
@@ -109,7 +128,7 @@ function showFilterPeople(arr){
         newArr = filter(newArr, 'phone_number', filterPhoneNumber);
     }
 
-    createElementFilter(removePeople,editPerson, tbodyPeople, newArr, 1)
+    createElementFilter(removePeople,editPerson, tbodyPeople, newArr, 0, 1, 1)
 }
 
 function showFilterGoods(arr){
@@ -142,5 +161,5 @@ function showFilterGoods(arr){
         newArr = filter(newArr, 'quantity', filterQuantityGoods);
     }
 
-    createElementFilter(removeGoods,editGoods, tbodyGoods, newArr)
+    createElementFilter(removeGoods,editGoods, tbodyGoods, newArr, 1)
 }
