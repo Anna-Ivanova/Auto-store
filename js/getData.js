@@ -61,4 +61,12 @@ async function initApplication() {
     });
 
     showFilterPeople(peopleInf);
+
+    const btnFilterPurchasesCars= document.querySelector('.searchfilterBoughtCars');
+    btnFilterPurchasesCars.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterPurchasesCars(purchaseCarsInf);
+    });
+
+    showFilterPurchasesCars(purchaseCarsInf);
   }

@@ -10,7 +10,7 @@ function filter(arr, prop, value){
    return newElements;
 }
 
-function createElementFilter(removeElements, editElements, tbody, newArr, withoutArr, withArr, addIcon){
+function createElementFilter(removeElements, editElements, tbody, newArr,actionIcon, withoutArr, withArr, addIcon){
     for (let i = 0; i < newArr.length; i++) {
         const row = document.createElement('tr');
         row.setAttribute('id', newArr[i].id);
@@ -40,10 +40,13 @@ function createElementFilter(removeElements, editElements, tbody, newArr, withou
                 }
             }
         }
+            if(actionIcon){
             const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, row);
-            createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeElements }, null, cellAction);
-            createElement('span', { className: 'icon-edit btn-edit btn-act', id: newArr[i].id }, { click: editElements }, null, cellAction);
+                createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeElements }, null, cellAction);
+                createElement('span', { className: 'icon-edit btn-edit btn-act', id: newArr[i].id }, { click: editElements }, null, cellAction);
+            }
             if(addIcon){
+            const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, row);
             createElement('span', { className: 'icon-euro btn-buy btn-act', id: newArr[i].id }, { click: showSellForm }, null, cellAction);
             }
         }
@@ -91,7 +94,7 @@ function showFilterCars(arr){
         newArr = filter(newArr, 'quantity', filterQuantityCars);
     }
 
-    createElementFilter(removeCars,editCars, tbodyCars, newArr, 1)
+    createElementFilter(removeCars,editCars, tbodyCars, newArr,1, 1)
 }
 
 function showFilterPeople(arr){
@@ -128,7 +131,7 @@ function showFilterPeople(arr){
         newArr = filter(newArr, 'phone_number', filterPhoneNumber);
     }
 
-    createElementFilter(removePeople,editPerson, tbodyPeople, newArr, 0, 1, 1)
+    createElementFilter(removePeople,editPerson, tbodyPeople, newArr,1 , 0, 1, 1)
 }
 
 function showFilterGoods(arr){
@@ -161,5 +164,50 @@ function showFilterGoods(arr){
         newArr = filter(newArr, 'quantity', filterQuantityGoods);
     }
 
-    createElementFilter(removeGoods,editGoods, tbodyGoods, newArr, 1)
+    createElementFilter(removeGoods,editGoods, tbodyGoods, newArr, 1, 1)
+}
+
+function showFilterPurchasesCars(arr){
+    const tbody = document.getElementById('tbody-bought-cars');
+    tbody.classList.add('filterNone');
+
+    const tbodyCars = document.getElementById('tbody-filter-bought-cars');
+    tbodyCars.classList.remove('filterNone');
+    tbodyCars.innerHTML = '';
+
+    const filterFuelPurchases = document.querySelector('.filterFuelPurchases').value;
+    const filterTransmissionPurchases = document.querySelector('.filterTransmissionPurchases').value;
+    const filterNumPurchases = document.querySelector('.filterNumPurchases').value;
+    const filterBodyPurchases = document.querySelector('.filterBodyPurchases').value;
+    const filterColorPurchases = document.querySelector('.filterColorPurchases').value;
+    const filterEnginePurchases = document.querySelector('.filterEnginePurchases').value;
+    const filterPriceCarsPurchases = document.querySelector('.filterPriceCarsPurchases').value;
+    const filterCustomerPurchases = document.querySelector('.filterCustomerPurchases').value;
+    let newArr = [...arr];
+    if( filterFuelPurchases !== ''){
+        newArr = filter(newArr, 'fuel', filterFuelPurchases);
+    }
+    if( filterTransmissionPurchases !== ''){
+        newArr = filter(newArr, 'transmission', filterTransmissionPurchases);
+    }
+    if( filterNumPurchases !== ''){
+        newArr = filter(newArr, 'model', filterNumPurchases);
+    }
+    if( filterBodyPurchases !== ''){
+        newArr = filter(newArr, 'body', filterBodyPurchases);
+    }
+    if( filterColorPurchases !== ''){
+        newArr = filter(newArr, 'color', filterColorPurchases);
+    }
+    if( filterEnginePurchases !== ''){
+        newArr = filter(newArr, 'engine', filterEnginePurchases);
+    }
+    if( filterPriceCarsPurchases !== ''){
+        newArr = filter(newArr, 'price', filterPriceCarsPurchases);
+    }
+    if( filterCustomerPurchases !== ''){
+        newArr = filter(newArr, 'customer', filterCustomerPurchases);
+    }
+
+    createElementFilter(null, null, tbodyCars, newArr, 0, 1)
 }

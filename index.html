@@ -187,13 +187,23 @@
                 <div class="details-bought-car hidden">
                     <div class="details-header d-flex">
                         <h2 class="details_title title_bought_car">Bought cars</h2>
+                         <form class="formFilterBoughtCars">
+                            <input type="text" name="name" class="filterNumPurchases"  placeholder="Model">
+                            <input type="text" name="name" class="filterBodyPurchases"  placeholder="Body">
+                            <input type="text" name="name" class="filterColorPurchases"  placeholder="Color">
+                            <input type="text" name="name" class="filterEnginePurchases"  placeholder="Engine">
+                            <input type="text" name="name" class="filterTransmissionPurchases"  placeholder="Transmission">
+                            <input type="text" name="name" class="filterFuelPurchases"  placeholder="Fuel">
+                            <input type="text" name="name" class="filterPriceCarsPurchases"  placeholder="Price">
+                            <input type="text" name="name" class="filterCustomerPurchases"  placeholder="Customer">
+                            <button class="searchfilterBoughtCars">Search</button>
+                        </form>
                         <div class="messageEmptyBoughtCar">The purchases list is empty!</div>
                     </div>
                     <table class="table table_bought_car">
                         <thead class="th_bought_car">
                             <tr class="headrow_bought_car">
                                 <th>№</th>
-                                <th>ID</th>
                                 <th data-col="model">Model</th>
                                 <th data-col="body">Body</th>
                                 <th data-col="color">Color</th>
@@ -205,6 +215,8 @@
                             </tr>
                         </thead>
                         <tbody id="tbody-bought-cars">
+                        </tbody>
+                        <tbody id="tbody-filter-bought-cars">
                         </tbody>
                     </table>
                 </div>

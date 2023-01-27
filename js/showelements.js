@@ -37,7 +37,12 @@ function showCars() {
 
 function showBoughtCars() {
     const tbody = document.getElementById('tbody-bought-cars');
+    tbody.classList.remove("filterNone");
     tbody.innerHTML = '';
+
+    const tbodyPurchasesCars = document.getElementById('tbody-filter-bought-cars');
+    tbodyPurchasesCars.classList.add('filterNone');
+
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
     detailsClients.style.display = 'none';
@@ -49,8 +54,10 @@ function showBoughtCars() {
         carRow.setAttribute('id', purchaseCarsInf[i].id);
         tbody.appendChild(carRow);
         createElement('td', null, null, i + 1, carRow);
-        for (let key in purchaseCarsInf[i]) {
-            createElement('td', null, null, purchaseCarsInf[i][key], carRow);
+        for (let key in purchaseCarsInf[i]){
+            if (key !== 'id') {
+                createElement('td', null, null, purchaseCarsInf[i][key], carRow);
+            }
         }
     }
     emptyListPurchaseCars();
