@@ -1,4 +1,5 @@
 let cart = {};
+let carCart = {};
 function cleanOptions(selectorModel, clasname) {
     if (selectorModel.contains(document.querySelector(`${clasname}`))) {
         let modelOptions = document.querySelectorAll(`${clasname}`);
@@ -14,10 +15,17 @@ function showSellForm(event) {
     form.style.display = 'block';
     const btnClose = document.querySelector('.btnCloseSell');
     btnClose.addEventListener('click', closeForm);
+    peopleInf.forEach(element => {
+        if (element.id === Number(button)) {
+            person = element;
+        }
+    });
 
-    const person = peopleInf[button];
+    // const person = peopleInf[button];
+    // console.log(peopleInf[button]);
     //--------------------------
-    const persId = person.id;
+    const persId = button;
+    console.log(persId);
     //-----------------------
     document.querySelector('.sell-name').innerHTML = `${person.name} ${person.surname}`;
     const selectModel = document.querySelector('.select-carModel');
@@ -27,19 +35,12 @@ function showSellForm(event) {
 
     cleanOptions(selectModel, '.model-option');
     cleanOptions(selectBody, '.body-option');
+    cleanOptions(selectGoodsModel, '.formodel-option');
 
-
-    if (selectGoodsModel.contains(document.querySelector('.formodel-option'))) {
-        let formodelOptions = document.querySelectorAll('.formodel-option');
-        for (let i = 0; i < formodelOptions.length; i++) {
-            formodelOptions[i].remove();
-        }
-    }
     //filter and sort unique models
 
     let carModels = filterUniqeModel(carInf, 'model');
     sortDetails(carModels, 'model', false);
-
 
     let goodsCarModels = filterUniqeModel(goodsInf, 'intended_for_cars');
     sortDetails(goodsCarModels, 'intended_for_cars', false);
@@ -101,7 +102,6 @@ function showSellForm(event) {
     //-------GOODS BY MODEL change eventlistener--------------------------------------------  
     selectGoodsModel.addEventListener('change', function () {
         const goodsBody = this.value;
-        console.log(goodsBody);
         const btnViewGoodsForSell = document.querySelector('.btn-sellgoods');
         btnViewGoodsForSell.setAttribute('data-userid', persId);
         btnViewGoodsForSell.addEventListener('click', function () {
@@ -129,6 +129,8 @@ function filterUniqeModel(array, prop) {
 }
 //------Show car for sell----------------------------------------
 function showCarsForSell(array, body) {
+    carCart = {};
+    cart = {};
     const sellCar = document.querySelector('.selectedcar-table');
     sellCar.innerHTML = "";
     sellCar.innerHTML += `<table class="table table_car">
@@ -155,17 +157,6 @@ function showCarsForSell(array, body) {
     const btnCloseSell = document.querySelector('.btnCloseSellDet');
     btnCloseSell.addEventListener('click', closeCleanGoods);
 
-    /*function () {
-        const selectedcar = document.querySelector('.selectedcar');
-        selectedcar.style.display = 'none';
-        sellCar.innerHTML = "";
-        tbody.innerHTML = '';
-        const selectModel = document.querySelector('.select-carModel');
-        const selectBody = document.querySelector('.select-carBody');
-        selectBody.selectedIndex = 0;
-        selectModel.selectedIndex = 0;
-
-    }); */
     let carSellResult = array.filter(function (item) {
         return item.body === body;
     });
@@ -177,7 +168,6 @@ function showCarsForSell(array, body) {
 
         for (let key in element) {
             createElement('td', { className: key }, null, element[key], carRow);
-
         }
         const cellAction = createElement('td', { className: 'actionsell d-flex', id: element.id }, null, null, carRow);
         console.log(cellAction);
@@ -188,6 +178,7 @@ function showCarsForSell(array, body) {
 }
 //----Show CARS in cart-------------------------------------------------
 function addCars(event) {
+
     console.log(event.target);
     const personId = document.querySelector('.btn-sell').getAttribute('data-userid');
     const products = document.querySelector('.products');
@@ -195,8 +186,9 @@ function addCars(event) {
     let quantityValue = event.target.parentNode.firstChild.value;
     const carRow = event.target.parentNode.parentNode;
     let carId = carRow.querySelector('.id').innerText;
-    console.log(quantityValue);
+    let orderDate = Date.now();
     const newSoldCar = {
+        userid: personId,
         id: carRow.querySelector('.id').innerText,
         model: carRow.querySelector('.model').innerText,
         body: carRow.querySelector('.body').innerText,
@@ -204,9 +196,11 @@ function addCars(event) {
         engine: carRow.querySelector('.engine').innerText,
         transmission: carRow.querySelector('.transmission').innerText,
         fuel: carRow.querySelector('.fuel').innerText,
-        price: carRow.querySelector('.price').innerText
+        price: carRow.querySelector('.price').innerText,
+        quantity: quantityValue,
+        date: orderDate
     }
-
+    carCart[carId] = newSoldCar;
     const carInCart = resultGoods.querySelector(`[data_prod="${newSoldCar.id}"]`);
 
     if (quantityValue) {
@@ -217,7 +211,7 @@ function addCars(event) {
             const totalElement = carInCart.querySelector('.good-total');
             countElement.innerText = Number(quantityValue) + Number(countElement.innerText);
             totalElement.innerText = Number(countElement.innerText) * Number(newSoldCar.price);
-            //cart[goodId]['quantity'] = countElement.innerText;
+            carCart[carId]['quantity'] = countElement.innerText;
         }
         else {
             const index = carInf.findIndex(item => item.id === +event.target.id);
@@ -240,11 +234,43 @@ function addCars(event) {
         }
         sumTotal.innerText = sum;
         const btnSellConfirm = document.querySelector('.btnConfirm');
-        btnSellConfirm.addEventListener("click", confirmSell);
-
-
+        btnSellConfirm.addEventListener("click", confirmSellCar);
     }
 }
+function confirmSellCar() {
+
+    for (let key in carCart) {
+        for (let i = 0; i < carInf.length; i++) {
+            if (parseInt(key) === carInf[i].id) {
+                carInf[i].quantity = parseInt(carInf[i].quantity) - parseInt(carCart[key]['quantity']);
+            }
+        }
+        for (let i = 0; i < peopleInf.length; i++) {
+            if (parseInt(carCart[key]['userid']) == peopleInf[i].id) {
+                const newCar = {
+                    id: +key,
+                    model: carCart[key]["model"],
+                    body: carCart[key]["body"],
+                    color: carCart[key]["color"],
+                    engine: carCart[key]["engine"],
+                    transmission: carCart[key]["transmission"],
+                    fuel: carCart[key]["fuel"],
+                    price: carCart[key]["price"],
+                    quantity: carCart[key]["quantity"],
+                    date: carCart[key]["date"],
+                }
+                peopleInf[i].auto.push(newCar);
+            }
+        }
+    }
+    localStorage.setItem('cars', JSON.stringify(carInf));
+    localStorage.setItem('people', JSON.stringify(peopleInf));
+
+    closeCleanGoods();
+    showPeople();
+    addPurchaseCarsInData();
+}
+
 function closeCleanGoods() {
     document.querySelector('.result-sell').innerHTML = "";
     document.querySelector('.selectedcar-table').innerHTML = '';
@@ -261,6 +287,8 @@ function closeCleanGoods() {
 }
 //-----show GOODS for sell-----------------------------
 function showGoodsForSell(array, value) {
+    cart = {};
+    carCart = {};
     const btnCloseSell = document.querySelector('.btnCloseSellDet');
     const sellCar = document.querySelector('.selectedcar-table');
     btnCloseSell.addEventListener('click', closeCleanGoods);
@@ -310,7 +338,7 @@ function addGoods(event) {
     let quantityValue = event.target.parentNode.firstChild.value;
     const productRow = event.target.parentNode.parentNode;
     let goodId = productRow.querySelector('.id').innerText;
-
+    let orderDate = Date.now();
     const newCartGood = {
         userid: personCartId,
         goodid: productRow.querySelector('.id').innerText,
@@ -318,7 +346,8 @@ function addGoods(event) {
         intended_for_cars: productRow.querySelector('.intended_for_cars').innerText,
         product: productRow.querySelector('.product').innerText,
         price: productRow.querySelector('.price').innerText,
-        quantity: quantityValue
+        quantity: quantityValue,
+        date: orderDate
     }
     cart[goodId] = newCartGood;
     const productInCart = resultGoods.querySelector(`[data_prod="${newCartGood.goodid}"]`);
@@ -348,7 +377,7 @@ function addGoods(event) {
     }
     let priceElements = resultGoods.querySelectorAll('.good-total');
     const sumTotal = document.querySelector('.items-total');
-    // console.log(cart);
+
     //localStorage.setItem('cart', JSON.stringify(cart));
 
     let sum = 0;
@@ -363,15 +392,13 @@ function addGoods(event) {
 }
 function confirmSell() {
 
-    console.log(cart);
+    // console.log(cart);
     for (let key in cart) {
         console.log(cart[key]['quantity']);
         for (let i = 0; i < goodsInf.length; i++) {
 
             if (parseInt(key) === goodsInf[i].id) {
-                console.log(goodsInf[i].quantity);
                 goodsInf[i].quantity = parseInt(goodsInf[i].quantity) - parseInt(cart[key]['quantity']);
-                console.log(goodsInf[i].quantity);
             }
         }
         for (let i = 0; i < peopleInf.length; i++) {
@@ -382,7 +409,8 @@ function confirmSell() {
                     part_number: cart[key]["part_number"],
                     intended_for_cars: cart[key]["intended_for_cars"],
                     price: cart[key]["price"],
-                    // quantity: cart[key]['quantity']
+                    quantity: cart[key]['quantity'],
+                    date: cart[key]['date']
                 }
                 peopleInf[i].accessories.push(Newgood);
             }
@@ -391,7 +419,10 @@ function confirmSell() {
     console.log(peopleInf);
     localStorage.setItem('accessories', JSON.stringify(goodsInf));
     localStorage.setItem('people', JSON.stringify(peopleInf));
-    closeCleanGoods();
-}
 
+
+    closeCleanGoods();
+    showPeople();
+    addPurchaseGoogsInData();
+}
 
