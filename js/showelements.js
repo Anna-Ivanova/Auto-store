@@ -6,11 +6,11 @@ const detailsBoughtGoods = document.querySelector('.details-bought-goods');
 
 function showCars() {
     const tbody = document.getElementById('tbody');
-    tbody.classList.remove("filterCars");
+    tbody.classList.remove("filterNone");
     tbody.innerHTML = '';
 
     const tbodyCars = document.getElementById('tbody-filter-cars');
-    tbodyCars.classList.add('filterCars');
+    tbodyCars.classList.add('filterNone');
 
     detailsCars.style.display = 'block';
     detailsGoods.style.display = 'none';
@@ -86,11 +86,11 @@ function showGoods() {
     detailsBoughtCars.style.display = 'none';
     detailsBoughtGoods.style.display = 'none';
     const tbody = document.getElementById('tbody-goods');
-    tbody.classList.remove("filterCars");
+    tbody.classList.remove("filterNone");
     tbody.innerHTML = '';
 
     const tbodyGoods = document.getElementById('tbody-filter-goods');
-    tbodyGoods.classList.add('filterCars');
+    tbodyGoods.classList.add('filterNone');
 
     for (let i = 0; i < goodsInf.length; i++) {
         const goodsRow = document.createElement('tr');

@@ -10,12 +10,29 @@ function filter(arr, prop, value){
    return newElements;
 }
 
-function showFilter(arr){
+function createElementFilter(removeElements, editElements, tbody, newArr){
+    for (let i = 0; i < newArr.length; i++) {
+        const row = document.createElement('tr');
+        row.setAttribute('id', newArr[i].id);
+        tbody.appendChild(row);
+        createElement('td', null, null, i + 1, row);
+        for (let key in newArr[i]) {
+            if (key !== 'id') {
+                createElement('td', null, null, newArr[i][key], row);
+            }
+        }
+            const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, row);
+            createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeElements }, null, cellAction);
+            createElement('span', { className: 'icon-edit btn-edit btn-act', id: newArr[i].id }, { click: editElements }, null, cellAction);
+        }
+}
+
+function showFilterCars(arr){
     const tbody = document.getElementById('tbody');
-    tbody.classList.add('filterCars');
+    tbody.classList.add('filterNone');
 
     const tbodyCars = document.getElementById('tbody-filter-cars');
-    tbodyCars.classList.remove('filterCars');
+    tbodyCars.classList.remove('filterNone');
     tbodyCars.innerHTML = '';
 
     const filterFuel = document.querySelector('.filterFuel').value;
@@ -24,8 +41,8 @@ function showFilter(arr){
     const filterBody = document.querySelector('.filterBody').value;
     const filterColor = document.querySelector('.filterColor').value;
     const filterEngine = document.querySelector('.filterEngine').value;
-    const filterPrice = document.querySelector('.filterPrice').value;
-    const filterQuantity = document.querySelector('.filterQuantity').value;
+    const filterPriceCars = document.querySelector('.filterPriceCars').value;
+    const filterQuantityCars = document.querySelector('.filterQuantityCars').value;
     let newArr = [...arr];
     if( filterFuel !== ''){
         newArr = filter(newArr, 'fuel', filterFuel);
@@ -45,35 +62,22 @@ function showFilter(arr){
     if( filterEngine !== ''){
         newArr = filter(newArr, 'engine', filterEngine);
     }
-    if( filterPrice !== ''){
-        newArr = filter(newArr, 'price', filterPrice);
+    if( filterPriceCars !== ''){
+        newArr = filter(newArr, 'price', filterPriceCars);
     }
-    if( filterQuantity !== ''){
-        newArr = filter(newArr, 'quantity', filterQuantity);
+    if( filterQuantityCars !== ''){
+        newArr = filter(newArr, 'quantity', filterQuantityCars);
     }
 
-   for (let i = 0; i < newArr.length; i++) {
-        const carRow = document.createElement('tr');
-        carRow.setAttribute('id', newArr[i].id);
-        tbodyCars.appendChild(carRow);
-        createElement('td', null, null, i + 1, carRow);
-        for (let key in newArr[i]) {
-            if (key !== 'id') {
-                createElement('td', null, null, newArr[i][key], carRow);
-            }
-        }
-        const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, carRow);
-        createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeCars }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act', id: newArr[i].id  }, { click: editCars }, null, cellAction);
-    }
+    createElementFilter(removeCars,editCars, tbodyCars, newArr)
 }
 
 function showFilterGoods(arr){
     const tbody = document.getElementById('tbody-goods');
-    tbody.classList.add('filterCars');
+    tbody.classList.add('filterNone');
 
     const tbodyGoods = document.getElementById('tbody-filter-goods');
-    tbodyGoods.classList.remove('filterCars');
+    tbodyGoods.classList.remove('filterNone');
     tbodyGoods.innerHTML = '';
 
     const filterProduct = document.querySelector('.filterProduct').value;
@@ -98,19 +102,6 @@ function showFilterGoods(arr){
         newArr = filter(newArr, 'quantity', filterQuantityGoods);
     }
 
-   for (let i = 0; i < newArr.length; i++) {
-    const goodsRow = document.createElement('tr');
-    goodsRow.setAttribute('id', newArr[i].id);
-    tbodyGoods.appendChild(goodsRow);
-    createElement('td', null, null, i + 1, goodsRow);
-    for (let key in newArr[i]) {
-        if (key !== 'id') {
-            createElement('td', null, null, newArr[i][key], goodsRow);
-        }
-    }
-        const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, goodsRow);
-        createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeGoods }, null, cellAction);
-        createElement('span', { className: 'icon-edit btn-edit btn-act', id: newArr[i].id }, { click: editGoods }, null, cellAction);
-    }
+    createElementFilter(removeGoods,editGoods, tbodyGoods, newArr)
 }
 

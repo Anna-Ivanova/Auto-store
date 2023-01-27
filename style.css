@@ -581,6 +581,6 @@ select {
     max-height: 220px;
 }
 
-.filterCars{
+.filterNone{
     display: none;
 }
