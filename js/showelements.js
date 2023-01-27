@@ -116,12 +116,17 @@ function showPeople() {
     detailsGoods.style.display = 'none';
     detailsBoughtCars.style.display = 'none';
     detailsBoughtGoods.style.display = 'none';
-    const tbodyClients = document.getElementById('tbody-clients');
-    tbodyClients.innerHTML = '';
+    const tbody = document.getElementById('tbody-clients');
+    tbody.classList.remove("filterNone");
+    tbody.innerHTML = '';
+
+    const tbodyClients = document.getElementById('tbody-filter-people');
+    tbodyClients.classList.add('filterNone');
+
     for (let i = 0; i < peopleInf.length; i++) {
         const clientsRow = document.createElement('tr');
         clientsRow.setAttribute('data-user', i);
-        tbodyClients.appendChild(clientsRow);
+        tbody.appendChild(clientsRow);
         createElement('td', null, null, i + 1, clientsRow);
         for (let key in peopleInf[i]) {
             if (typeof peopleInf[i][key] !== 'object') {
@@ -145,7 +150,7 @@ function showPeople() {
         const cellAction = createElement('td', { className: 'action d-flex', id: peopleInf[i].id }, null, null, clientsRow);
         createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removePeople }, null, cellAction);
 
-        createElement('span', { className: 'icon-edit btn-edit btn-act', id: i }, { click: editPerson }, null, cellAction);
+        createElement('span', { className: 'icon-edit btn-edit btn-act', id: peopleInf[i].id }, { click: editPerson }, null, cellAction);
 
         createElement('span', { className: 'icon-euro btn-buy btn-act', id: i }, { click: showSellForm }, null, cellAction);
 

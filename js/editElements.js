@@ -115,12 +115,12 @@ function saveNewEditGoods(event) {
 }
 
 function editPerson(event) {
-    const button = event.target.getAttribute('id');
+    const button =  +(event.target.getAttribute('id'));
 
     const form = document.querySelector('.editAddPeople');
     form.style.display = 'block';
 
-    const person = peopleInf[button];
+    const person = peopleInf.find(x => x.id === button);
 
     document.querySelector('.textName').value = peopleInf.name || person.name;
     document.querySelector('.textSurname').value = peopleInf.surname || person.surname;
@@ -142,9 +142,9 @@ function editPerson(event) {
 }
 
 function saveNewEditPerson(event) {
-    const button = event.target.getAttribute('id');
+    const button =  +(event.target.getAttribute('id'));
 
-    const person = peopleInf[button];
+    const person = peopleInf.find(x => x.id === button);
 
     if (validateFormPeople()) {
         const newName = document.querySelector('.textName').value;

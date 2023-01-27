@@ -10,7 +10,7 @@ function filter(arr, prop, value){
    return newElements;
 }
 
-function createElementFilter(removeElements, editElements, tbody, newArr){
+function createElementFilter(removeElements, editElements, tbody, newArr, addIcon){
     for (let i = 0; i < newArr.length; i++) {
         const row = document.createElement('tr');
         row.setAttribute('id', newArr[i].id);
@@ -24,6 +24,9 @@ function createElementFilter(removeElements, editElements, tbody, newArr){
             const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, row);
             createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeElements }, null, cellAction);
             createElement('span', { className: 'icon-edit btn-edit btn-act', id: newArr[i].id }, { click: editElements }, null, cellAction);
+            if(addIcon){
+            createElement('span', { className: 'icon-euro btn-buy btn-act', id: newArr[i].id }, { click: showSellForm }, null, cellAction);
+            }
         }
 }
 
@@ -72,6 +75,43 @@ function showFilterCars(arr){
     createElementFilter(removeCars,editCars, tbodyCars, newArr)
 }
 
+function showFilterPeople(arr){
+    const tbody = document.getElementById('tbody-clients');
+    tbody.classList.add('filterNone');
+
+    const tbodyPeople = document.getElementById('tbody-filter-people');
+    tbodyPeople.classList.remove('filterNone');
+    tbodyPeople.innerHTML = '';
+
+    const filterName = document.querySelector('.filterName').value;
+    const filterSurname = document.querySelector('.filterSurname').value;
+    const filterAge = document.querySelector('.filterAge').value;
+    const filterAddress = document.querySelector('.filterAddress').value;
+    const filterEmail = document.querySelector('.filterEmail').value;
+    const filterPhoneNumber = document.querySelector('.filterPhoneNumber').value;
+    let newArr = [...arr];
+    if( filterName !== ''){
+        newArr = filter(newArr, 'name', filterName);
+    }
+    if( filterSurname !== ''){
+        newArr = filter(newArr, 'surname', filterSurname);
+    }
+    if( filterAge !== ''){
+        newArr = filter(newArr, 'age', filterAge);
+    }
+    if( filterAddress !== ''){
+        newArr = filter(newArr, 'address', filterAddress);
+    }
+    if( filterEmail !== ''){
+        newArr = filter(newArr, 'email', filterEmail);
+    }
+    if( filterPhoneNumber !== ''){
+        newArr = filter(newArr, 'phone_number', filterPhoneNumber);
+    }
+
+    createElementFilter(removePeople,editPerson, tbodyPeople, newArr, 1)
+}
+
 function showFilterGoods(arr){
     const tbody = document.getElementById('tbody-goods');
     tbody.classList.add('filterNone');
@@ -104,4 +144,3 @@ function showFilterGoods(arr){
 
     createElementFilter(removeGoods,editGoods, tbodyGoods, newArr)
 }
-

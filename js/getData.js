@@ -38,20 +38,27 @@ async function initApplication() {
     addPurchaseCarsInData(); 
     addPurchaseGoogsInData();
      
-    const classBtnCars ='.savefilterCars';
-    getClickFilter(classBtnCars, showFilterCars, carInf);
-
-    const classBtnGoods ='.saveFilterGoods';
-    getClickFilter(classBtnGoods, showFilterGoods, goodsInf);
-
-  } 
-
-  function getClickFilter(classBtn, showFilter, inf){
-    const btnFilter= document.querySelector(classBtn);
-    btnFilter.addEventListener('click', function(event){
+    const btnFilterCars= document.querySelector('.searchfilterCars');
+    btnFilterCars.addEventListener('click', function(event){
         event.preventDefault();
-        showFilter(inf);
+        showFilterCars(carInf);
     });
 
-    showFilter(inf);
+    showFilterCars(carInf);
+     
+    const btnFilterGoods= document.querySelector('.searchFilterGoods');
+    btnFilterGoods.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterGoods(goodsInf);
+    });
+
+    showFilterGoods(goodsInf);
+
+    const btnFilterPeople= document.querySelector('.searchFilterPeople');
+    btnFilterPeople.addEventListener('click', function(event){
+        event.preventDefault();
+        showFilterPeople(peopleInf);
+    });
+
+    showFilterPeople(peopleInf);
   }

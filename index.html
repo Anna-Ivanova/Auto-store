@@ -92,7 +92,7 @@
                             <input type="text" name="name" class="filterFuel"  placeholder="Fuel">
                             <input type="text" name="name" class="filterPriceCars"  placeholder="Price">
                             <input type="text" name="name" class="filterQuantityCars"  placeholder="Quantity">
-                            <button class="savefilterCars">Save</button>
+                            <button class="searchfilterCars">Search</button>
                         </form>
                         <div class="messageEmptyCar">The machine list is empty!</div>
                     </div>
@@ -126,7 +126,7 @@
                             <input type="text" name="name" class="filterIntendedForModel"  placeholder="Intended for model">
                             <input type="text" name="name" class="filterPriceGoods"  placeholder="Price">
                             <input type="text" name="name" class="filterQuantityGoods"  placeholder="Quantity">
-                            <button class="saveFilterGoods">Save</button>
+                            <button class="searchFilterGoods">Search</button>
                         </form>
                         <div class="messageEmptyGoods">The accessories list is empty!</div>
                     </div>
@@ -151,6 +151,15 @@
                 <div class="details-clients hidden">
                     <div class="details-header d-flex">
                         <h2 class="details_title title_people">Customers</h2>
+                        <form class="formFilterPeople">
+                            <input type="text" name="name" class="filterName"  placeholder="Name">
+                            <input type="text" name="name" class="filterSurname"  placeholder="Surname">
+                            <input type="text" name="name" class="filterAge"  placeholder="Age">
+                            <input type="text" name="name" class="filterAddress"  placeholder="Address">
+                            <input type="text" name="name" class="filterEmail"  placeholder="Email">
+                            <input type="text" name="name" class="filterPhoneNumber"  placeholder="Phone number">
+                            <button class="searchFilterPeople">Search</button>
+                        </form>
                         <div class="messageEmptyPeople">The people list is empty!</div>
                     </div>
                     <table class="table table_people">
@@ -160,7 +169,7 @@
                                 <th data-col="name">Name</th>
                                 <th data-col="surname">Surname</th>
                                 <th data-col="age">Age</th>
-                                <th data-col=>Address</th>
+                                <th data-col= "address">Address</th>
                                 <th data-col="email">Email</th>
                                 <th data-col="phone_number">Phone</th>
                                 <th>Auto</th>
@@ -169,6 +178,8 @@
                             </tr>
                         </thead>
                         <tbody id="tbody-clients">
+                        </tbody>
+                        <tbody id="tbody-filter-people">
                         </tbody>
                     </table>
                 </div>
