@@ -100,14 +100,14 @@
                         <thead class="th_car">
                             <tr class="headrow-cars">
                                 <th>№</th>
-                                <th data-col="model">Model</th>
-                                <th data-col="body">Body</th>
-                                <th data-col="color">Color</th>
-                                <th data-col="engine">Engine</th>
+                                <th class="arr-sort" data-col="model">Model</th>
+                                <th class="arr-sort" data-col="body">Body</th>
+                                <th class="arr-sort" data-col="color">Color</th>
+                                <th class="arr-sort" data-col="engine">Engine</th>
                                 <th>Trans-<br>mission</th>
-                                <th data-col="fuel">Fuel type</th>
-                                <th data-col="price">Price in <br> Euro</th>
-                                <th data-col="quantity">Quantity</th>
+                                <th class="arr-sort" data-col="fuel">Fuel type</th>
+                                <th class="arr-sort" data-col="price">Price in <br> Euro</th>
+                                <th class="arr-sort" data-col="quantity">Quantity</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -134,12 +134,12 @@
                     <table class="table table_goods">
                         <thead>
                             <tr class="headrow-goods">
-                                <th data-col="id">№</th>
-                                <th data-col="product">Product</th>
-                                <th data-col="part_number">Part Number</th>
-                                <th>Intended<br>for model</th>
-                                <th data-col="price">Price in <br> Euro</th>
-                                <th data-col="quantity">Quantity</th>
+                                <th>№</th>
+                                <th class="arr-sort" data-col="product">Product</th>
+                                <th class="arr-sort" data-col="part_number">Part Number</th>
+                                <th> Intended<br>for model</th>
+                                <th class="arr-sort" data-col="price">Price in <br> Euro</th>
+                                <th class="arr-sort" data-col="quantity">Quantity</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -166,13 +166,13 @@
                     <table class="table table_people">
                         <thead>
                             <tr class="headrow-people">
-                                <th data-col="id">№</th>
-                                <th data-col="name">Name</th>
-                                <th data-col="surname">Surname</th>
-                                <th data-col="age">Age</th>
-                                <th data-col="address">Address</th>
-                                <th data-col="email">Email</th>
-                                <th data-col="phone_number">Phone</th>
+                                <th>№</th>
+                                <th class="arr-sort" data-col="name">Name</th>
+                                <th class="arr-sort" data-col="surname">Surname</th>
+                                <th class="arr-sort" data-col="age">Age</th>
+                                <th class="arr-sort" data-col="address">Address</th>
+                                <th class="arr-sort" data-col="email">Email</th>
+                                <th class="arr-sort" data-col="phone_number">Phone</th>
                                 <th>Auto</th>
                                 <th>Accessories</th>
                                 <th>Action</th>
@@ -420,7 +420,7 @@
                             </select>
                             <button type="button" class="btn btn-sellgoods">View</button>
                         </div>
-
+                        <div class="order-history arrow-down d-flex">Orders History</div>
                     </form>
 
                 </div>
@@ -474,6 +474,7 @@
     <script src="./js/emptyLists.js"></script>
     <script src="./js/removeElements.js"></script>
     <script src="./js/sellGoods.js"></script>
+    <script src="./js/ordersHistory.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/validate.js"></script>
 

@@ -1,7 +1,7 @@
 let carInf = JSON.parse(localStorage.getItem('cars')) || [];
 let goodsInf = JSON.parse(localStorage.getItem('accessories')) || [];
 let peopleInf = JSON.parse(localStorage.getItem('people')) || [];
-let purchaseCarsInf, purchaseGoodsInf ;
+let purchaseCarsInf, purchaseGoodsInf;
 
 initApplication();
 
@@ -33,19 +33,42 @@ const tableHead = document.querySelector('.headrow-cars');
 const tableHeadGoods = document.querySelector('.headrow-goods');
 const tableHeadPeople = document.querySelector('.headrow-people');
 let columnDir = true;
+function moveArrows(event) {
+    let thProperties = document.querySelectorAll('.arr-sort');
+    thProperties.forEach(element => {
+        element.classList.remove('arr-up');
+        element.classList.remove('arr-down');
+
+        if (element == event.target) {
+            if (columnDir == false) {
+
+                element.classList.add('arr-down');
+            } else {
+
+                element.classList.add('arr-up');
+            }
+        }
+
+    })
+}
+
 tableHead.addEventListener('click', function (event) {
+
     let prop = event.target.getAttribute('data-col');
-    console.log(prop);
+
+    moveArrows(event);
     columnDir = !columnDir;
     console.log(columnDir);
+
     if (prop !== null) {
         sortDetails(carInf, prop, columnDir);
         showCars();
     }
 })
 tableHeadGoods.addEventListener('click', function (event) {
+
     let prop = event.target.getAttribute('data-col');
-    console.log(prop);
+    moveArrows(event);
     columnDir = !columnDir;
     if (prop !== null) {
         sortDetails(goodsInf, prop, columnDir);
@@ -54,7 +77,7 @@ tableHeadGoods.addEventListener('click', function (event) {
 })
 tableHeadPeople.addEventListener('click', function (event) {
     let prop = event.target.getAttribute('data-col');
-    console.log(prop);
+    moveArrows(event);
     columnDir = !columnDir;
     if (prop !== null) {
         sortDetails(peopleInf, prop, columnDir);

@@ -581,6 +581,34 @@ select {
     max-height: 220px;
 }
 
-.filterNone{
+.filterNone {
     display: none;
+}
+
+.order-history {
+    justify-content: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.arrow-down::after {
+    content: '⬇️';
+}
+
+.arrow-up::after {
+    content: '⬆️';
+}
+
+.arr-sort::after {
+    content: '⬍';
+    margin-left: 10px;
+}
+
+.arr-up::after {
+    content: '▲';
+}
+
+.arr-down::after {
+    content: '▼';
 }
