@@ -187,24 +187,25 @@ function addCars(event) {
     const carRow = event.target.parentNode.parentNode;
     let carId = carRow.querySelector('.id').innerText;
     let orderDate = Date.now();
-    const newSoldCar = {
-        userid: personId,
-        id: carRow.querySelector('.id').innerText,
-        model: carRow.querySelector('.model').innerText,
-        body: carRow.querySelector('.body').innerText,
-        color: carRow.querySelector('.color').innerText,
-        engine: carRow.querySelector('.engine').innerText,
-        transmission: carRow.querySelector('.transmission').innerText,
-        fuel: carRow.querySelector('.fuel').innerText,
-        price: carRow.querySelector('.price').innerText,
-        quantity: quantityValue,
-        date: orderDate
-    }
-    carCart[carId] = newSoldCar;
-    const carInCart = resultGoods.querySelector(`[data_prod="${newSoldCar.id}"]`);
+
 
     if (quantityValue) {
         products.style.display = 'flex';
+        const newSoldCar = {
+            userid: personId,
+            id: carRow.querySelector('.id').innerText,
+            model: carRow.querySelector('.model').innerText,
+            body: carRow.querySelector('.body').innerText,
+            color: carRow.querySelector('.color').innerText,
+            engine: carRow.querySelector('.engine').innerText,
+            transmission: carRow.querySelector('.transmission').innerText,
+            fuel: carRow.querySelector('.fuel').innerText,
+            price: carRow.querySelector('.price').innerText,
+            quantity: quantityValue,
+            date: orderDate
+        }
+        carCart[carId] = newSoldCar;
+        const carInCart = resultGoods.querySelector(`[data_prod="${newSoldCar.id}"]`);
         document.querySelector('.productsTotal').style.display = 'flex';
         if (carInCart) {
             const countElement = carInCart.querySelector('.good-quantity');
@@ -332,27 +333,27 @@ function showGoodsForSell(array, value) {
 //-----show GOODS in Cart-----------------------------
 function addGoods(event) {
     const products = document.querySelector('.products');
-    // products.style.display = 'flex';
     const personCartId = document.querySelector('.btn-sellgoods').getAttribute('data-userid');
     const resultGoods = document.querySelector('.result-sell');
     let quantityValue = event.target.parentNode.firstChild.value;
     const productRow = event.target.parentNode.parentNode;
     let goodId = productRow.querySelector('.id').innerText;
     let orderDate = Date.now();
-    const newCartGood = {
-        userid: personCartId,
-        goodid: productRow.querySelector('.id').innerText,
-        part_number: productRow.querySelector('.part_number').innerText,
-        intended_for_cars: productRow.querySelector('.intended_for_cars').innerText,
-        product: productRow.querySelector('.product').innerText,
-        price: productRow.querySelector('.price').innerText,
-        quantity: quantityValue,
-        date: orderDate
-    }
-    cart[goodId] = newCartGood;
-    const productInCart = resultGoods.querySelector(`[data_prod="${newCartGood.goodid}"]`);
+
 
     if (quantityValue) {
+        const newCartGood = {
+            userid: personCartId,
+            goodid: productRow.querySelector('.id').innerText,
+            part_number: productRow.querySelector('.part_number').innerText,
+            intended_for_cars: productRow.querySelector('.intended_for_cars').innerText,
+            product: productRow.querySelector('.product').innerText,
+            price: productRow.querySelector('.price').innerText,
+            quantity: quantityValue,
+            date: orderDate
+        }
+        cart[goodId] = newCartGood;
+        const productInCart = resultGoods.querySelector(`[data_prod="${newCartGood.goodid}"]`);
         products.style.display = 'flex';
         document.querySelector('.productsTotal').style.display = 'flex';
         if (productInCart) {
