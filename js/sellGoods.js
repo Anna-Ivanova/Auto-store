@@ -224,7 +224,7 @@ function addCars(event) {
             let total = Number(carInf[index].price) * Number(quantityValue);
             createElement('div', { className: 'good-total' }, null, total, rowProduct);
             const deleteBlock = createElement('div', { className: 'good-delete' }, null, null, rowProduct);
-            createElement('span', { className: 'icon-delete btn-del btn-act delete' }, null, null, deleteBlock);
+            createElement('span', { className: 'icon-delete btn-del btn-act delete' }, { click: deleteCartRow }, null, deleteBlock);
         }
         let priceElements = resultGoods.querySelectorAll('.good-total');
         const sumTotal = document.querySelector('.items-total');
@@ -237,6 +237,39 @@ function addCars(event) {
         const btnSellConfirm = document.querySelector('.btnConfirm');
         btnSellConfirm.addEventListener("click", confirmSellCar);
     }
+}
+function deleteCartRow(event) {
+    const productMain = event.target.parentNode.parentNode;
+    const indexProd = productMain.getAttribute('data_prod');
+    productMain.remove();
+    delete carCart[indexProd];
+    const resultGoods = document.querySelector('.result-sell');
+    let priceElements = resultGoods.querySelectorAll('.good-total');
+    const sumTotal = document.querySelector('.items-total');
+    let sum = 0;
+    for (let i = 0; i < priceElements.length; i++) {
+        let priceElem = Number(priceElements[i].innerText);
+        sum += priceElem;
+    }
+    sumTotal.innerText = sum;
+    console.log(carCart);
+}
+function deleteRowGoods(event) {
+    const productMain = event.target.parentNode.parentNode;
+    const indexProd = productMain.getAttribute('data_prod');
+    productMain.remove();
+    delete cart[indexProd];
+    const resultGoods = document.querySelector('.result-sell');
+    let priceElements = resultGoods.querySelectorAll('.good-total');
+    const sumTotal = document.querySelector('.items-total');
+    let sum = 0;
+    for (let i = 0; i < priceElements.length; i++) {
+        let priceElem = Number(priceElements[i].innerText);
+        sum += priceElem;
+    }
+    sumTotal.innerText = sum;
+    console.log(cart);
+
 }
 function confirmSellCar() {
 
@@ -372,7 +405,7 @@ function addGoods(event) {
             let total = Number(goodsInf[index].price) * Number(quantityValue);
             createElement('div', { className: 'good-total' }, null, total, rowProduct);
             const deleteBlock = createElement('div', { className: 'good-delete' }, null, null, rowProduct);
-            createElement('span', { className: 'icon-delete btn-del btn-act delete' }, null, null, deleteBlock);
+            createElement('span', { className: 'icon-delete btn-del btn-act delete' }, { click: deleteRowGoods }, null, deleteBlock);
         }
 
     }
