@@ -7,5 +7,7 @@ function closeForm() {
     formCar.style.display = 'none';
     const formSell = document.querySelector('.sellGoods');
     formSell.style.display = 'none';
+    const historyInfo = document.querySelector('.order-history-info');
+    historyInfo.innerHTML = '';
 
 }

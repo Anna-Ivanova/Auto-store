@@ -25,6 +25,10 @@ function showSellForm(event) {
     // console.log(peopleInf[button]);
     //--------------------------
     const persId = button;
+    const arrow = document.querySelector('.arrow-down');
+    arrow.addEventListener('click', function () {
+        showOrdersHistory(persId);
+    });
     console.log(persId);
     //-----------------------
     document.querySelector('.sell-name').innerHTML = `${person.name} ${person.surname}`;

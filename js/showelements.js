@@ -55,7 +55,7 @@ function showBoughtCars() {
         tbody.appendChild(carRow);
         createElement('td', null, null, i + 1, carRow);
         for (let key in purchaseCarsInf[i]) {
-            if (key !== 'id' && key !== 'date') {
+            if (key !== 'id' && key !== 'date' && key !== 'customerid') {
                 createElement('td', null, null, purchaseCarsInf[i][key], carRow);
             }
         }

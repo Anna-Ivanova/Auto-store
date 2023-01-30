@@ -624,3 +624,25 @@ select {
     box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
 
 }
+
+
+
+.order-history-info {
+    overflow-y: auto;
+    height: 250px;
+}
+
+
+
+
+.order {
+    border-bottom: 1px solid rgb(117, 116, 116);
+    padding: 10px;
+}
+
+
+.product-history {
+
+    line-height: 20px;
+    font-size: 14px;
+}

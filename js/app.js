@@ -29,6 +29,7 @@ btnAddAccessories.addEventListener('click', createNewAccessories);
 const btnAddCar = document.querySelector('.addCar');
 btnAddCar.addEventListener('click', createNewCar);
 
+
 const tableHead = document.querySelector('.headrow-cars');
 const tableHeadGoods = document.querySelector('.headrow-goods');
 const tableHeadPeople = document.querySelector('.headrow-people');
@@ -89,7 +90,7 @@ tableHeadPeople.addEventListener('click', function (event) {
 function sortDetails(arr, prop, columnDir) {
 
     return arr.sort(function (propA, propB) {
-        if (prop === 'id' || prop === 'model' || prop === 'transmission' || prop === 'price' || prop === 'quantity' || prop === 'part_number' || prop === 'age' || prop === 'phone_number') {
+        if (prop === 'id' || prop === 'model' || prop === 'transmission' || prop === 'date' || prop === 'price' || prop === 'quantity' || prop === 'part_number' || prop === 'age' || prop === 'phone_number') {
             if (columnDir == false) {
                 return Number(propA[prop]) - Number(propB[prop])
             }
