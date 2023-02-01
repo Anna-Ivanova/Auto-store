@@ -4,6 +4,7 @@ function showOrdersHistory(id) {
     let carsHistory = [];
 
     const historyInfo = document.querySelector('.order-history-info');
+    historyInfo.style.display = 'block';
     historyInfo.innerHTML = '';
     peopleInf.forEach(element => {
         if (element.id === Number(id)) {
@@ -44,10 +45,11 @@ function showOrdersHistory(id) {
         for (let i = 0; i < group.length; i++) {
             const prod = createElement('div', { className: 'order' }, null, null, orderDate);
             for (let key in group[i]) {
-
+                //  group[i].total = Number(group[i].price) * Number(group[i].quantity);
                 if (key !== 'id' && key !== 'date' && key != 'customer' && key != 'customerid') {
-                    createElement('p', null, null, `${key} :      ${group[i][key]}`, prod);
+                    createElement('p', { className: `${key}-history` }, null, `${key} :      ${group[i][key]}`, prod);
                 }
+
             }
         }
 

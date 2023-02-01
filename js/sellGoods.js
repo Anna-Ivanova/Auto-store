@@ -97,6 +97,7 @@ function showSellForm(event) {
                 btnViewCarsForSell.addEventListener('click', function () {
                     const sellCar = document.querySelector('.selectedcar');
                     sellCar.style.display = 'block';
+                    cleanOrdersHistory();
                     showCarsForSell(carInfChange, valBody);
                 });
 
@@ -112,6 +113,7 @@ function showSellForm(event) {
             const sellCar = document.querySelector('.selectedcar');
             document.querySelector('.selectedcar-table').innerHTML = '';
             sellCar.style.display = 'block';
+            cleanOrdersHistory();
             showGoodsForSell(goodsInf, goodsBody);
         })
     })

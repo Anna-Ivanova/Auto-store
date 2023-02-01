@@ -628,6 +628,7 @@ select {
 
 
 .order-history-info {
+    display: none;
     overflow-y: auto;
     height: 250px;
 }
