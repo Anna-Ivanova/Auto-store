@@ -12,6 +12,9 @@ function showCars() {
     const tbodyCars = document.getElementById('tbody-filter-cars');
     tbodyCars.classList.add('filterNone');
 
+    const btnCloseTableCars = document.querySelector('.closeTableCar');
+    btnCloseTableCars.addEventListener('click', closeTableCars);
+
     detailsCars.style.display = 'block';
     detailsGoods.style.display = 'none';
     detailsClients.style.display = 'none';
@@ -43,6 +46,9 @@ function showBoughtCars() {
     const tbodyPurchasesCars = document.getElementById('tbody-filter-bought-cars');
     tbodyPurchasesCars.classList.add('filterNone');
 
+    const btnCloseTableBoughtCars = document.querySelector('.closeTableBoughtCars');
+    btnCloseTableBoughtCars.addEventListener('click', closeTableBoughtCars);
+
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
     detailsClients.style.display = 'none';
@@ -70,6 +76,9 @@ function showBoughtAccessories() {
 
     const tbodyPurchasesGoods = document.getElementById('tbody-filter-bought-goods');
     tbodyPurchasesGoods.classList.add('filterNone');
+
+    const btnCloseTableBoughtGoods = document.querySelector('.closeTableBoughtGoods');
+    btnCloseTableBoughtGoods.addEventListener('click', closeTableBoughtGoods);
 
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
@@ -104,6 +113,9 @@ function showGoods() {
     const tbodyGoods = document.getElementById('tbody-filter-goods');
     tbodyGoods.classList.add('filterNone');
 
+    const btnCloseTableGoods = document.querySelector('.closeTableGoods');
+    btnCloseTableGoods.addEventListener('click', closeTableGoods);
+
     for (let i = 0; i < goodsInf.length; i++) {
         const goodsRow = document.createElement('tr');
         goodsRow.setAttribute('id', goodsInf[i].id);
@@ -134,6 +146,9 @@ function showPeople() {
 
     const tbodyClients = document.getElementById('tbody-filter-people');
     tbodyClients.classList.add('filterNone');
+
+    const btnCloseTableCustomers = document.querySelector('.closeTableCustoners');
+    btnCloseTableCustomers.addEventListener('click', closeTableCustomers);
 
     for (let i = 0; i < peopleInf.length; i++) {
         const clientsRow = document.createElement('tr');
