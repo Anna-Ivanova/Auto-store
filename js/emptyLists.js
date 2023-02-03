@@ -1,4 +1,4 @@
-function emptyList(Inf, table, titles, message){
+function emptyList(Inf, table, titles, message, forms){
     if(Inf.length <= 0){
         const tbody = document.querySelector(table);
         tbody.style.display = 'none';
@@ -8,6 +8,9 @@ function emptyList(Inf, table, titles, message){
 
         const messageEmpty = document.querySelector(message);
         messageEmpty.style.display = 'block';
+
+        const formFilter = document.querySelector(forms);
+        formFilter.style.display = 'none';
     }
     if(Inf.length > 0){
         const messageEmpty = document.querySelector(message);
@@ -18,6 +21,9 @@ function emptyList(Inf, table, titles, message){
 
         const tbody = document.querySelector(table);
         tbody.style.display = 'inline-table';
+
+        const formFilter = document.querySelector(forms);
+        formFilter.style.display = 'flex';
     }
 }
 
@@ -26,28 +32,32 @@ function emptyListCar(){
     const tableCar = '.table_car';
     const titleCar = '.title_cars';
     const messageCar = '.messageEmptyCar';
-    emptyList(carInf, tableCar, titleCar, messageCar);
+    const formCar = '.formFilterCars';
+    emptyList(carInf, tableCar, titleCar, messageCar, formCar);
 }
 
 function emptyListGoods(){
     const tableGoods = '.table_goods';
     const titleGoods = '.title_goods';
     const messageGoods = '.messageEmptyGoods';
-    emptyList(goodsInf, tableGoods, titleGoods, messageGoods);
+    const formGoods = '.formFilterGoods';
+    emptyList(goodsInf, tableGoods, titleGoods, messageGoods, formGoods);
 }
 
 function emptyListPeople(){
     const tablePeople = '.table_people';
     const titlePeople = '.title_people';
     const messagePeople = '.messageEmptyPeople';
-    emptyList(peopleInf, tablePeople, titlePeople, messagePeople);
+    const formPeople = '.formFilterPeople';
+    emptyList(peopleInf, tablePeople, titlePeople, messagePeople, formPeople);
 }
 
 function emptyListPurchaseCars(){
     const tablePurchaseCars = '.table_bought_car';
     const titlePurchaseCars = '.title_bought_car';
     const messagePurchaseCars = '.messageEmptyBoughtCar';
-    emptyList(purchaseCarsInf, tablePurchaseCars, titlePurchaseCars, messagePurchaseCars);
+    const formBoughtCars = '.formFilterBoughtCars';
+    emptyList(purchaseCarsInf, tablePurchaseCars, titlePurchaseCars, messagePurchaseCars, formBoughtCars);
 }
 
 
@@ -55,5 +65,6 @@ function emptyListPurchaseGoods(){
     const tablePurchaseGoods = '.table_bought_goods';
     const titlePurchaseGoods = '.title_bought_goods';
     const messagePurchaseGoods = '.messageEmptyBoughtGoods';
-    emptyList(purchaseGoodsInf, tablePurchaseGoods, titlePurchaseGoods, messagePurchaseGoods);
+    const formBoughtGoods = '.formFilterBoughtGoods';
+    emptyList(purchaseGoodsInf, tablePurchaseGoods, titlePurchaseGoods, messagePurchaseGoods, formBoughtGoods);
 }
