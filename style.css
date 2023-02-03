@@ -674,3 +674,14 @@ select {
     color: black;
     transition: 0.5s linear;
 }
+
+.closeTable{
+    font-size: 24px;
+    font-weight: bold;
+    background: transparent;
+    margin-left: 95%;
+    border: 0;
+    color: rgb(92, 89, 89);
+    transition: 0.5s linear;
+    cursor: pointer;
+}
