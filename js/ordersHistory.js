@@ -4,7 +4,8 @@ function showOrdersHistory(id) {
     let carsHistory = [];
 
     const historyInfo = document.querySelector('.order-history-info');
-    historyInfo.style.display = 'block';
+    historyInfo.classList.toggle('order-history-open');
+    // historyInfo.style.display = 'block';
     historyInfo.innerHTML = '';
     peopleInf.forEach(element => {
         if (element.id === Number(id)) {

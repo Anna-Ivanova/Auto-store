@@ -1,38 +1,38 @@
-function filter(arr, prop, value){
+function filter(arr, prop, value) {
     let newElements = [];
     let copy = [...arr];
-    for ( const elem of copy){
-        if(String(elem[prop]).includes(value) === true){
+    for (const elem of copy) {
+        if (String(elem[prop]).includes(value) === true) {
             newElements.push(elem);
         }
     }
 
-   return newElements;
+    return newElements;
 }
 
-function createElementFilter(removeElements, editElements, tbody, newArr,actionIcon, withoutArr, withArr, addIcon){
+function createElementFilter(removeElements, editElements, tbody, newArr, actionIcon, withoutArr, withArr, addIcon) {
     for (let i = 0; i < newArr.length; i++) {
         const row = document.createElement('tr');
         row.setAttribute('id', newArr[i].id);
         tbody.appendChild(row);
         createElement('td', null, null, i + 1, row);
         for (let key in newArr[i]) {
-            if(withoutArr){
+            if (withoutArr) {
                 if (key !== 'id') {
                     createElement('td', null, null, newArr[i][key], row);
                 }
             }
-            if(withArr){
+            if (withArr) {
                 if (key !== 'id' && key !== 'auto' && key !== 'accessories') {
                     createElement('td', null, null, newArr[i][key], row);
                 }
-                if(key === 'auto'){
+                if (key === 'auto') {
                     let tdAuto = createElement('td', null, null, null, row);
                     newArr[i]['auto'].forEach(element => {
                         createElement('p', null, null, element.model + ", ", tdAuto);
                     });
                 }
-                if(key === 'accessories'){
+                if (key === 'accessories') {
                     let tdAuto = createElement('td', null, null, null, row);
                     newArr[i]['accessories'].forEach(element => {
                         createElement('p', null, null, element.product + ", ", tdAuto);
@@ -40,19 +40,19 @@ function createElementFilter(removeElements, editElements, tbody, newArr,actionI
                 }
             }
         }
-            if(actionIcon){
+        if (actionIcon) {
             const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, row);
-                createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeElements }, null, cellAction);
-                createElement('span', { className: 'icon-edit btn-edit btn-act', id: newArr[i].id }, { click: editElements }, null, cellAction);
-            }
-            if(addIcon){
+            createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeElements }, null, cellAction);
+            createElement('span', { className: 'icon-edit btn-edit btn-act', id: newArr[i].id }, { click: editElements }, null, cellAction);
+        }
+        if (addIcon) {
             const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, row);
             createElement('span', { className: 'icon-euro btn-buy btn-act', id: newArr[i].id }, { click: showSellForm }, null, cellAction);
-            }
         }
+    }
 }
 
-function showFilterCars(arr){
+function showFilterCars(arr) {
     const tbody = document.getElementById('tbody');
     tbody.classList.add('filterNone');
 
@@ -69,35 +69,35 @@ function showFilterCars(arr){
     const filterPriceCars = document.querySelector('.filterPriceCars').value;
     const filterQuantityCars = document.querySelector('.filterQuantityCars').value;
     let newArr = [...arr];
-    if( filterFuel !== ''){
+    if (filterFuel !== '') {
         newArr = filter(newArr, 'fuel', filterFuel);
     }
-    if( filterTransmission !== ''){
+    if (filterTransmission !== '') {
         newArr = filter(newArr, 'transmission', filterTransmission);
     }
-    if( filterNum !== ''){
+    if (filterNum !== '') {
         newArr = filter(newArr, 'model', filterNum);
     }
-    if( filterBody !== ''){
+    if (filterBody !== '') {
         newArr = filter(newArr, 'body', filterBody);
     }
-    if( filterColor !== ''){
+    if (filterColor !== '') {
         newArr = filter(newArr, 'color', filterColor);
     }
-    if( filterEngine !== ''){
+    if (filterEngine !== '') {
         newArr = filter(newArr, 'engine', filterEngine);
     }
-    if( filterPriceCars !== ''){
+    if (filterPriceCars !== '') {
         newArr = filter(newArr, 'price', filterPriceCars);
     }
-    if( filterQuantityCars !== ''){
+    if (filterQuantityCars !== '') {
         newArr = filter(newArr, 'quantity', filterQuantityCars);
     }
 
-    createElementFilter(removeCars,editCars, tbodyCars, newArr,1, 1)
+    createElementFilter(removeCars, editCars, tbodyCars, newArr, 1, 1)
 }
 
-function showFilterPeople(arr){
+function showFilterPeople(arr) {
     const tbody = document.getElementById('tbody-clients');
     tbody.classList.add('filterNone');
 
@@ -112,29 +112,29 @@ function showFilterPeople(arr){
     const filterEmail = document.querySelector('.filterEmail').value;
     const filterPhoneNumber = document.querySelector('.filterPhoneNumber').value;
     let newArr = [...arr];
-    if( filterName !== ''){
+    if (filterName !== '') {
         newArr = filter(newArr, 'name', filterName);
     }
-    if( filterSurname !== ''){
+    if (filterSurname !== '') {
         newArr = filter(newArr, 'surname', filterSurname);
     }
-    if( filterAge !== ''){
+    if (filterAge !== '') {
         newArr = filter(newArr, 'age', filterAge);
     }
-    if( filterAddress !== ''){
+    if (filterAddress !== '') {
         newArr = filter(newArr, 'address', filterAddress);
     }
-    if( filterEmail !== ''){
+    if (filterEmail !== '') {
         newArr = filter(newArr, 'email', filterEmail);
     }
-    if( filterPhoneNumber !== ''){
+    if (filterPhoneNumber !== '') {
         newArr = filter(newArr, 'phone_number', filterPhoneNumber);
     }
 
-    createElementFilter(removePeople,editPerson, tbodyPeople, newArr,1 , 0, 1, 1)
+    createElementFilter(removePeople, editPerson, tbodyPeople, newArr, 1, 0, 1, 1)
 }
 
-function showFilterGoods(arr){
+function showFilterGoods(arr) {
     const tbody = document.getElementById('tbody-goods');
     tbody.classList.add('filterNone');
 
@@ -148,26 +148,26 @@ function showFilterGoods(arr){
     const filterPriceGoods = document.querySelector('.filterPriceGoods').value;
     const filterQuantityGoods = document.querySelector('.filterQuantityGoods').value;
     let newArr = [...arr];
-    if( filterProduct !== ''){
+    if (filterProduct !== '') {
         newArr = filter(newArr, 'product', filterProduct);
     }
-    if( filterPartNumber !== ''){
+    if (filterPartNumber !== '') {
         newArr = filter(newArr, 'part_number', filterPartNumber);
     }
-    if( filterIntendedForModel !== ''){
+    if (filterIntendedForModel !== '') {
         newArr = filter(newArr, 'intended_for_cars', filterIntendedForModel);
     }
-    if( filterPriceGoods !== ''){
+    if (filterPriceGoods !== '') {
         newArr = filter(newArr, 'price', filterPriceGoods);
     }
-    if( filterQuantityGoods !== ''){
+    if (filterQuantityGoods !== '') {
         newArr = filter(newArr, 'quantity', filterQuantityGoods);
     }
 
-    createElementFilter(removeGoods,editGoods, tbodyGoods, newArr, 1, 1)
+    createElementFilter(removeGoods, editGoods, tbodyGoods, newArr, 1, 1)
 }
 
-function showFilterPurchasesCars(arr){
+function showFilterPurchasesCars(arr) {
     const tbody = document.getElementById('tbody-bought-cars');
     tbody.classList.add('filterNone');
 
@@ -184,35 +184,35 @@ function showFilterPurchasesCars(arr){
     const filterPriceCarsPurchases = document.querySelector('.filterPriceCarsPurchases').value;
     const filterCustomerPurchasesCars = document.querySelector('.filterCustomerPurchasesCars').value;
     let newArr = [...arr];
-    if( filterFuelPurchases !== ''){
+    if (filterFuelPurchases !== '') {
         newArr = filter(newArr, 'fuel', filterFuelPurchases);
     }
-    if( filterTransmissionPurchases !== ''){
+    if (filterTransmissionPurchases !== '') {
         newArr = filter(newArr, 'transmission', filterTransmissionPurchases);
     }
-    if( filterNumPurchases !== ''){
+    if (filterNumPurchases !== '') {
         newArr = filter(newArr, 'model', filterNumPurchases);
     }
-    if( filterBodyPurchases !== ''){
+    if (filterBodyPurchases !== '') {
         newArr = filter(newArr, 'body', filterBodyPurchases);
     }
-    if( filterColorPurchases !== ''){
+    if (filterColorPurchases !== '') {
         newArr = filter(newArr, 'color', filterColorPurchases);
     }
-    if( filterEnginePurchases !== ''){
+    if (filterEnginePurchases !== '') {
         newArr = filter(newArr, 'engine', filterEnginePurchases);
     }
-    if( filterPriceCarsPurchases !== ''){
+    if (filterPriceCarsPurchases !== '') {
         newArr = filter(newArr, 'price', filterPriceCarsPurchases);
     }
-    if( filterCustomerPurchasesCars !== ''){
+    if (filterCustomerPurchasesCars !== '') {
         newArr = filter(newArr, 'customer', filterCustomerPurchasesCars);
     }
 
     createElementFilter(null, null, tbodyCars, newArr, 0, 1)
 }
 
-function showFilterPurchasesGoods(arr){
+function showFilterPurchasesGoods(arr) {
     const tbody = document.getElementById('tbody-bought-goods');
     tbody.classList.add('filterNone');
 
@@ -226,19 +226,19 @@ function showFilterPurchasesGoods(arr){
     const filterPriceGoodsPurchases = document.querySelector('.filterPriceGoodsPurchases').value;
     const filterCustomerPurchasesGoods = document.querySelector('.filterCustomerPurchasesGoods').value;
     let newArr = [...arr];
-    if( filterProductPurchases !== ''){
+    if (filterProductPurchases !== '') {
         newArr = filter(newArr, 'product', filterProductPurchases);
     }
-    if( filterPartNumberPurchases !== ''){
+    if (filterPartNumberPurchases !== '') {
         newArr = filter(newArr, 'part_number', filterPartNumberPurchases);
     }
-    if( filterIntendedForModelPurchases !== ''){
+    if (filterIntendedForModelPurchases !== '') {
         newArr = filter(newArr, 'intended_for_cars', filterIntendedForModelPurchases);
     }
-    if( filterPriceGoodsPurchases !== ''){
+    if (filterPriceGoodsPurchases !== '') {
         newArr = filter(newArr, 'price', filterPriceGoodsPurchases);
     }
-    if( filterCustomerPurchasesGoods !== ''){
+    if (filterCustomerPurchasesGoods !== '') {
         newArr = filter(newArr, 'customer', filterCustomerPurchasesGoods);
         console.log(3);
     }

@@ -382,7 +382,8 @@ thead th {
     margin: 0 0 20px 0;
 }
 
-.textInput:hover, .inputFilter:hover {
+.textInput:hover,
+.inputFilter:hover {
     border: 2px solid #00a3e0;
 }
 
@@ -632,6 +633,12 @@ select {
     height: 250px;
 }
 
+.order-history-open {
+    display: block;
+    overflow-y: auto;
+    height: 250px;
+}
+
 .order {
     border-bottom: 1px solid rgb(117, 116, 116);
     padding: 10px;
@@ -643,7 +650,7 @@ select {
     font-size: 14px;
 }
 
-.formFilter{
+.formFilter {
     margin-top: 20px;
     margin-bottom: 10px;
     display: flex;
@@ -651,7 +658,7 @@ select {
     flex-wrap: wrap;
 }
 
-.inputFilter{
+.inputFilter {
     border: 1px solid black;
     border-radius: 5px;
     width: 15%;
@@ -663,7 +670,7 @@ select {
     transition: 0.3s linear;
 }
 
-.btnSearch{
+.btnSearch {
     font-size: 16px;
     height: 30px;
     width: 150px;
@@ -675,7 +682,7 @@ select {
     transition: 0.5s linear;
 }
 
-.closeTable{
+.closeTable {
     font-size: 24px;
     font-weight: bold;
     background: transparent;
