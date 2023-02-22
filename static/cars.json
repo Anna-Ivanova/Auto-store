@@ -39,7 +39,7 @@
         "color": "pacific green",
         "engine": "2.0 Plug-in Hybrid 200HP",
         "transmission": "6 AT",
-        "fuel": "disel",
+        "fuel": "diesel",
         "price": "35984",
         "quantity": "400"
     },
@@ -50,7 +50,7 @@
         "color": "white pearl",
         "engine": "2.0 Plug-in Hybrid 200HP",
         "transmission": "6 AT",
-        "fuel": "disel",
+        "fuel": "diesel",
         "price": "38670",
         "quantity": "500"
     },
@@ -61,7 +61,7 @@
         "color": "diamond red",
         "engine": "2.0 Plug-in Hybrid 200HP",
         "transmission": "8 AT",
-        "fuel": "disel",
+        "fuel": "diesel",
         "price": "41860",
         "quantity": "450"
     },
@@ -72,7 +72,7 @@
         "color": "dark grey",
         "engine": "2.0 Plug-in Hybrid 200HP",
         "transmission": "8 AT",
-        "fuel": "disel",
+        "fuel": "diesel",
         "price": "48765",
         "quantity": "300"
     }
