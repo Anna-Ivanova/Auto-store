@@ -22,20 +22,25 @@ function cleanOrdersHistory() {
 
 function closeTableCars() {
     document.querySelector('.details-cars').style.display = 'none';
+    cleaningCarsFilter();
 }
 
 function closeTableGoods() {
     document.querySelector('.details-goods').style.display = 'none';
+    cleaningGoodsFilter();
 }
 
 function closeTableCustomers() {
     document.querySelector('.details-clients').style.display = 'none';
+    cleaningPeopleFilter();
 }
 
 function closeTableBoughtCars() {
     document.querySelector('.details-bought-car').style.display = 'none';
+    cleaningBoughtCarsFilter();
 }
 
 function closeTableBoughtGoods() {
     document.querySelector('.details-bought-goods').style.display = 'none';
+    cleaningBoughtGoodsFilter();
 }

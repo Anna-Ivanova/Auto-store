@@ -29,6 +29,21 @@ btnAddAccessories.addEventListener('click', createNewAccessories);
 const btnAddCar = document.querySelector('.addCar');
 btnAddCar.addEventListener('click', createNewCar);
 
+const btnCleaningCarsFilter = document.querySelector('.btnCleaningCarsFilter');
+btnCleaningCarsFilter.addEventListener('click', cleaningCarsFilter);
+
+const btnCleaningGoodsFilter = document.querySelector('.btnCleaningGoodsFilter');
+btnCleaningGoodsFilter.addEventListener('click', cleaningGoodsFilter);
+
+const btnCleaningPeopleFilter = document.querySelector('.btnCleaningPeopleFilter');
+btnCleaningPeopleFilter.addEventListener('click', cleaningPeopleFilter);
+
+const btnCleaningBoughtCarsFilter = document.querySelector('.btnCleaningBoughtCarsFilter');
+btnCleaningBoughtCarsFilter.addEventListener('click', cleaningBoughtCarsFilter);
+
+const btnCleaningBoughtGoodsFilter = document.querySelector('.btnCleaningBoughtGoodsFilter');
+btnCleaningBoughtGoodsFilter.addEventListener('click', cleaningBoughtGoodsFilter);
+
 
 const tableHead = document.querySelector('.headrow-cars');
 const tableHeadGoods = document.querySelector('.headrow-goods');
