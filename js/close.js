@@ -25,25 +25,25 @@ function cleanOrdersHistory() {
 
 function closeTableCars() {
     document.querySelector('.details-cars').style.display = 'none';
-    cleaningCarsFilter();
+    //  cleaningCarsFilter();
 }
 
 function closeTableGoods() {
     document.querySelector('.details-goods').style.display = 'none';
-    cleaningGoodsFilter();
+    // cleaningGoodsFilter();
 }
 
 function closeTableCustomers() {
     document.querySelector('.details-clients').style.display = 'none';
-    cleaningPeopleFilter();
+    // cleaningPeopleFilter();
 }
 
 function closeTableBoughtCars() {
     document.querySelector('.details-bought-car').style.display = 'none';
-    cleaningBoughtCarsFilter();
+    // cleaningBoughtCarsFilter();
 }
 
 function closeTableBoughtGoods() {
     document.querySelector('.details-bought-goods').style.display = 'none';
-    cleaningBoughtGoodsFilter();
+    //  cleaningBoughtGoodsFilter();
 }

@@ -187,7 +187,7 @@
             {
                 "id": 7,
                 "model": "5008",
-                "body": "SUV",
+                "body": "suv",
                 "color": "dark grey",
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "8 AT",
@@ -409,7 +409,7 @@
             {
                 "id": 6,
                 "model": "3008",
-                "body": "SUV",
+                "body": "suv",
                 "color": "diamond red",
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "8 AT",
@@ -461,7 +461,7 @@
             {
                 "id": 7,
                 "model": "5008",
-                "body": "SUV",
+                "body": "suv",
                 "color": "dark grey",
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "8 AT",
@@ -601,7 +601,7 @@
             {
                 "id": 6,
                 "model": "3008",
-                "body": "SUV",
+                "body": "suv",
                 "color": "diamond red",
                 "engine": "2.0 Plug-in Hybrid 200HP",
                 "transmission": "8 AT",
