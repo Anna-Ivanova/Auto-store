@@ -18,7 +18,7 @@ function createElementFilter(removeElements, editElements, tbody, newArr, action
         createElement('td', null, null, i + 1, row);
         for (let key in newArr[i]) {
             if (withoutArr) {
-                if (key !== 'id') {
+                if (key !== 'id' && key !== 'date' && key !== 'customerid') {
                     createElement('td', null, null, newArr[i][key], row);
                 }
             }

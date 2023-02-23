@@ -3,6 +3,7 @@ function cleaningCarsFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+    showCars();
 }
 
 function cleaningGoodsFilter(){
@@ -10,6 +11,7 @@ function cleaningGoodsFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+    showGoods();
 }
 
 function cleaningPeopleFilter(){
@@ -17,6 +19,7 @@ function cleaningPeopleFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+    showPeople();
 }
 
 function cleaningBoughtCarsFilter(){
@@ -24,6 +27,7 @@ function cleaningBoughtCarsFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+    showBoughtCars();
 }
 
 function cleaningBoughtGoodsFilter(){
@@ -31,4 +35,5 @@ function cleaningBoughtGoodsFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+    showBoughtAccessories();
 }
