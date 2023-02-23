@@ -1,11 +1,14 @@
 function showOrdersHistory(id) {
     const arrow = document.querySelector('.arrow-down');
-    arrow.classList.toggle('arrow-up');
+
     let carsHistory = [];
 
     const historyInfo = document.querySelector('.order-history-info');
-    historyInfo.classList.toggle('order-history-open');
-    // historyInfo.style.display = 'block';
+    historyInfo.style.display = 'block';
+    const closeOrders = document.querySelector('.closeOrders');
+    closeOrders.addEventListener('click', function () {
+        historyInfo.style.display = 'none';
+    });
     historyInfo.innerHTML = '';
     peopleInf.forEach(element => {
         if (element.id === Number(id)) {
@@ -36,7 +39,7 @@ function showOrdersHistory(id) {
         }, {});
     }
     let groups = groupItems(carsHistory, 'date');
-    console.log(groups);
+
     for (let key in groups) {
         let group = groups[key];
 
@@ -46,9 +49,9 @@ function showOrdersHistory(id) {
         for (let i = 0; i < group.length; i++) {
             const prod = createElement('div', { className: 'order' }, null, null, orderDate);
             for (let key in group[i]) {
-                //  group[i].total = Number(group[i].price) * Number(group[i].quantity);
+
                 if (key !== 'id' && key !== 'date' && key != 'customer' && key != 'customerid') {
-                    createElement('p', { className: `${key}-history` }, null, `${key} :      ${group[i][key]}`, prod);
+                    createElement('p', { className: `${key}-history` }, null, `${key} : ${group[i][key]}`, prod);
                 }
 
             }

@@ -593,11 +593,19 @@ select {
     display: none;
 }
 
+.order-wrapper {
+    justify-content: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+}
+
 .order-history {
     justify-content: center;
     font-weight: 500;
     font-size: 18px;
     line-height: 25px;
+
 }
 
 .arrow-down::after {
@@ -631,12 +639,14 @@ select {
     display: none;
     overflow-y: auto;
     height: 250px;
+
 }
 
-.order-history-open {
-    display: block;
-    overflow-y: auto;
-    height: 250px;
+.closeOrders {
+
+
+
+    cursor: pointer;
 }
 
 .order {

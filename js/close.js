@@ -14,9 +14,12 @@ function closeForm() {
 function cleanOrdersHistory() {
     const historyInfo = document.querySelector('.order-history-info');
     historyInfo.innerHTML = '';
-    historyInfo.classList.toggle('order-history-open');
-    const arrow = document.querySelector('.arrow-down');
-    arrow.classList.toggle('arrow-up');
+    historyInfo.style.display = 'none';
+    // historyInfo.classList.toggle('order-history-open');
+    // const arrow = document.querySelector('.arrow-down');
+    //arrow.classList.toggle('arrow-up');
+
+
 
 }
 

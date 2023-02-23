@@ -1,8 +1,10 @@
 let cart = {};
 let carCart = {};
 function cleanOptions(selectorModel, clasname) {
-    if (selectorModel.contains(document.querySelector(`${clasname}`))) {
-        let modelOptions = document.querySelectorAll(`${clasname}`);
+
+    if (selectorModel.contains(document.querySelector(clasname))) {
+        console.log(document.querySelector(clasname))
+        let modelOptions = document.querySelectorAll(clasname);
         for (let i = 0; i < modelOptions.length; i++) {
             modelOptions[i].remove();
         }
@@ -15,28 +17,29 @@ function showSellForm(event) {
     form.style.display = 'block';
     const btnClose = document.querySelector('.btnCloseSell');
     btnClose.addEventListener('click', closeForm);
+
+    //----define buyer-------
     peopleInf.forEach(element => {
         if (element.id === Number(button)) {
             person = element;
         }
     });
 
-    // const person = peopleInf[button];
-    // console.log(peopleInf[button]);
     //--------------------------
     const persId = button;
-    const arrow = document.querySelector('.arrow-down');
+    //----Order History-----
+    const arrow = document.querySelector('.order-history');
     arrow.addEventListener('click', function () {
         showOrdersHistory(persId);
     });
-    console.log(persId);
-    //-----------------------
+
+    //---------Window with selectors--------------
     document.querySelector('.sell-name').innerHTML = `${person.name} ${person.surname}`;
     const selectModel = document.querySelector('.select-carModel');
     const selectBody = document.querySelector('.select-carBody');
     const selectGoodsModel = document.querySelector('.select-goodsModel');
-    //clean options
 
+    //clean options
     cleanOptions(selectModel, '.model-option');
     cleanOptions(selectBody, '.body-option');
     cleanOptions(selectGoodsModel, '.formodel-option');
@@ -49,7 +52,7 @@ function showSellForm(event) {
     let goodsCarModels = filterUniqeModel(goodsInf, 'intended_for_cars');
     sortDetails(goodsCarModels, 'intended_for_cars', false);
 
-    //---------------------------------------------------
+    //----------oprion for select----------------------------
     for (let i = 0; i < carModels.length; i++) {
         let carOptionModel = document.createElement('option');
         carOptionModel.value = carModels[i].model;
@@ -89,34 +92,43 @@ function showSellForm(event) {
                 carOptionBody.textContent = carBodyOptions[i].body;
                 selectBody.appendChild(carOptionBody);
             }
-            //-------BODY change eventlistener--------------------------------------------        
-            selectBody.addEventListener('change', function () {
-                const valBody = this.value;
+            //-------BODY change eventlistener--------------------------------------------       
+
+            selectBody.addEventListener('change', function (e) {
+                let valBody = e.target.value;
+                console.log(valBody)
                 const btnViewCarsForSell = document.querySelector('.btn-sell');
                 btnViewCarsForSell.setAttribute('data-userid', persId);
                 btnViewCarsForSell.addEventListener('click', function () {
-                    const sellCar = document.querySelector('.selectedcar');
-                    sellCar.style.display = 'block';
-                    cleanOrdersHistory();
-                    showCarsForSell(carInfChange, valBody);
-                });
 
-            })
+                    cleanOrdersHistory();
+                    if (carInfChange.length > 0) {
+                        showCarsForSell(carInfChange, valBody);
+                        carInfChange = [];
+                    }
+                    selectBody.selectedIndex = 0;
+                    selectModel.selectedIndex = 0;
+                });
+            });
         }
     });
     //-------GOODS BY MODEL change eventlistener--------------------------------------------  
     selectGoodsModel.addEventListener('change', function () {
-        const goodsBody = this.value;
+
+        let goodsBody = selectGoodsModel.value;
         const btnViewGoodsForSell = document.querySelector('.btn-sellgoods');
         btnViewGoodsForSell.setAttribute('data-userid', persId);
+        console.log(goodsBody)
         btnViewGoodsForSell.addEventListener('click', function () {
-            const sellCar = document.querySelector('.selectedcar');
             document.querySelector('.selectedcar-table').innerHTML = '';
-            sellCar.style.display = 'block';
             cleanOrdersHistory();
-            showGoodsForSell(goodsInf, goodsBody);
+            if (goodsBody) {
+                showGoodsForSell(goodsInf, goodsBody);
+            }
+            goodsBody = '';
         })
     })
+
 }
 
 //--отбор уникальных моделей
@@ -135,6 +147,8 @@ function filterUniqeModel(array, prop) {
 }
 //------Show car for sell----------------------------------------
 function showCarsForSell(array, body) {
+    const selectCar = document.querySelector('.selectedcar');
+    selectCar.style.display = 'block';
     carCart = {};
     cart = {};
     const sellCar = document.querySelector('.selectedcar-table');
@@ -176,7 +190,7 @@ function showCarsForSell(array, body) {
             createElement('td', { className: key }, null, element[key], carRow);
         }
         const cellAction = createElement('td', { className: 'actionsell d-flex', id: element.id }, null, null, carRow);
-        console.log(cellAction);
+        // console.log(cellAction);
         createElement('input', { className: 'quantity', type: 'number', min: "1" }, null, null, cellAction);
         createElement('button', { className: 'btnSellCar btnSell', id: element.id }, { click: addCars }, 'Sell', cellAction);
     });
@@ -185,7 +199,7 @@ function showCarsForSell(array, body) {
 //----Show CARS in cart-------------------------------------------------
 function addCars(event) {
 
-    console.log(event.target);
+    // console.log(event.target);
     const personId = document.querySelector('.btn-sell').getAttribute('data-userid');
     const products = document.querySelector('.products');
     const resultGoods = document.querySelector('.result-sell');
@@ -222,7 +236,7 @@ function addCars(event) {
         }
         else {
             const index = carInf.findIndex(item => item.id === +event.target.id);
-            console.log(index);
+            //  console.log(index);
             const rowProduct = createElement('div', { className: 'product-main', data_prod: carInf[index].id }, null, null, resultGoods)
             const goodName = createElement('div', { className: 'good-name' }, null, `${carInf[index].id} ${carInf[index].body} ${carInf[index].color} ${carInf[index].engine}`, rowProduct);
             const goodPrice = createElement('div', { className: 'good-price' }, null, carInf[index].price, rowProduct);
@@ -274,7 +288,7 @@ function deleteRowGoods(event) {
         sum += priceElem;
     }
     sumTotal.innerText = sum;
-    console.log(cart);
+    // console.log(cart);
 
 }
 function confirmSellCar() {
@@ -327,6 +341,8 @@ function closeCleanGoods() {
 }
 //-----show GOODS for sell-----------------------------
 function showGoodsForSell(array, value) {
+    const selectedModel = document.querySelector('.selectedcar');
+    selectedModel.style.display = 'block';
     cart = {};
     carCart = {};
     const btnCloseSell = document.querySelector('.btnCloseSellDet');
@@ -465,4 +481,3 @@ function confirmSell() {
     showPeople();
     addPurchaseGoogsInData();
 }
-
