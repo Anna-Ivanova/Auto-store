@@ -401,7 +401,7 @@ thead th {
     border-radius: 10px;
     background-color: #00a3e0;
     cursor: pointer;
-    color: rgb(44, 43, 43);
+    color: white;
     transition: 0.5s linear;
 }
 
@@ -411,7 +411,8 @@ thead th {
 .btn-sell:hover,
 .btnSell:hover,
 .btn-sellgoods:hover,
-.btnSearch:hover {
+.btnSearch:hover,
+.btnFilter:hover {
     background-color: #ccc;
 }
 
@@ -688,7 +689,7 @@ select {
     border-radius: 10px;
     background-color: #00a3e0;
     cursor: pointer;
-    color: black;
+    color: white;
     transition: 0.5s linear;
 }
 
@@ -701,4 +702,31 @@ select {
     color: rgb(92, 89, 89);
     transition: 0.5s linear;
     cursor: pointer;
+}
+
+
+.pagination-car .active,
+.goods-pagination .active,
+.pagination-clients .active,
+.pagination-car .active,
+.pagination-boughtcars .active,
+.pagination-boughtgoods .active {
+    background-color: #00a3e0;
+    color: white;
+    font-weight: 600;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px
+}
+
+.pagination button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-right: 5px;
+    background-color: white;
 }
