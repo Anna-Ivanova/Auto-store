@@ -30,19 +30,19 @@ const btnAddCar = document.querySelector('.addCar');
 btnAddCar.addEventListener('click', createNewCar);
 
 const btnCleaningCarsFilter = document.querySelector('.btnCleaningCarsFilter');
-btnCleaningCarsFilter.addEventListener('click', cleaningCarsFilter);
+btnCleaningCarsFilter.addEventListener('click', cleaningCarsFilterData);
 
 const btnCleaningGoodsFilter = document.querySelector('.btnCleaningGoodsFilter');
-btnCleaningGoodsFilter.addEventListener('click', cleaningGoodsFilter);
+btnCleaningGoodsFilter.addEventListener('click', cleaningGoodsFilterData);
 
 const btnCleaningPeopleFilter = document.querySelector('.btnCleaningPeopleFilter');
-btnCleaningPeopleFilter.addEventListener('click', cleaningPeopleFilter);
+btnCleaningPeopleFilter.addEventListener('click', cleaningPeopleFilterData);
 
 const btnCleaningBoughtCarsFilter = document.querySelector('.btnCleaningBoughtCarsFilter');
-btnCleaningBoughtCarsFilter.addEventListener('click', cleaningBoughtCarsFilter);
+btnCleaningBoughtCarsFilter.addEventListener('click', cleaningBoughtCarsFilterData);
 
 const btnCleaningBoughtGoodsFilter = document.querySelector('.btnCleaningBoughtGoodsFilter');
-btnCleaningBoughtGoodsFilter.addEventListener('click', cleaningBoughtGoodsFilter);
+btnCleaningBoughtGoodsFilter.addEventListener('click', cleaningBoughtGoodsFilterData);
 
 
 const tableHead = document.querySelector('.headrow-cars');

@@ -3,6 +3,10 @@ function cleaningCarsFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+}
+
+function cleaningCarsFilterData(){
+    cleaningCarsFilter();
     showCars();
 }
 
@@ -11,6 +15,10 @@ function cleaningGoodsFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+}
+
+function cleaningGoodsFilterData(){
+    cleaningGoodsFilter();
     showGoods();
 }
 
@@ -19,6 +27,10 @@ function cleaningPeopleFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+}
+
+function cleaningPeopleFilterData(){
+    cleaningPeopleFilter();
     showPeople();
 }
 
@@ -27,6 +39,10 @@ function cleaningBoughtCarsFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+}
+
+function cleaningBoughtCarsFilterData(){
+    cleaningBoughtCarsFilter();
     showBoughtCars();
 }
 
@@ -35,5 +51,9 @@ function cleaningBoughtGoodsFilter(){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+}
+
+function cleaningBoughtGoodsFilterData(){
+    cleaningBoughtGoodsFilter();
     showBoughtAccessories();
 }
