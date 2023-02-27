@@ -1,14 +1,16 @@
 function showOrdersHistory(id) {
-    const arrow = document.querySelector('.arrow-down');
+    document.querySelector('.arrow-down');
 
     let carsHistory = [];
 
     const historyInfo = document.querySelector('.order-history-info');
     historyInfo.style.display = 'block';
+
     const closeOrders = document.querySelector('.closeOrders');
     closeOrders.addEventListener('click', function () {
         historyInfo.style.display = 'none';
     });
+
     historyInfo.innerHTML = '';
     peopleInf.forEach(element => {
         if (element.id === Number(id)) {
@@ -26,11 +28,9 @@ function showOrdersHistory(id) {
             }
         }
     });
-
     sortDetails(carsHistory, 'date', true);
 
     function groupItems(array, property) {
-
         return array.reduce(function (groups, item) {
             let name = Intl.DateTimeFormat('ua').format(item[property]);
             let group = groups[name] || (groups[name] = []);
@@ -38,11 +38,11 @@ function showOrdersHistory(id) {
             return groups;
         }, {});
     }
-    let groups = groupItems(carsHistory, 'date');
 
+    let groups = groupItems(carsHistory, 'date');
     for (let key in groups) {
         let group = groups[key];
-
+        
         const rowProduct = createElement('div', { className: 'product-history' }, null, null, historyInfo);
         const orderDate = createElement('div', { className: 'order-date' }, null, key, rowProduct);
 

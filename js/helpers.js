@@ -1,7 +1,5 @@
 function createElement(tagName, attributes, handlers, content, parentElement) {
   const element = document.createElement(tagName);
-
-  // go over attributes
   if (attributes) {
     for (let key in attributes) {
       if (key === 'className') {
@@ -13,15 +11,12 @@ function createElement(tagName, attributes, handlers, content, parentElement) {
         element.setAttribute('data-btn', attributes[key]);
 
       }
-
-
       else {
         element.setAttribute(key, attributes[key]);
       }
     }
   }
 
-  // go over handlers
   if (handlers) {
     for (let key in handlers) {
       element.addEventListener(key, handlers[key]);
@@ -29,8 +24,11 @@ function createElement(tagName, attributes, handlers, content, parentElement) {
   }
 
   element.textContent = content;
-
   parentElement.appendChild(element);
-
   return element;
+}
+
+function clickButton(text, func){
+  const btn = document.querySelector(text);
+  btn.addEventListener('click', func);
 }

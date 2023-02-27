@@ -13,12 +13,12 @@ function createNewCar() {
 
     const btnSaveCar = document.querySelector('.btnSaveCar');
     btnSaveCar.style.display = 'block';
+
     const btnSaveEditCar = document.querySelector('.btnSaveEditCar');
     btnSaveEditCar.style.display = 'none';
-    btnSaveCar.addEventListener('click', saveNewCar);
 
-    const btnClose = document.querySelector('.btnCloseCar');
-    btnClose.addEventListener('click', closeForm);
+    clickButton('.btnSaveCar', saveNewCar);
+    clickButton('.btnCloseCar', closeForm);
 
 }
 
@@ -45,7 +45,6 @@ function saveNewCar() {
                 price: newPrice,
                 quantity: newQuantity
             }
-
             carInf.push(newCar);
             localStorage.setItem('cars', JSON.stringify(carInf));
             const form = document.querySelector('.editAddCar');
@@ -65,7 +64,6 @@ function saveNewCar() {
                 price: newPrice,
                 quantity: newQuantity
             }
-
             carInf.push(newCar);
             localStorage.setItem('cars', JSON.stringify(carInf));
             const form = document.querySelector('.editAddCar');
@@ -88,12 +86,12 @@ function createNewAccessories() {
 
     const btnSaveGoods = document.querySelector('.btnSaveGoods');
     btnSaveGoods.style.display = 'block';
+
     const btnSaveEditGoods = document.querySelector('.btnSaveEditGoods');
     btnSaveEditGoods.style.display = 'none';
-    btnSaveGoods.addEventListener('click', saveNewAccessories);
 
-    const btnClose = document.querySelector('.btnCloseGoods');
-    btnClose.addEventListener('click', closeForm);
+    clickButton('.btnSaveGoods', saveNewAccessories);
+    clickButton('.btnCloseGoods', closeForm);
 }
 
 function saveNewAccessories() {
@@ -114,7 +112,6 @@ function saveNewAccessories() {
                 price: newPriceAccessories,
                 quantity: newQuantity
             }
-
             goodsInf.push(newAccessories);
             localStorage.setItem('accessories', JSON.stringify(goodsInf));
             const form = document.querySelector('.editAddGoods');
@@ -131,7 +128,6 @@ function saveNewAccessories() {
                 price: newPriceAccessories,
                 quantity: newQuantity
             }
-
             goodsInf.push(newAccessories);
             localStorage.setItem('accessories', JSON.stringify(goodsInf));
             const form = document.querySelector('.editAddGoods');
@@ -155,12 +151,13 @@ function createNewPeople() {
 
     const btnSavePeople = document.querySelector('.btnSavePeople');
     btnSavePeople.style.display = 'block';
+
     const btnSaveEditPeople = document.querySelector('.btnSaveEditPeople');
     btnSaveEditPeople.style.display = 'none';
-    btnSavePeople.addEventListener('click', saveNewPeople);
 
-    const btnClose = document.querySelector('.btnClose');
-    btnClose.addEventListener('click', closeForm);
+    clickButton('.btnSavePeople', saveNewPeople);
+    clickButton('.btnClose', closeForm);
+    
 }
 
 function saveNewPeople() {
@@ -185,9 +182,7 @@ function saveNewPeople() {
                 auto: [],
                 accessories: []
             }
-
             peopleInf.push(newPerson);
-            console.log(peopleInf);
             localStorage.setItem('people', JSON.stringify(peopleInf));
             const form = document.querySelector('.editAddPeople');
             hideForm();
@@ -208,7 +203,6 @@ function saveNewPeople() {
             }
 
             peopleInf.push(newPerson);
-            console.log(peopleInf);
             localStorage.setItem('people', JSON.stringify(peopleInf));
             const form = document.querySelector('.editAddPeople');
             hideForm();

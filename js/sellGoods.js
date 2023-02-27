@@ -1,9 +1,7 @@
 let cart = {};
 let carCart = {};
 function cleanOptions(selectorModel, clasname) {
-
     if (selectorModel.contains(document.querySelector(clasname))) {
-        console.log(document.querySelector(clasname))
         let modelOptions = document.querySelectorAll(clasname);
         for (let i = 0; i < modelOptions.length; i++) {
             modelOptions[i].remove();
@@ -15,36 +13,28 @@ function showSellForm(event) {
     const button = event.target.getAttribute('id');
     const form = document.querySelector('.sellGoods');
     form.style.display = 'block';
-    const btnClose = document.querySelector('.btnCloseSell');
-    btnClose.addEventListener('click', closeForm);
+    clickButton('.btnCloseSell', closeForm);
 
-    //----define buyer-------
     peopleInf.forEach(element => {
         if (element.id === Number(button)) {
             person = element;
         }
     });
 
-    //--------------------------
     const persId = button;
-    //----Order History-----
     const arrow = document.querySelector('.order-history');
     arrow.addEventListener('click', function () {
         showOrdersHistory(persId);
     });
 
-    //---------Window with selectors--------------
     document.querySelector('.sell-name').innerHTML = `${person.name} ${person.surname}`;
     const selectModel = document.querySelector('.select-carModel');
     const selectBody = document.querySelector('.select-carBody');
     const selectGoodsModel = document.querySelector('.select-goodsModel');
 
-    //clean options
     cleanOptions(selectModel, '.model-option');
     cleanOptions(selectBody, '.body-option');
     cleanOptions(selectGoodsModel, '.formodel-option');
-
-    //filter and sort unique models
 
     let carModels = filterUniqeModel(carInf, 'model');
     sortDetails(carModels, 'model', false);
@@ -52,7 +42,6 @@ function showSellForm(event) {
     let goodsCarModels = filterUniqeModel(goodsInf, 'intended_for_cars');
     sortDetails(goodsCarModels, 'intended_for_cars', false);
 
-    //----------oprion for select----------------------------
     for (let i = 0; i < carModels.length; i++) {
         let carOptionModel = document.createElement('option');
         carOptionModel.value = carModels[i].model;
@@ -60,6 +49,7 @@ function showSellForm(event) {
         carOptionModel.textContent = carModels[i].model;
         selectModel.appendChild(carOptionModel);
     }
+
     for (let i = 0; i < goodsCarModels.length; i++) {
         let goodsOptionModel = document.createElement('option');
         goodsOptionModel.value = goodsCarModels[i].intended_for_cars.split(' ').slice(-1);
@@ -67,7 +57,7 @@ function showSellForm(event) {
         goodsOptionModel.textContent = goodsOptionModel.value;
         selectGoodsModel.appendChild(goodsOptionModel);
     }
-    //-----model change eventlistener--------
+
     selectModel.addEventListener('change', function (e) {
         let elem = e.target;
 
@@ -82,7 +72,6 @@ function showSellForm(event) {
             let carInfChange = carInf.filter(function (item) {
                 return item.model === valModel;
             });
-            //-------BODY options unique filter--------------------------------------------
             let carBodyOptions = filterUniqeModel(carInfChange, 'body');
             sortDetails(carBodyOptions, 'body', false);
             for (let i = 0; i < carBodyOptions.length; i++) {
@@ -92,11 +81,9 @@ function showSellForm(event) {
                 carOptionBody.textContent = carBodyOptions[i].body;
                 selectBody.appendChild(carOptionBody);
             }
-            //-------BODY change eventlistener--------------------------------------------       
 
             selectBody.addEventListener('change', function (e) {
                 let valBody = e.target.value;
-                console.log(valBody)
                 const btnViewCarsForSell = document.querySelector('.btn-sell');
                 btnViewCarsForSell.setAttribute('data-userid', persId);
                 btnViewCarsForSell.addEventListener('click', function () {
@@ -112,13 +99,11 @@ function showSellForm(event) {
             });
         }
     });
-    //-------GOODS BY MODEL change eventlistener--------------------------------------------  
-    selectGoodsModel.addEventListener('change', function () {
 
+    selectGoodsModel.addEventListener('change', function () {
         let goodsBody = selectGoodsModel.value;
         const btnViewGoodsForSell = document.querySelector('.btn-sellgoods');
         btnViewGoodsForSell.setAttribute('data-userid', persId);
-        console.log(goodsBody)
         btnViewGoodsForSell.addEventListener('click', function () {
             document.querySelector('.selectedcar-table').innerHTML = '';
             cleanOrdersHistory();
@@ -128,14 +113,11 @@ function showSellForm(event) {
             goodsBody = '';
         })
     })
-
 }
 
-//--отбор уникальных моделей
 function filterUniqeModel(array, prop) {
     let tmpArray = [];
     function itemCheck(item) {
-
         if (tmpArray.indexOf(item[prop]) === -1) {
             tmpArray.push(item[prop]);
             return true
@@ -145,7 +127,7 @@ function filterUniqeModel(array, prop) {
     let uniqueArray = array.filter((item) => itemCheck(item));
     return uniqueArray;
 }
-//------Show car for sell----------------------------------------
+
 function showCarsForSell(array, body) {
     const selectCar = document.querySelector('.selectedcar');
     selectCar.style.display = 'block';
@@ -174,8 +156,7 @@ function showCarsForSell(array, body) {
 </table>`
     const tbody = document.getElementById('tbodysell');
     tbody.innerHTML = '';
-    const btnCloseSell = document.querySelector('.btnCloseSellDet');
-    btnCloseSell.addEventListener('click', closeCleanGoods);
+    clickButton('.btnCloseSellDet', closeCleanGoods)
 
     let carSellResult = array.filter(function (item) {
         return item.body === body;
@@ -190,16 +171,13 @@ function showCarsForSell(array, body) {
             createElement('td', { className: key }, null, element[key], carRow);
         }
         const cellAction = createElement('td', { className: 'actionsell d-flex', id: element.id }, null, null, carRow);
-        // console.log(cellAction);
         createElement('input', { className: 'quantity', type: 'number', min: "1" }, null, null, cellAction);
         createElement('button', { className: 'btnSellCar btnSell', id: element.id }, { click: addCars }, 'Sell', cellAction);
     });
 
 }
-//----Show CARS in cart-------------------------------------------------
-function addCars(event) {
 
-    // console.log(event.target);
+function addCars(event) {
     const personId = document.querySelector('.btn-sell').getAttribute('data-userid');
     const products = document.querySelector('.products');
     const resultGoods = document.querySelector('.result-sell');
@@ -207,7 +185,6 @@ function addCars(event) {
     const carRow = event.target.parentNode.parentNode;
     let carId = carRow.querySelector('.id').innerText;
     let orderDate = Date.now();
-
 
     if (quantityValue) {
         products.style.display = 'flex';
@@ -236,10 +213,9 @@ function addCars(event) {
         }
         else {
             const index = carInf.findIndex(item => item.id === +event.target.id);
-            //  console.log(index);
             const rowProduct = createElement('div', { className: 'product-main', data_prod: carInf[index].id }, null, null, resultGoods)
-            const goodName = createElement('div', { className: 'good-name' }, null, `${carInf[index].id} ${carInf[index].body} ${carInf[index].color} ${carInf[index].engine}`, rowProduct);
-            const goodPrice = createElement('div', { className: 'good-price' }, null, carInf[index].price, rowProduct);
+            createElement('div', { className: 'good-name' }, null, `${carInf[index].id} ${carInf[index].body} ${carInf[index].color} ${carInf[index].engine}`, rowProduct);
+            createElement('div', { className: 'good-price' }, null, carInf[index].price, rowProduct);
             createElement('div', { className: 'good-quantity' }, null, quantityValue, rowProduct);
             let total = Number(carInf[index].price) * Number(quantityValue);
             createElement('div', { className: 'good-total' }, null, total, rowProduct);
@@ -254,10 +230,10 @@ function addCars(event) {
             sum += priceElem;
         }
         sumTotal.innerText = sum;
-        const btnSellConfirm = document.querySelector('.btnConfirm');
-        btnSellConfirm.addEventListener("click", confirmSellCar);
+        clickButton('.btnConfirm', confirmSellCar)
     }
 }
+
 function deleteCartRow(event) {
     const productMain = event.target.parentNode.parentNode;
     const indexProd = productMain.getAttribute('data_prod');
@@ -272,8 +248,8 @@ function deleteCartRow(event) {
         sum += priceElem;
     }
     sumTotal.innerText = sum;
-    console.log(carCart);
 }
+
 function deleteRowGoods(event) {
     const productMain = event.target.parentNode.parentNode;
     const indexProd = productMain.getAttribute('data_prod');
@@ -288,11 +264,9 @@ function deleteRowGoods(event) {
         sum += priceElem;
     }
     sumTotal.innerText = sum;
-    // console.log(cart);
-
 }
-function confirmSellCar() {
 
+function confirmSellCar() {
     for (let key in carCart) {
         for (let i = 0; i < carInf.length; i++) {
             if (parseInt(key) === carInf[i].id) {
@@ -339,15 +313,14 @@ function closeCleanGoods() {
     selectModel.selectedIndex = 0;
     selectGoodsModel.selectedIndex = 0;
 }
-//-----show GOODS for sell-----------------------------
+
 function showGoodsForSell(array, value) {
     const selectedModel = document.querySelector('.selectedcar');
     selectedModel.style.display = 'block';
     cart = {};
     carCart = {};
-    const btnCloseSell = document.querySelector('.btnCloseSellDet');
     const sellCar = document.querySelector('.selectedcar-table');
-    btnCloseSell.addEventListener('click', closeCleanGoods);
+    clickButton('.btnCloseSellDet', closeCleanGoods)
 
     sellCar.innerHTML = "";
     sellCar.innerHTML += `<table class="table table_goods">
@@ -385,7 +358,7 @@ function showGoodsForSell(array, value) {
         createElement('button', { className: 'btnSell', id: element.id }, { click: addGoods }, 'Add', cellAction);
     });
 }
-//-----show GOODS in Cart-----------------------------
+
 function addGoods(event) {
     const products = document.querySelector('.products');
     const personCartId = document.querySelector('.btn-sellgoods').getAttribute('data-userid');
@@ -394,7 +367,6 @@ function addGoods(event) {
     const productRow = event.target.parentNode.parentNode;
     let goodId = productRow.querySelector('.id').innerText;
     let orderDate = Date.now();
-
 
     if (quantityValue) {
         const newCartGood = {
@@ -421,20 +393,17 @@ function addGoods(event) {
         else {
             const index = goodsInf.findIndex(item => item.id === +event.target.id);
             const rowProduct = createElement('div', { className: 'product-main', data_prod: goodsInf[index].id }, null, null, resultGoods)
-            const goodName = createElement('div', { className: 'good-name' }, null, goodsInf[index].product, rowProduct);
-            const goodPrice = createElement('div', { className: 'good-price' }, null, goodsInf[index].price, rowProduct);
+            createElement('div', { className: 'good-name' }, null, goodsInf[index].product, rowProduct);
+            createElement('div', { className: 'good-price' }, null, goodsInf[index].price, rowProduct);
             createElement('div', { className: 'good-quantity' }, null, quantityValue, rowProduct);
             let total = Number(goodsInf[index].price) * Number(quantityValue);
             createElement('div', { className: 'good-total' }, null, total, rowProduct);
             const deleteBlock = createElement('div', { className: 'good-delete' }, null, null, rowProduct);
             createElement('span', { className: 'icon-delete btn-del btn-act delete' }, { click: deleteRowGoods }, null, deleteBlock);
         }
-
     }
     let priceElements = resultGoods.querySelectorAll('.good-total');
     const sumTotal = document.querySelector('.items-total');
-
-    //localStorage.setItem('cart', JSON.stringify(cart));
 
     let sum = 0;
     for (let i = 0; i < priceElements.length; i++) {
@@ -442,15 +411,11 @@ function addGoods(event) {
         sum += priceElem;
     }
     sumTotal.innerText = sum;
-    const btnSellConfirm = document.querySelector('.btnConfirm');
-    btnSellConfirm.addEventListener("click", confirmSell);
-
+    clickButton('.btnConfirm', confirmSell)
 }
-function confirmSell() {
 
-    // console.log(cart);
+function confirmSell() {
     for (let key in cart) {
-        console.log(cart[key]['quantity']);
         for (let i = 0; i < goodsInf.length; i++) {
 
             if (parseInt(key) === goodsInf[i].id) {
@@ -472,10 +437,8 @@ function confirmSell() {
             }
         }
     }
-    console.log(peopleInf);
     localStorage.setItem('accessories', JSON.stringify(goodsInf));
     localStorage.setItem('people', JSON.stringify(peopleInf));
-
 
     closeCleanGoods();
     showPeople();

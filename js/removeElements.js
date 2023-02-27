@@ -4,10 +4,9 @@ function remove(ID, deleteEl) {
 
     const buttonYes = document.querySelector('.yes');
     buttonYes.setAttribute('id', ID);
-    buttonYes.addEventListener('click', deleteEl);
 
-    const buttonNO = document.querySelector('.no');
-    buttonNO.addEventListener('click', cancelDelete);
+    clickButton('.yes', deleteEl);
+    clickButton('.no', cancelDelete);
 }
 
 function cancelDelete() {
@@ -17,7 +16,7 @@ function cancelDelete() {
 
 function removeCars(event) {
     const carId = event.target.parentNode.getAttribute('id');
-    remove(carId, deleteCar)
+    remove(carId, deleteCar);
 }
 
 function deleteCar(event){
@@ -26,12 +25,12 @@ function deleteCar(event){
     const id = event.target.getAttribute('id');
     carInf = carInf.filter(item => item.id != id);
     localStorage.setItem('cars', JSON.stringify(carInf));
-    showCars()
+    showCars();
 }
 
 function removeGoods(event) {
     const goodId = event.target.parentNode.getAttribute('id');
-    remove(goodId, deleteGoods)
+    remove(goodId, deleteGoods);
 }
 
 function deleteGoods(event){
@@ -40,12 +39,12 @@ function deleteGoods(event){
     const id = event.target.getAttribute('id');
     goodsInf = goodsInf.filter(item => item.id != id);
     localStorage.setItem('accessories', JSON.stringify(goodsInf));
-    showGoods()
+    showGoods();
 }
 
 function removePeople(event) {
     const peopleId = event.target.parentNode.getAttribute('id');
-    remove(peopleId, deletePeople)
+    remove(peopleId, deletePeople);
 }
 
 function deletePeople(event){

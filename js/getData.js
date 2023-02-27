@@ -1,25 +1,22 @@
 async function getCarstoLocalStor() {
-
     const response = await fetch(`static/cars.json`);
     let data = await response.json();
     if (localStorage.getItem('cars') === null) {
         localStorage.setItem('cars', JSON.stringify(data));
         carInf = JSON.parse(localStorage.getItem('cars'));
     }
-
 }
-async function getGoodstoLocalStor() {
 
+async function getGoodstoLocalStor() {
     const response = await fetch(`static/accessories.json`);
     let data = await response.json();
     if (localStorage.getItem('accessories') === null) {
         localStorage.setItem('accessories', JSON.stringify(data));
         goodsInf = JSON.parse(localStorage.getItem('accessories'));
     }
-
 }
-async function getPeopletoLocalStor() {
 
+async function getPeopletoLocalStor() {
     const response = await fetch(`static/people.json`);
     let data = await response.json();
     if (localStorage.getItem('people') === null) {

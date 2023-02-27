@@ -4,12 +4,9 @@ const detailsClients = document.querySelector('.details-clients');
 const detailsBoughtCars = document.querySelector('.details-bought-car');
 const detailsBoughtGoods = document.querySelector('.details-bought-goods');
 
-
 function displayTable(data, tbody, start, removeHandler, editHandler, showSellForm) {
     tbody.innerHTML = '';
-
     if (removeHandler !== undefined && editHandler !== undefined && showSellForm !== undefined) {
-        console.log(data);
         for (let i = 0; i < data.length; i++) {
             const clientsRow = document.createElement('tr');
             clientsRow.setAttribute('data-user', data[i].id);
@@ -31,16 +28,12 @@ function displayTable(data, tbody, start, removeHandler, editHandler, showSellFo
                             createElement('p', null, null, element.product + ", ", tdAuto);
                         }
                     });
-
                 }
             }
             const cellAction = createElement('td', { className: 'action d-flex', id: data[i].id }, null, null, clientsRow);
             createElement('span', { className: 'icon-delete btn-del btn-act' }, { click: removeHandler }, null, cellAction);
-
             createElement('span', { className: 'icon-edit btn-edit btn-act', id: data[i].id }, { click: editHandler }, null, cellAction);
-
             createElement('span', { className: 'icon-euro btn-buy btn-act', id: data[i].id }, { click: showSellForm }, null, cellAction);
-
         }
     }
     else {
@@ -62,8 +55,8 @@ function displayTable(data, tbody, start, removeHandler, editHandler, showSellFo
         }
     }
 }
-function pagination(element, data, tbody, selectorbtn, removeHandler, editHandler, showSellForm) {
 
+function pagination(element, data, tbody, selectorbtn, removeHandler, editHandler, showSellForm) {
     element.innerHTML = '';
     const rowsPerPage = 5;
     let currentPage = 1;
@@ -90,6 +83,7 @@ function pagination(element, data, tbody, selectorbtn, removeHandler, editHandle
         element.appendChild(btnPage)
     }
 }
+
 function showCars() {
     const tbody = document.getElementById('tbody');
     const btnCloseTableCars = document.querySelector('.closeTableCar');
@@ -100,10 +94,8 @@ function showCars() {
     const tbodyCars = document.getElementById('tbody-filter-cars');
     tbodyCars.classList.add('filterNone');
     const carPagination = document.querySelector('.pagination-car')
-    //------------------------------------------
     pagination(carPagination, carInf, tbody, '.pagination-car', removeCars, editCars);
 
-    // Отображаем первую страницу таблицы
     let start = 0;
     const rowsPerPage = 5;
     let end = start + rowsPerPage;
@@ -127,7 +119,6 @@ function showGoods() {
     detailsBoughtGoods.style.display = 'none';
     const btnCloseTableGoods = document.querySelector('.closeTableGoods');
     btnCloseTableGoods.addEventListener('click', closeTableGoods);
-
 
     const tbody = document.getElementById('tbody-goods');
     tbody.classList.remove("filterNone");
@@ -156,8 +147,7 @@ function showBoughtCars() {
     const tbodyPurchasesCars = document.getElementById('tbody-filter-bought-cars');
     tbodyPurchasesCars.classList.add('filterNone');
 
-    const btnCloseTableBoughtCars = document.querySelector('.closeTableBoughtCars');
-    btnCloseTableBoughtCars.addEventListener('click', closeTableBoughtCars);
+    clickButton('.closeTableBoughtCars', closeTableBoughtCars)
 
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
@@ -182,8 +172,7 @@ function showBoughtAccessories() {
     const tbodyPurchasesGoods = document.getElementById('tbody-filter-bought-goods');
     tbodyPurchasesGoods.classList.add('filterNone');
 
-    const btnCloseTableBoughtGoods = document.querySelector('.closeTableBoughtGoods');
-    btnCloseTableBoughtGoods.addEventListener('click', closeTableBoughtGoods);
+    clickButton('.closeTableBoughtGoods', closeTableBoughtGoods)
 
     detailsCars.style.display = 'none';
     detailsGoods.style.display = 'none';
@@ -214,8 +203,7 @@ function showPeople() {
     const tbodyClients = document.getElementById('tbody-filter-people');
     tbodyClients.classList.add('filterNone');
 
-    const btnCloseTableCustomers = document.querySelector('.closeTableCustoners');
-    btnCloseTableCustomers.addEventListener('click', closeTableCustomers);
+    clickButton('.closeTableCustoners', closeTableCustomers)
     const clientsPagination = document.querySelector('.pagination-clients');
     pagination(clientsPagination, peopleInf, tbody, '.pagination-clients', removePeople, editPerson, showSellForm);
 
@@ -226,5 +214,4 @@ function showPeople() {
     displayTable(peopleInfPage, tbody, start, removePeople, editPerson, showSellForm);
 
     emptyListPeople();
-
 }

@@ -6,7 +6,6 @@ function filter(arr, prop, value) {
             newElements.push(elem);
         }
     }
-
     return newElements;
 }
 
@@ -68,7 +67,9 @@ function showFilterCars(arr) {
     const filterEngine = document.querySelector('.filterEngine').value;
     const filterPriceCars = document.querySelector('.filterPriceCars').value;
     const filterQuantityCars = document.querySelector('.filterQuantityCars').value;
+
     let newArr = [...arr];
+
     if (filterFuel !== '') {
         newArr = filter(newArr, 'fuel', filterFuel);
     }
@@ -111,7 +112,9 @@ function showFilterPeople(arr) {
     const filterAddress = document.querySelector('.filterAddress').value;
     const filterEmail = document.querySelector('.filterEmail').value;
     const filterPhoneNumber = document.querySelector('.filterPhoneNumber').value;
+
     let newArr = [...arr];
+
     if (filterName !== '') {
         newArr = filter(newArr, 'name', filterName);
     }
@@ -147,7 +150,9 @@ function showFilterGoods(arr) {
     const filterIntendedForModel = document.querySelector('.filterIntendedForModel').value;
     const filterPriceGoods = document.querySelector('.filterPriceGoods').value;
     const filterQuantityGoods = document.querySelector('.filterQuantityGoods').value;
+
     let newArr = [...arr];
+
     if (filterProduct !== '') {
         newArr = filter(newArr, 'product', filterProduct);
     }
@@ -183,7 +188,9 @@ function showFilterPurchasesCars(arr) {
     const filterEnginePurchases = document.querySelector('.filterEnginePurchases').value;
     const filterPriceCarsPurchases = document.querySelector('.filterPriceCarsPurchases').value;
     const filterCustomerPurchasesCars = document.querySelector('.filterCustomerPurchasesCars').value;
+
     let newArr = [...arr];
+
     if (filterFuelPurchases !== '') {
         newArr = filter(newArr, 'fuel', filterFuelPurchases);
     }
@@ -225,7 +232,9 @@ function showFilterPurchasesGoods(arr) {
     const filterIntendedForModelPurchases = document.querySelector('.filterIntendedForModelPurchases').value;
     const filterPriceGoodsPurchases = document.querySelector('.filterPriceGoodsPurchases').value;
     const filterCustomerPurchasesGoods = document.querySelector('.filterCustomerPurchasesGoods').value;
+
     let newArr = [...arr];
+    
     if (filterProductPurchases !== '') {
         newArr = filter(newArr, 'product', filterProductPurchases);
     }
@@ -240,7 +249,6 @@ function showFilterPurchasesGoods(arr) {
     }
     if (filterCustomerPurchasesGoods !== '') {
         newArr = filter(newArr, 'customer', filterCustomerPurchasesGoods);
-        console.log(3);
     }
 
     createElementFilter(null, null, tbodyGoods, newArr, 0, 1)
