@@ -3,24 +3,24 @@ const width = 100;
 const images = document.querySelectorAll('.img');
 const slider = document.querySelector('.slide');
 
-showSlides();
-function showSlides() {
+function slidesNext(){
     imgIndex++;
     if (imgIndex >= images.length) {
         imgIndex = 0;
     }
     moveSlide();
+}
+
+showSlides();
+function showSlides() {
+    slidesNext();
     timer = setTimeout(showSlideNext, 3000);
 
 }
 
 function showSlideNext() {
     clearTimeout(timer);
-    imgIndex++;
-    if (imgIndex >= images.length) {
-        imgIndex = 0;
-    }
-    moveSlide();
+    slidesNext();
     timer = setTimeout(showSlides, 3000);
 }
 

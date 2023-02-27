@@ -73,7 +73,6 @@ main {
 }
 
 .slider_container {
-
     position: relative;
     margin: 0 auto;
     max-width: 900px;
@@ -107,7 +106,6 @@ main {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-
 }
 
 .next {
@@ -124,7 +122,6 @@ main {
 .categories {
     background-color: rgb(228, 228, 228);
     padding: 30px 0 30px 0;
-
 }
 
 .category_menu {
@@ -146,7 +143,6 @@ main {
 
 .category_menu>div:hover {
     color: #00a3e0;
-
 }
 
 .table {
@@ -355,7 +351,6 @@ thead th {
     justify-content: space-between;
 }
 
-
 .error-message {
     position: relative;
     color: #ff3860;
@@ -529,7 +524,6 @@ select {
 }
 
 .products {
-
     display: flex;
     border-bottom: 1px solid rgb(237, 237, 237);
     line-height: 48px;
@@ -542,13 +536,11 @@ select {
     border-bottom: 1px solid rgb(237, 237, 237);
     line-height: 48px;
     font-size: 14px;
-
 }
 
 .products {
     display: none;
 }
-
 
 .item-product,
 .good-name {
@@ -645,9 +637,6 @@ select {
 }
 
 .closeOrders {
-
-
-
     cursor: pointer;
 }
 
@@ -657,7 +646,6 @@ select {
 }
 
 .product-history {
-
     line-height: 20px;
     font-size: 14px;
 }
@@ -704,7 +692,6 @@ select {
     transition: 0.5s linear;
     cursor: pointer;
 }
-
 
 .pagination-car .active,
 .goods-pagination .active,

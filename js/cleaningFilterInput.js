@@ -1,8 +1,12 @@
-function cleaningCarsFilter(){
-    const list = document.querySelectorAll('.formFilterCars .inputFilter');
+function cleaning(list){
     for(let i = 0; i < list.length; i++){
         list[i].value = '';
     }
+}
+
+function cleaningCarsFilter(){
+    const list = document.querySelectorAll('.formFilterCars .inputFilter');
+    cleaning(list);
 }
 
 function cleaningCarsFilterData(){
@@ -12,9 +16,7 @@ function cleaningCarsFilterData(){
 
 function cleaningGoodsFilter(){
     const list = document.querySelectorAll('.formFilterGoods .inputFilter');
-    for(let i = 0; i < list.length; i++){
-        list[i].value = '';
-    }
+    cleaning(list);
 }
 
 function cleaningGoodsFilterData(){
@@ -24,9 +26,7 @@ function cleaningGoodsFilterData(){
 
 function cleaningPeopleFilter(){
     const list = document.querySelectorAll('.formFilterPeople .inputFilter');
-    for(let i = 0; i < list.length; i++){
-        list[i].value = '';
-    }
+    cleaning(list);
 }
 
 function cleaningPeopleFilterData(){
@@ -36,9 +36,7 @@ function cleaningPeopleFilterData(){
 
 function cleaningBoughtCarsFilter(){
     const list = document.querySelectorAll('.formFilterBoughtCars .inputFilter');
-    for(let i = 0; i < list.length; i++){
-        list[i].value = '';
-    }
+    cleaning(list);
 }
 
 function cleaningBoughtCarsFilterData(){
@@ -48,9 +46,7 @@ function cleaningBoughtCarsFilterData(){
 
 function cleaningBoughtGoodsFilter(){
     const list = document.querySelectorAll('.formFilterBoughtGoods .inputFilter');
-    for(let i = 0; i < list.length; i++){
-        list[i].value = '';
-    }
+    cleaning(list);
 }
 
 function cleaningBoughtGoodsFilterData(){

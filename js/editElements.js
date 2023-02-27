@@ -4,8 +4,7 @@ function editCars(event) {
     const form = document.querySelector('.editAddCar');
     form.style.display = 'block';
 
-
-     const cars = carInf.find(x => x.id === button);
+    const cars = carInf.find(x => x.id === button);
 
     document.querySelector('.textModel').value = carInf.model || cars.model;
     document.querySelector('.textBody').value = carInf.body || cars.body;
@@ -18,14 +17,13 @@ function editCars(event) {
 
     const btnSaveCar = document.querySelector('.btnSaveCar');
     btnSaveCar.style.display = 'none';
+
     const btnSaveEditCar = document.querySelector('.btnSaveEditCar');
     btnSaveEditCar.style.display = 'block';
     btnSaveEditCar.setAttribute('id', button);
 
-    btnSaveEditCar.addEventListener('click', saveNewEditCar);
-
-    const btnClose = document.querySelector('.btnCloseCar');
-    btnClose.addEventListener('click', closeForm);
+    clickButton('.btnSaveEditCar', saveNewEditCar);
+    clickButton('.btnCloseCar', closeForm);
 }
 
 function saveNewEditCar(event) {
@@ -77,14 +75,13 @@ function editGoods(event) {
 
     const btnSaveGoods = document.querySelector('.btnSaveGoods');
     btnSaveGoods.style.display = 'none';
+
     const btnSaveEditGoods = document.querySelector('.btnSaveEditGoods');
     btnSaveEditGoods.style.display = 'block';
     btnSaveEditGoods.setAttribute('id', button);
 
-    btnSaveEditGoods.addEventListener('click', saveNewEditGoods);
-
-    const btnClose = document.querySelector('.btnCloseGoods');
-    btnClose.addEventListener('click', closeForm);
+    clickButton('.btnSaveEditGoods', saveNewEditGoods);
+    clickButton('.btnCloseGoods', closeForm);
 }
 
 function saveNewEditGoods(event) {
@@ -131,14 +128,13 @@ function editPerson(event) {
 
     const btnSavePeople = document.querySelector('.btnSavePeople');
     btnSavePeople.style.display = 'none';
+
     const btnSaveEditPeople = document.querySelector('.btnSaveEditPeople');
     btnSaveEditPeople.style.display = 'block';
     btnSaveEditPeople.setAttribute('id', button);
 
-    btnSaveEditPeople.addEventListener('click', saveNewEditPerson);
-
-    const btnClose = document.querySelector('.btnClose');
-    btnClose.addEventListener('click', closeForm);
+    clickButton('.btnSaveEditPeople', saveNewEditPerson);
+    clickButton('.btnClose', closeForm);
 }
 
 function saveNewEditPerson(event) {

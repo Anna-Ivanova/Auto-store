@@ -14,7 +14,7 @@ const setSuccess = element => {
     inputControl.classList.add('success');
     inputControl.classList.remove('error');
 };
-/*---------------------------------*/
+
 const isValidName = uname => {
     const re = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u;
     return re.test(String(uname).toLowerCase());
@@ -110,7 +110,6 @@ const isValidQuantityCar = quantityCar => {
     return re.test(String(quantityCar).toLowerCase());
 }
 
-/*---------------------------------*/
 function validateName(uname) {
     if (uname.value === '') {
         setError(uname, 'User name cannot be blank');
@@ -123,7 +122,6 @@ function validateName(uname) {
         result = true;
     }
     return result;
-    console.log(result);
 }
 
 function validateSurname(surname) {
