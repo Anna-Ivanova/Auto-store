@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="wrapper">
         <header class="header">
@@ -64,8 +66,8 @@
                         <div class="dropdown">
                             <div><span class="icon-euro icon-menu rotate-hor-center"></span>Purchases</div>
                             <div class="dropdown-content">
-                                <li class="viewBoughtCars" value="people">View bought cars</li>
-                                <li class="viewBoughtAccessories">View bought accessories</li>
+                                <li class="viewBoughtCars" value="people">View Sold Cars</li>
+                                <li class="viewBoughtAccessories">View Sold Goods</li>
                             </div>
                         </div>
                     </div>
@@ -88,7 +90,7 @@
                             <input type="text" name="name" class="filterQuantityCars inputFilter"
                                 placeholder="Quantity">
                             <button class="searchfilterCars btnFilter">Search</button>
-                            <input type="button" value="Cleaning Filter" class="btnCleaningCarsFilter btnFilter">
+                            <input type="button" value="Clear" class="btnCleaningCarsFilter btnFilter">
                         </form>
                         <div class="messageEmptyCar">The machine list is empty!</div>
                     </div>
@@ -130,7 +132,7 @@
                             <input type="text" name="name" class="filterQuantityGoods inputFilter"
                                 placeholder="Quantity">
                             <button class="searchFilterGoods btnFilter">Search</button>
-                            <input type="button" value="Cleaning Filter" class="btnCleaningGoodsFilter btnFilter">
+                            <input type="button" value="Clear" class="btnCleaningGoodsFilter btnFilter">
                         </form>
                         <div class="messageEmptyGoods">The accessories list is empty!</div>
                     </div>
@@ -168,7 +170,7 @@
                             <input type="text" name="name" class="filterPhoneNumber inputFilter"
                                 placeholder="Phone number">
                             <button class="searchFilterPeople btnFilter">Search</button>
-                            <input type="button" value="Cleaning Filter" class="btnCleaningPeopleFilter btnFilter">
+                            <input type="button" value="Clear" class="btnCleaningPeopleFilter btnFilter">
                         </form>
                         <div class="messageEmptyPeople">The people list is empty!</div>
                     </div>
@@ -214,7 +216,7 @@
                             <input type="text" name="name" class="filterCustomerPurchasesCars inputFilter"
                                 placeholder="Customer">
                             <button class="searchfilterBoughtCars btnFilter">Search</button>
-                            <input type="button" value="Cleaning Filter" class="btnCleaningBoughtCarsFilter btnFilter">
+                            <input type="button" value="Clear" class="btnCleaningBoughtCarsFilter btnFilter">
                         </form>
                         <div class="messageEmptyBoughtCar">The purchases list is empty!</div>
                     </div>
@@ -223,15 +225,16 @@
                             <thead class="th_bought_car">
                                 <tr class="headrow_bought_car">
                                     <th>№</th>
-                                    <th data-col="model">Model</th>
-                                    <th data-col="body">Body</th>
-                                    <th data-col="color">Color</th>
+                                    <th class="arr-sort" data-col="model">Model</th>
+                                    <th class="arr-sort" data-col="body">Body</th>
+                                    <th class="arr-sort" data-col="color">Color</th>
                                     <th data-col="engine">Engine</th>
                                     <th>Trans-<br>mission</th>
                                     <th data-col="fuel">Fuel type</th>
-                                    <th data-col="price">Price in <br> Euro</th>
-                                    <th data-col="quantity">Quantity</th>
-                                    <th data-col="customer">Customer</th>
+                                    <th class="arr-sort" data-col="price">Price in <br> Euro</th>
+                                    <th class="arr-sort" data-col="quantity">Quantity</th>
+                                    <th class="arr-sort" data-col="date">Purchase Date</th>
+                                    <th class="arr-sort" data-col="customer">Customer</th>
                                 </tr>
                             </thead>
                             <tbody id="tbody-bought-cars">
@@ -258,7 +261,7 @@
                             <input type="text" name="name" class="filterCustomerPurchasesGoods inputFilter"
                                 placeholder="Customer">
                             <button class="searchFilterPurchasesGoods btnFilter">Search</button>
-                            <input type="button" value="Cleaning Filter" class="btnCleaningBoughtGoodsFilter btnFilter">
+                            <input type="button" value="Clear" class="btnCleaningBoughtGoodsFilter btnFilter">
                         </form>
                         <div class="messageEmptyBoughtGoods">The purchases list is empty!</div>
                     </div>
@@ -272,6 +275,7 @@
                                     <th>Intended<br>for model</th>
                                     <th data-col="price">Price in <br> Euro</th>
                                     <th data-col="quantity">Quantity</th>
+                                    <th data-col="date">Purchase Date</th>
                                     <th data-col="customer">Customer</th>
                                 </tr>
                             </thead>
@@ -445,7 +449,7 @@
                             <div class="order-history arrow-down">Orders History </div>
                             <span class="closeOrders">❎</span>
                         </div>
-                        <div class="order-history-info"></div>
+                        <div class="order-history-info faded"></div>
                     </form>
                 </div>
                 <div class="selectedcar">
@@ -504,4 +508,5 @@
     <script src="./js/app.js"></script>
     <script src="./js/validate.js"></script>
 </body>
+
 </html>

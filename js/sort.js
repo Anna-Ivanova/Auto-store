@@ -19,7 +19,7 @@ function moveArrows(event) {
     })
 }
 
-function sortCars(event){
+function sortCars(event) {
     let prop = event.target.getAttribute('data-col');
     moveArrows(event);
     columnDir = !columnDir;
@@ -29,7 +29,7 @@ function sortCars(event){
     }
 }
 
-function sortGoods(event){
+function sortGoods(event) {
     let prop = event.target.getAttribute('data-col');
     moveArrows(event);
     columnDir = !columnDir;
@@ -39,13 +39,23 @@ function sortGoods(event){
     }
 }
 
-function sortPeople(event){
+function sortPeople(event) {
     let prop = event.target.getAttribute('data-col');
     moveArrows(event);
     columnDir = !columnDir;
     if (prop !== null) {
         sortDetails(peopleInf, prop, columnDir);
         showPeople();
+    }
+}
+function sortBoughtCar(event) {
+    let prop = event.target.getAttribute('data-col');
+    moveArrows(event);
+    columnDir = !columnDir;
+    if (prop !== null) {
+        sortDetails(purchaseCarsInf, prop, columnDir);
+        showBoughtCars();
+
     }
 }
 

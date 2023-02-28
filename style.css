@@ -20,7 +20,7 @@ li {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 
 }
@@ -52,7 +52,7 @@ li {
 }
 
 .footer {
-    height: 100px;
+    height: 80px;
     background-color: rgb(228, 228, 228);
     justify-content: center;
     align-items: center;
@@ -135,6 +135,7 @@ main {
     color: black;
     display: block;
     text-align: center;
+    margin-bottom: 7px;
 }
 
 .icon-car-1:hover {
@@ -251,6 +252,11 @@ thead th {
 .dropdown {
     position: relative;
     display: inline-block;
+    min-width: 130px;
+}
+
+.dropdown div {
+    text-align: center;
 }
 
 .dropdown-content {
@@ -260,8 +266,7 @@ thead th {
     min-width: 130px;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
     z-index: 1;
-    left: -25px;
-    top: 70px;
+    /*left: -25px;*/
     animation: rotateMenu 700ms ease-in-out forwards;
     transform-origin: top center;
     border-radius: 8px;
@@ -285,6 +290,7 @@ thead th {
     color: black;
     padding: 12px 16px;
     display: block;
+    text-align: center;
 }
 
 .dropdown:hover .dropdown-content {
@@ -311,6 +317,7 @@ thead th {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.755);
     z-index: 2000;
+
 }
 
 .selectedcar-det {
@@ -325,6 +332,8 @@ thead th {
     flex-direction: column;
     gap: 10px;
     border-radius: 10px;
+    overflow-y: auto;
+    max-height: 80vh;
 
 }
 
@@ -704,7 +713,7 @@ select {
 .inputFilter {
     border: 1px solid black;
     border-radius: 5px;
-    width: 15%;
+    width: 12%;
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -716,7 +725,7 @@ select {
 .btnFilter {
     font-size: 16px;
     height: 30px;
-    width: 150px;
+    width: 100px;
     border: none;
     border-radius: 10px;
     background-color: #00a3e0;
@@ -809,10 +818,9 @@ select {
 .pulse:hover {
     -webkit-animation-name: pulse;
     animation-name: pulse;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
+    animation-duration: 0.5s;
     animation-fill-mode: both;
+    animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes pulse {
@@ -846,5 +854,34 @@ select {
     100% {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
+    }
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }

@@ -326,7 +326,8 @@ function showGoodsForSell(array, value) {
     sellCar.innerHTML += `<table class="table table_goods">
     <thead>
         <tr class="headrow-goods">
-            <th data-col="id">Num</th>
+        <th>Num</th>
+            <th data-col="id">ID</th>
             <th data-col="product">Product</th>
             <th data-col="part_number">Part Number</th>
             <th>Intended<br>for model</th>
@@ -344,11 +345,11 @@ function showGoodsForSell(array, value) {
 
     const tbodyGoods = document.getElementById('tbodyGoods');
 
-    carGoodsResult.forEach((element) => {
+    carGoodsResult.forEach((element, index) => {
         const goodsRow = document.createElement('tr');
         goodsRow.setAttribute('id', element.id);
         tbodyGoods.appendChild(goodsRow);
-
+        createElement('td', null, null, index + 1, goodsRow);
         for (let key in element) {
             createElement('td', { className: key }, null, element[key], goodsRow);
 

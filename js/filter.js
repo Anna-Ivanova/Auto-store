@@ -17,8 +17,12 @@ function createElementFilter(removeElements, editElements, tbody, newArr, action
         createElement('td', null, null, i + 1, row);
         for (let key in newArr[i]) {
             if (withoutArr) {
-                if (key !== 'id' && key !== 'date' && key !== 'customerid') {
-                    createElement('td', null, null, newArr[i][key], row);
+                if (key !== 'id' && key !== 'customerid') {
+                    if (key === 'date') {
+                        createElement('td', null, null, Intl.DateTimeFormat('ua').format(newArr[i][key]), row);
+                    } else {
+                        createElement('td', null, null, newArr[i][key], row);
+                    }
                 }
             }
             if (withArr) {
@@ -48,6 +52,10 @@ function createElementFilter(removeElements, editElements, tbody, newArr, action
             const cellAction = createElement('td', { className: 'action d-flex', id: newArr[i].id }, null, null, row);
             createElement('span', { className: 'icon-euro btn-buy btn-act', id: newArr[i].id }, { click: showSellForm }, null, cellAction);
         }
+    }
+    const paginations = document.querySelectorAll('.pagination');
+    for (let i = 0; i < paginations.length; i++) {
+        paginations[i].innerHTML = '';
     }
 }
 
@@ -180,14 +188,14 @@ function showFilterPurchasesCars(arr) {
     tbodyCars.classList.remove('filterNone');
     tbodyCars.innerHTML = '';
 
-    const filterFuelPurchases = document.querySelector('.filterFuelPurchases').value;
-    const filterTransmissionPurchases = document.querySelector('.filterTransmissionPurchases').value;
-    const filterNumPurchases = document.querySelector('.filterNumPurchases').value;
-    const filterBodyPurchases = document.querySelector('.filterBodyPurchases').value;
-    const filterColorPurchases = document.querySelector('.filterColorPurchases').value;
-    const filterEnginePurchases = document.querySelector('.filterEnginePurchases').value;
-    const filterPriceCarsPurchases = document.querySelector('.filterPriceCarsPurchases').value;
-    const filterCustomerPurchasesCars = document.querySelector('.filterCustomerPurchasesCars').value;
+    const filterFuelPurchases = document.querySelector('.filterFuelPurchases').value.trim();
+    const filterTransmissionPurchases = document.querySelector('.filterTransmissionPurchases').value.trim();
+    const filterNumPurchases = document.querySelector('.filterNumPurchases').value.trim();
+    const filterBodyPurchases = document.querySelector('.filterBodyPurchases').value.trim();
+    const filterColorPurchases = document.querySelector('.filterColorPurchases').value.trim();
+    const filterEnginePurchases = document.querySelector('.filterEnginePurchases').value.trim();
+    const filterPriceCarsPurchases = document.querySelector('.filterPriceCarsPurchases').value.trim();
+    const filterCustomerPurchasesCars = document.querySelector('.filterCustomerPurchasesCars').value.trim();
 
     let newArr = [...arr];
 
@@ -234,7 +242,7 @@ function showFilterPurchasesGoods(arr) {
     const filterCustomerPurchasesGoods = document.querySelector('.filterCustomerPurchasesGoods').value;
 
     let newArr = [...arr];
-    
+
     if (filterProductPurchases !== '') {
         newArr = filter(newArr, 'product', filterProductPurchases);
     }

@@ -1,5 +1,4 @@
 function showOrdersHistory(id) {
-    document.querySelector('.arrow-down');
 
     let carsHistory = [];
 
@@ -8,6 +7,7 @@ function showOrdersHistory(id) {
 
     const closeOrders = document.querySelector('.closeOrders');
     closeOrders.addEventListener('click', function () {
+
         historyInfo.style.display = 'none';
     });
 
@@ -42,7 +42,7 @@ function showOrdersHistory(id) {
     let groups = groupItems(carsHistory, 'date');
     for (let key in groups) {
         let group = groups[key];
-        
+
         const rowProduct = createElement('div', { className: 'product-history' }, null, null, historyInfo);
         const orderDate = createElement('div', { className: 'order-date' }, null, key, rowProduct);
 
