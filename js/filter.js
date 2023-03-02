@@ -69,14 +69,14 @@ function showFilterCars(arr) {
     tbodyCars.classList.remove('filterNone');
     tbodyCars.innerHTML = '';
 
-    const filterFuel = document.querySelector('.filterFuel').value;
-    const filterTransmission = document.querySelector('.filterTransmission').value;
-    const filterNum = document.querySelector('.filterNum').value;
-    const filterBody = document.querySelector('.filterBody').value;
-    const filterColor = document.querySelector('.filterColor').value;
-    const filterEngine = document.querySelector('.filterEngine').value;
-    const filterPriceCars = document.querySelector('.filterPriceCars').value;
-    const filterQuantityCars = document.querySelector('.filterQuantityCars').value;
+    const filterFuel = document.querySelector('.filterFuel').value.trim();
+    const filterTransmission = document.querySelector('.filterTransmission').value.trim();
+    const filterNum = document.querySelector('.filterNum').value.trim();
+    const filterBody = document.querySelector('.filterBody').value.trim();
+    const filterColor = document.querySelector('.filterColor').value.trim();
+    const filterEngine = document.querySelector('.filterEngine').value.trim();
+    const filterPriceCars = document.querySelector('.filterPriceCars').value.trim();
+    const filterQuantityCars = document.querySelector('.filterQuantityCars').value.trim();
 
     let newArr = [...arr];
 
@@ -116,12 +116,12 @@ function showFilterPeople(arr) {
     tbodyPeople.classList.remove('filterNone');
     tbodyPeople.innerHTML = '';
 
-    const filterName = document.querySelector('.filterName').value;
-    const filterSurname = document.querySelector('.filterSurname').value;
-    const filterAge = document.querySelector('.filterAge').value;
-    const filterAddress = document.querySelector('.filterAddress').value;
-    const filterEmail = document.querySelector('.filterEmail').value;
-    const filterPhoneNumber = document.querySelector('.filterPhoneNumber').value;
+    const filterName = document.querySelector('.filterName').value.trim();
+    const filterSurname = document.querySelector('.filterSurname').value.trim();
+    const filterAge = document.querySelector('.filterAge').value.trim();
+    const filterAddress = document.querySelector('.filterAddress').value.trim();
+    const filterEmail = document.querySelector('.filterEmail').value.trim();
+    const filterPhoneNumber = document.querySelector('.filterPhoneNumber').value.trim();
 
     let newArr = [...arr];
 
@@ -155,11 +155,11 @@ function showFilterGoods(arr) {
     tbodyGoods.classList.remove('filterNone');
     tbodyGoods.innerHTML = '';
 
-    const filterProduct = document.querySelector('.filterProduct').value;
-    const filterPartNumber = document.querySelector('.filterPartNumber').value;
-    const filterIntendedForModel = document.querySelector('.filterIntendedForModel').value;
-    const filterPriceGoods = document.querySelector('.filterPriceGoods').value;
-    const filterQuantityGoods = document.querySelector('.filterQuantityGoods').value;
+    const filterProduct = document.querySelector('.filterProduct').value.trim();
+    const filterPartNumber = document.querySelector('.filterPartNumber').value.trim();
+    const filterIntendedForModel = document.querySelector('.filterIntendedForModel').value.trim();
+    const filterPriceGoods = document.querySelector('.filterPriceGoods').value.trim();
+    const filterQuantityGoods = document.querySelector('.filterQuantityGoods').value.trim();
 
     let newArr = [...arr];
 
@@ -237,11 +237,11 @@ function showFilterPurchasesGoods(arr) {
     tbodyGoods.classList.remove('filterNone');
     tbodyGoods.innerHTML = '';
 
-    const filterProductPurchases = document.querySelector('.filterProductPurchases').value;
-    const filterPartNumberPurchases = document.querySelector('.filterPartNumberPurchases').value;
-    const filterIntendedForModelPurchases = document.querySelector('.filterIntendedForModelPurchases').value;
-    const filterPriceGoodsPurchases = document.querySelector('.filterPriceGoodsPurchases').value;
-    const filterCustomerPurchasesGoods = document.querySelector('.filterCustomerPurchasesGoods').value;
+    const filterProductPurchases = document.querySelector('.filterProductPurchases').value.trim();
+    const filterPartNumberPurchases = document.querySelector('.filterPartNumberPurchases').value.trim();
+    const filterIntendedForModelPurchases = document.querySelector('.filterIntendedForModelPurchases').value.trim();
+    const filterPriceGoodsPurchases = document.querySelector('.filterPriceGoodsPurchases').value.trim();
+    const filterCustomerPurchasesGoods = document.querySelector('.filterCustomerPurchasesGoods').value.trim();
 
     let newArr = [...arr];
 
