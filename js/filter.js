@@ -1,3 +1,4 @@
+let filteredArray = []
 function filter(arr, prop, value) {
     let newElements = [];
     let copy = [...arr];
@@ -6,6 +7,7 @@ function filter(arr, prop, value) {
             newElements.push(elem);
         }
     }
+    filteredArray = newElements;
     return newElements;
 }
 
@@ -261,3 +263,4 @@ function showFilterPurchasesGoods(arr) {
 
     createElementFilter(null, null, tbodyGoods, newArr, 0, 1)
 }
+

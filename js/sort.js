@@ -18,44 +18,51 @@ function moveArrows(event) {
 
     })
 }
-
-function sortCars(event) {
+function sortTable(event, array, selector) {
     let prop = event.target.getAttribute('data-col');
+    let tbody = document.getElementById(selector);
     moveArrows(event);
     columnDir = !columnDir;
-    if (prop !== null) {
-        sortDetails(carInf, prop, columnDir);
-        showCars();
+    if (tbody.classList.contains('filterNone')) {
+        if (prop !== null) {
+            sortDetails(filteredArray, prop, columnDir);
+            if (selector === 'tbody') {
+                showFilterCars(filteredArray);
+            }
+            else if (selector === 'tbody-goods') {
+                showFilterGoods(filteredArray);
+            }
+            else if (selector === 'tbody-clients') {
+                showFilterPeople(filteredArray);
+            }
+            else if (selector === 'tbody-bought-cars') {
+                showFilterPurchasesCars(filteredArray);
+            }
+            else {
+                showFilterPurchasesGoods(filteredArray);
+            }
+
+        }
     }
-}
-
-function sortGoods(event) {
-    let prop = event.target.getAttribute('data-col');
-    moveArrows(event);
-    columnDir = !columnDir;
-    if (prop !== null) {
-        sortDetails(goodsInf, prop, columnDir);
-        showGoods();
-    }
-}
-
-function sortPeople(event) {
-    let prop = event.target.getAttribute('data-col');
-    moveArrows(event);
-    columnDir = !columnDir;
-    if (prop !== null) {
-        sortDetails(peopleInf, prop, columnDir);
-        showPeople();
-    }
-}
-function sortBoughtCar(event) {
-    let prop = event.target.getAttribute('data-col');
-    moveArrows(event);
-    columnDir = !columnDir;
-    if (prop !== null) {
-        sortDetails(purchaseCarsInf, prop, columnDir);
-        showBoughtCars();
-
+    else {
+        if (prop !== null) {
+            sortDetails(array, prop, columnDir);
+            if (selector === 'tbody') {
+                showCars();
+            }
+            else if (selector === 'tbody-goods') {
+                showGoods();
+            }
+            else if (selector === 'tbody-clients') {
+                showPeople();
+            }
+            else if (selector === 'tbody-bought-cars') {
+                showBoughtCars();
+            }
+            else {
+                showBoughtAccessories();
+            }
+        }
     }
 }
 
