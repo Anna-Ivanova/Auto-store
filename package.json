@@ -1,0 +1,46 @@
+{
+  "name": "auto-store",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anna-Ivanova/Auto-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/compat-data": "7.19.4",
+    "@babel/core": "7.19.6",
+    "@babel/generator": "7.19.6",
+    "@babel/helper-compilation-targets": "7.19.3",
+    "@babel/helper-create-class-features-plugin": "7.19.0",
+    "@babel/helper-module-transforms": "7.19.6",
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.35.1"
+  },
+  "bugs": {
+    "url": "https://github.com/Anna-Ivanova/Auto-store/issues"
+  },
+  "homepage": "https://github.com/Anna-Ivanova/Auto-store#readme",
+  "dependencies": {
+    "gulp-babel": "^8.0.0",
+    "gulp-babel-minify": "^0.5.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-webp": "^4.0.1"
+  }
+}

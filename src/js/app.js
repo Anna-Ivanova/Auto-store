@@ -22,4 +22,3 @@ clickButton('.headrow-cars', sortCars);
 clickButton('.headrow-goods', sortGoods);
 clickButton('.headrow-people', sortPeople);
 clickButton('.headrow_bought_car', sortBoughtCar);
-
