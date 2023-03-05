@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "model": "208",
+        "body": "hatchback",
+        "color": "blue ocean",
+        "engine": "1.3l EcoTech 122HP",
+        "transmission": "6 AT",
+        "fuel": "gas",
+        "price": "21567",
+        "quantity": "250"
+    },
+    {
+        "id": 2,
+        "model": "308",
+        "body": "hatchback",
+        "color": "black pearl",
+        "engine": "1.6l EP6 147HP",
+        "transmission": "6 AT",
+        "fuel": "gas",
+        "price": "32457",
+        "quantity": "200"
+    },
+    {
+        "id": 3,
+        "model": "308",
+        "body": "hatchback",
+        "color": "red",
+        "engine": "1.6l EP6 147HP",
+        "transmission": "6 AT",
+        "fuel": "gas",
+        "price": "32457",
+        "quantity": "200"
+    },
+    {
+        "id": 4,
+        "model": "408",
+        "body": "crossover",
+        "color": "pacific green",
+        "engine": "2.0 Plug-in Hybrid 200HP",
+        "transmission": "6 AT",
+        "fuel": "diesel",
+        "price": "35984",
+        "quantity": "400"
+    },
+    {
+        "id": 5,
+        "model": "508",
+        "body": "sedan",
+        "color": "white pearl",
+        "engine": "2.0 Plug-in Hybrid 200HP",
+        "transmission": "6 AT",
+        "fuel": "diesel",
+        "price": "38670",
+        "quantity": "500"
+    },
+    {
+        "id": 6,
+        "model": "3008",
+        "body": "suv",
+        "color": "diamond red",
+        "engine": "2.0 Plug-in Hybrid 200HP",
+        "transmission": "8 AT",
+        "fuel": "diesel",
+        "price": "41860",
+        "quantity": "450"
+    },
+    {
+        "id": 7,
+        "model": "5008",
+        "body": "suv",
+        "color": "dark grey",
+        "engine": "2.0 Plug-in Hybrid 200HP",
+        "transmission": "8 AT",
+        "fuel": "diesel",
+        "price": "48765",
+        "quantity": "300"
+    }
+]

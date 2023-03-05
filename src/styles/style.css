@@ -127,6 +127,7 @@ main {
 .category_menu {
     justify-content: space-evenly;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .icon-menu {

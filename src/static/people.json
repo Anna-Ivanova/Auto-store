@@ -1,0 +1,653 @@
+[
+    {
+        "id": 1,
+        "name": "Mike",
+        "surname": "Williams",
+        "age": "22",
+        "address": "2829 College St",
+        "email": "mike.williams@gmail.com",
+        "phone_number": "8898144626",
+        "auto": [
+            {
+                "id": 1,
+                "model": "208",
+                "body": "hatchback",
+                "color": "blue ocean",
+                "engine": "1.3l EcoTech 122HP",
+                "transmission": "6 AT",
+                "fuel": "gas",
+                "price": "21567",
+                "quantity": "1",
+                "date": "1657880715151"
+            }
+        ],
+        "accessories": []
+    },
+    {
+        "id": 2,
+        "name": "Delores",
+        "surname": "Freeman",
+        "age": "30",
+        "address": "485 W Gray St",
+        "email": "delores.freeman@gmail.com",
+        "phone_number": "2447430251",
+        "auto": [
+            {
+                "id": 2,
+                "model": "308",
+                "body": "hatchback",
+                "color": "black pearl",
+                "engine": "1.6l EP6 147HP",
+                "transmission": "6 AT",
+                "fuel": "gas",
+                "price": "32457",
+                "quantity": "1",
+                "date": "1651550715151"
+            },
+            {
+                "id": 4,
+                "model": "408",
+                "body": "crossover",
+                "color": "pacific green",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "6 AT",
+                "fuel": "disel",
+                "price": "35984",
+                "quantity": "1",
+                "date": "1651550715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 1,
+                "product": "dog guard",
+                "part_number": "1658058380",
+                "intended_for_cars": "peugeot 308",
+                "price": "366",
+                "quantity": "1",
+                "date": "1651550715151"
+            },
+            {
+                "id": 2,
+                "product": "front air deflectors",
+                "part_number": "1680299780",
+                "intended_for_cars": "peugeot 308",
+                "price": "155",
+                "quantity": "1",
+                "date": "1651550715151"
+            },
+            {
+                "id": 3,
+                "product": "mid-length roof box",
+                "part_number": "1609665780",
+                "intended_for_cars": "peugeot 308",
+                "price": "1247",
+                "quantity": "1",
+                "date": "1651550715151"
+            },
+            {
+                "id": 4,
+                "product": "needle-pile floor mats-wagon",
+                "part_number": "1680490580",
+                "intended_for_cars": "peugeot 308",
+                "price": "115",
+                "quantity": "1",
+                "date": "1651550715151"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Kim",
+        "surname": "Wade",
+        "age": "42",
+        "address": "4268 Stevens Creek Blvd",
+        "email": "kim.wade@gmail.com",
+        "phone_number": "8357469934",
+        "auto": [
+            {
+                "id": 2,
+                "model": "308",
+                "body": "hatchback",
+                "color": "black pearl",
+                "engine": "1.6l EP6 147HP",
+                "transmission": "6 AT",
+                "fuel": "gas",
+                "price": "32457",
+                "quantity": "1",
+                "date": "1648550715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 9,
+                "product": "docking station for E-cick scooter",
+                "part_number": "1620299480",
+                "intended_for_cars": "peugeot 3008",
+                "price": "484",
+                "quantity": "1",
+                "date": "1657880715151"
+            },
+            {
+                "id": 10,
+                "product": "cleaning cloth for touchscreen",
+                "part_number": "1628950980",
+                "intended_for_cars": "peugeot 3008",
+                "price": "9",
+                "quantity": "1",
+                "date": "1657880715151"
+            },
+            {
+                "id": 11,
+                "product": "set of 4 black centre caps for alloy wheels",
+                "part_number": "1622961980",
+                "intended_for_cars": "peugeot 3008",
+                "price": "97",
+                "quantity": "1",
+                "date": "1657880715151"
+            },
+            {
+                "id": 12,
+                "product": "set of two chrome wing mirror cases",
+                "part_number": "16118182680",
+                "intended_for_cars": "peugeot 3008",
+                "price": "115",
+                "quantity": "3",
+                "date": "1657880715151"
+            },
+            {
+                "id": 13,
+                "product": "towbar( excluding wiring harness)",
+                "part_number": "9160559120",
+                "intended_for_cars": "peugeot 5008",
+                "price": "87",
+                "quantity": "5",
+                "date": "1655550715151"
+            },
+            {
+                "id": 14,
+                "product": "E-kick scooter",
+                "part_number": "1622150280",
+                "intended_for_cars": "peugeot 5008",
+                "price": "1733",
+                "quantity": "5",
+                "date": "1655550715151"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Shelly",
+        "surname": "Webb",
+        "age": 39,
+        "address": "1085 Hunters Creek Dr",
+        "email": "shelly.webb@gmail.com",
+        "phone_number": "7973485177",
+        "auto": [
+            {
+                "id": 7,
+                "model": "5008",
+                "body": "suv",
+                "color": "dark grey",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "8 AT",
+                "fuel": "disel",
+                "price": "48765",
+                "quantity": "1",
+                "date": "1650550715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 15,
+                "product": "first aid & safety kit",
+                "part_number": "1611561780",
+                "intended_for_cars": "peugeot 5008",
+                "price": "103",
+                "quantity": "10",
+                "date": "1666550715151"
+            },
+            {
+                "id": 16,
+                "product": "indoor car cover",
+                "part_number": "1682174680",
+                "intended_for_cars": "peugeot 5008",
+                "price": "256",
+                "quantity": "5",
+                "date": "1666550715151"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Eugene",
+        "surname": "Reed",
+        "age": "35",
+        "address": "7672 W Belt Line Rd",
+        "email": "eugene.reed@gmail.com",
+        "phone_number": "2909901004",
+        "auto": [
+            {
+                "id": 5,
+                "model": "508",
+                "body": "sedan",
+                "color": "white pearl",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "6 AT",
+                "fuel": "disel",
+                "price": "38670",
+                "quantity": "1",
+                "date": "1652550715151"
+            }
+        ],
+        "accessories": []
+    },
+    {
+        "id": 7,
+        "name": "Ann",
+        "surname": "Simpson",
+        "age": "25",
+        "address": "6883 Prospect Rd",
+        "email": "ann.simpson@gmail.com",
+        "phone_number": "3264207414",
+        "auto": [
+            {
+                "id": 2,
+                "model": "308",
+                "body": "hatchback",
+                "color": "black pearl",
+                "engine": "1.6l EP6 147HP",
+                "transmission": "6 AT",
+                "fuel": "gas",
+                "price": "32457",
+                "quantity": "1",
+                "date": "1635550715151"
+            },
+            {
+                "id": 4,
+                "model": "408",
+                "body": "crossover",
+                "color": "pacific green",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "6 AT",
+                "fuel": "disel",
+                "price": "35984",
+                "quantity": "1",
+                "date": "1645550715151"
+            },
+            {
+                "id": 5,
+                "model": "508",
+                "body": "sedan",
+                "color": "white pearl",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "6 AT",
+                "fuel": "disel",
+                "price": "38670",
+                "quantity": "1",
+                "date": "1655550715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 4,
+                "product": "needle-pile floor mats-wagon",
+                "part_number": "1680490580",
+                "intended_for_cars": "peugeot 308",
+                "price": "115",
+                "quantity": "2",
+                "date": "1666550715151"
+            },
+            {
+                "id": 5,
+                "product": "charge cable storage bag",
+                "part_number": "9837945080",
+                "intended_for_cars": "peugeot 508",
+                "price": "87",
+                "quantity": "1",
+                "date": "1666550715151"
+            },
+            {
+                "id": 6,
+                "product": "mode 2 charge cable for PHEV",
+                "part_number": "9846744180",
+                "intended_for_cars": "peugeot 508",
+                "price": "1250",
+                "quantity": "2",
+                "date": "1666550715151"
+            },
+            {
+                "id": 7,
+                "product": "set of 4 19 inch Augusta alloy wheels",
+                "part_number": "1638560280",
+                "intended_for_cars": "peugeot 508",
+                "price": "2228",
+                "quantity": "2",
+                "date": "1666550715151"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Marion",
+        "surname": "Lawrence",
+        "age": 47,
+        "address": "1940 E Little York Rd",
+        "email": "marion.lawrence@gmail.com",
+        "phone_number": "7668849141",
+        "auto": [
+            {
+                "id": 2,
+                "model": "308",
+                "body": "hatchback",
+                "color": "black pearl",
+                "engine": "1.6l EP6 147HP",
+                "transmission": "6 AT",
+                "fuel": "gas",
+                "price": "32457",
+                "quantity": "1",
+                "date": "1635550715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 13,
+                "product": "towbar( excluding wiring harness)",
+                "part_number": "9160559120",
+                "intended_for_cars": "peugeot 5008",
+                "price": "87",
+                "quantity": "2",
+                "date": "1666550715151"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Jeffery",
+        "surname": "Hughes",
+        "age": "19",
+        "address": "2847 Lovers Ln",
+        "email": "jeffery.hughes@gmail.com",
+        "phone_number": "5655563711",
+        "auto": [
+            {
+                "id": 4,
+                "model": "408",
+                "body": "crossover",
+                "color": "pacific green",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "6 AT",
+                "fuel": "disel",
+                "price": "35984",
+                "quantity": "1",
+                "date": "1659550715151"
+            }
+        ],
+        "accessories": []
+    },
+    {
+        "id": 10,
+        "name": "Christina",
+        "surname": "Fields",
+        "age": "18",
+        "address": "9680 Plum St",
+        "email": "christina.fields@example.com",
+        "phone_number": "3205463282",
+        "auto": [
+            {
+                "id": 5,
+                "model": "508",
+                "body": "sedan",
+                "color": "white pearl",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "6 AT",
+                "fuel": "disel",
+                "price": "38670",
+                "quantity": "2",
+                "date": "1621550715151"
+            },
+            {
+                "id": 6,
+                "model": "3008",
+                "body": "suv",
+                "color": "diamond red",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "8 AT",
+                "fuel": "disel",
+                "price": "41860",
+                "quantity": "1",
+                "date": "1621550715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 7,
+                "product": "set of 4 19 inch Augusta alloy wheels",
+                "part_number": "1638560280",
+                "intended_for_cars": "peugeot 508",
+                "price": "2228",
+                "quantity": "2",
+                "date": "1651550715151"
+            },
+            {
+                "id": 8,
+                "product": "isotherm unit - 16 litres",
+                "part_number": "9456032587",
+                "intended_for_cars": "peugeot 508",
+                "price": "242",
+                "quantity": "2",
+                "date": "1651550715151"
+            },
+            {
+                "id": 9,
+                "product": "docking station for E-cick scooter",
+                "part_number": "1620299480",
+                "intended_for_cars": "peugeot 3008",
+                "price": "484",
+                "quantity": "2",
+                "date": "1651550715151"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Paul",
+        "surname": "Gibson",
+        "age": "27",
+        "address": "6138 Nowlin Rd",
+        "email": "paul.gibson@gmail.com",
+        "phone_number": "6997590055",
+        "auto": [
+            {
+                "id": 7,
+                "model": "5008",
+                "body": "suv",
+                "color": "dark grey",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "8 AT",
+                "fuel": "disel",
+                "price": "48765",
+                "quantity": "2",
+                "date": "1628850715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 10,
+                "product": "cleaning cloth for touchscreen",
+                "part_number": "1628950980",
+                "intended_for_cars": "peugeot 3008",
+                "price": "9",
+                "quantity": "3",
+                "date": "1657880715151"
+            },
+            {
+                "id": 11,
+                "product": "set of 4 black centre caps for alloy wheels",
+                "part_number": "1622961980",
+                "intended_for_cars": "peugeot 3008",
+                "price": "97",
+                "quantity": "1",
+                "date": "1657880715151"
+            },
+            {
+                "id": 12,
+                "product": "set of two chrome wing mirror cases",
+                "part_number": "16118182680",
+                "intended_for_cars": "peugeot 3008",
+                "price": "115",
+                "quantity": "1",
+                "date": "1657880715151"
+            },
+            {
+                "id": 13,
+                "product": "towbar( excluding wiring harness)",
+                "part_number": "9160559120",
+                "intended_for_cars": "peugeot 5008",
+                "price": "87",
+                "quantity": "3",
+                "date": "1657880715151"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Rodney",
+        "surname": "Wright",
+        "age": "21",
+        "address": "9479 E Sandy Lake Rd",
+        "email": "rodney.wright@gmail.com",
+        "phone_number": "4669032201",
+        "auto": [
+            {
+                "id": 5,
+                "model": "508",
+                "body": "sedan",
+                "color": "white pearl",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "6 AT",
+                "fuel": "disel",
+                "price": "38670",
+                "quantity": "2",
+                "date": "1611550715151"
+            },
+            {
+                "id": 1,
+                "model": "208",
+                "body": "hatchback",
+                "color": "blue ocean",
+                "engine": "1.3l EcoTech 122HP",
+                "transmission": "6 AT",
+                "fuel": "gas",
+                "price": "21567",
+                "quantity": "2",
+                "date": "1621550715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 10,
+                "product": "cleaning cloth for touchscreen",
+                "part_number": "1628950980",
+                "intended_for_cars": "peugeot 3008",
+                "price": "9",
+                "quantity": "3",
+                "date": "1667880715151"
+            },
+            {
+                "id": 11,
+                "product": "set of 4 black centre caps for alloy wheels",
+                "part_number": "1622961980",
+                "intended_for_cars": "peugeot 3008",
+                "price": "97",
+                "quantity": "1",
+                "date": "1667880715151"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Miriam",
+        "surname": "Watts",
+        "age": 31,
+        "address": "4367 Dogwood Ave",
+        "email": "miriam.watts@gmail.com",
+        "phone_number": "4842896002",
+        "auto": [
+            {
+                "id": 4,
+                "model": "408",
+                "body": "crossover",
+                "color": "pacific green",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "6 AT",
+                "fuel": "disel",
+                "price": "35984",
+                "quantity": "5",
+                "date": "1618550715151"
+            }
+        ],
+        "accessories": []
+    },
+    {
+        "id": 14,
+        "name": "Mae",
+        "surname": "Hunt",
+        "age": "19",
+        "address": "2921 Daisy Dr",
+        "email": "mae.hunt@gmail.com",
+        "phone_number": "9142902480",
+        "auto": [
+            {
+                "id": 6,
+                "model": "3008",
+                "body": "suv",
+                "color": "diamond red",
+                "engine": "2.0 Plug-in Hybrid 200HP",
+                "transmission": "8 AT",
+                "fuel": "disel",
+                "price": "41860",
+                "quantity": "2",
+                "date": "1651550715151"
+            }
+        ],
+        "accessories": [
+            {
+                "id": 5,
+                "product": "charge cable storage bag",
+                "part_number": "9837945080",
+                "intended_for_cars": "peugeot 508",
+                "price": "87",
+                "quantity": "3",
+                "date": "1657880715151"
+            },
+            {
+                "id": 6,
+                "product": "mode 2 charge cable for PHEV",
+                "part_number": "9846744180",
+                "intended_for_cars": "peugeot 508",
+                "price": "1250",
+                "quantity": "1",
+                "date": "1657880715151"
+            },
+            {
+                "id": 7,
+                "product": "set of 4 19 inch Augusta alloy wheels",
+                "part_number": "1638560280",
+                "intended_for_cars": "peugeot 508",
+                "price": "2228",
+                "quantity": "1",
+                "date": "1655550715151"
+            },
+            {
+                "id": 8,
+                "product": "isotherm unit - 16 litres",
+                "part_number": "9456032587",
+                "intended_for_cars": "peugeot 508",
+                "price": "242",
+                "quantity": "1",
+                "date": "1655550715151"
+            }
+        ]
+    }
+]
