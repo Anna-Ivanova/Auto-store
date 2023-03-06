@@ -3,7 +3,7 @@ function filter(arr, prop, value) {
     let newElements = [];
     let copy = [...arr];
     for (const elem of copy) {
-        if (String(elem[prop]).includes(value) === true) {
+        if (String(elem[prop].toLowerCase()).includes(value.toLowerCase()) === true) {
             newElements.push(elem);
         }
     }
