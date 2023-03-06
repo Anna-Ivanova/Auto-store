@@ -6,6 +6,7 @@ import clean from "gulp-clean-css";
 import concatCss from 'gulp-concat-css';
 import htmlmin from 'gulp-htmlmin';
 import replace from 'gulp-replace';
+import browserSync from 'browser-sync';
 
 
 const SRC_FOLDER = './src';
@@ -28,28 +29,29 @@ async function jsCompilation() {
     JS_FILES_PATH + 'removeElements.js', JS_FILES_PATH + 'sellGoods.js',
     JS_FILES_PATH + 'ordersHistory.js', JS_FILES_PATH + 'app.js',
     JS_FILES_PATH + 'validate.js',
-
   ])
     .pipe(babel())
     .pipe(concat('result.js'))
-    .pipe(gulp.dest(BUILD_FOLDER));
+    .pipe(gulp.dest(BUILD_FOLDER))
+    .pipe(browserSync.stream())
 }
 
 async function cssHandler() {
   gulp.src([ICONS_CSS, CSS_FILES_PATH])
     .pipe(concatCss('style.css'))
     .pipe(clean())
-    .pipe(gulp.dest(BUILD_FOLDER + '/styles'));
+    .pipe(gulp.dest(BUILD_FOLDER + '/styles'))
+    .pipe(browserSync.stream())
 }
+
 async function imageToWebP() {
   gulp.src(IMG_PATH)
     .pipe(webp({
       quality: 0
     }))
     .pipe(gulp.dest(BUILD_FOLDER + '/img'))
-
-
 }
+
 async function htmlCompilation() {
   gulp.src(HTML_FILES_PATH)
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -57,20 +59,31 @@ async function htmlCompilation() {
     .pipe(replace('<script src="../build/result.js"></script>', '<script src="./result.js"></script>'))
     .pipe(replace('.jpg', '.webp'))
     .pipe(replace('.png', '.webp'))
-
-    .pipe(gulp.dest(BUILD_FOLDER));
+    .pipe(gulp.dest(BUILD_FOLDER))
+    .pipe(browserSync.stream())
 }
 
 gulp.task('html-compile', htmlCompilation);
 async function copyJson() {
   gulp.src('src/**/*.json')
-    .pipe(gulp.dest(BUILD_FOLDER));
+    .pipe(gulp.dest(BUILD_FOLDER))
 }
+
 async function copyIconFonts() {
   gulp.src(ICONS_FONT)
-    .pipe(gulp.dest(BUILD_FOLDER + '/styles/fonts'));
+    .pipe(gulp.dest(BUILD_FOLDER + '/styles/fonts'))
 }
+
+async function browsersync(){
+  browserSync.init({
+      server: {
+          baseDir: "./build/"
+      }
+  });
+}
+
 gulp.task('copy-icons', copyIconFonts);
+
 gulp.task('copy-json', copyJson);
 
 gulp.task('css-compile', cssHandler);
@@ -79,10 +92,13 @@ gulp.task('js-compile', jsCompilation);
 
 gulp.task('imgToWebP', imageToWebP);
 
+gulp.task('browserSync', browsersync);
 
 gulp.task('watch-js', function () {
+  gulp.watch(CSS_FILES_PATH, cssHandler)
   gulp.watch(JS_FILES_PATH, jsCompilation)
+  gulp.watch(HTML_FILES_PATH).on('change', browserSync.reload);
 })
 
 
-gulp.task('default', gulp.parallel('js-compile', 'css-compile', 'imgToWebP', 'copy-json', 'copy-icons', 'html-compile'));
+gulp.task('default', gulp.parallel('js-compile', 'css-compile', 'imgToWebP', 'copy-json', 'copy-icons', 'html-compile', 'browserSync', 'watch-js'));
