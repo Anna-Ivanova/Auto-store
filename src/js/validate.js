@@ -61,17 +61,17 @@ const isValidIntende = intende => {
 }
 
 const isValidPriceGoods = priceGoods => {
-    const re = /\d/;
+    const re = /^\d{1,10}$/;
     return re.test(String(priceGoods).toLowerCase());
 }
 
 const isValidQuantityGoods = quantityGoods => {
-    const re = /\d/;
+    const re = /^\d{1,10}$/;
     return re.test(String(quantityGoods).toLowerCase());
 }
 
 const isValidModel = model => {
-    const re = /\d/;
+    const re = /^\d{1,10}$/;
     return re.test(String(model).toLowerCase());
 }
 
@@ -101,12 +101,12 @@ const isValidFuel = fuel => {
 }
 
 const isValidPriceCar = priceCar => {
-    const re = /\d/;
+    const re = /^\d{1,10}$/;
     return re.test(String(priceCar).toLowerCase());
 }
 
 const isValidQuantityCar = quantityCar => {
-    const re = /\d/;
+    const re = /^\d{1,10}$/;
     return re.test(String(quantityCar).toLowerCase());
 }
 
