@@ -1,19 +1,19 @@
 function editCars(event) {
-    const button =  +(event.target.getAttribute('id'));
+    const button = +(event.target.getAttribute('id'));
 
     const form = document.querySelector('.editAddCar');
     form.style.display = 'block';
 
     const cars = carInf.find(x => x.id === button);
 
-    document.querySelector('.textModel').value = carInf.model || cars.model;
-    document.querySelector('.textBody').value = carInf.body || cars.body;
-    document.querySelector('.textColor').value = carInf.color || cars.color;
-    document.querySelector('.textEngine').value = carInf.engine || cars.engine;
-    document.querySelector('.textTransmission').value = carInf.transmission || cars.transmission;
-    document.querySelector('.textFuel').value = carInf.fuel || cars.fuel;
-    document.querySelector('.textPriceCar').value = carInf.price || cars.price;
-    document.querySelector('.textQuantityCars').value = carInf.quantity || cars.quantity;
+    document.querySelector('.textModel').value = cars.model;
+    document.querySelector('.textBody').value = cars.body;
+    document.querySelector('.textColor').value = cars.color;
+    document.querySelector('.textEngine').value = cars.engine;
+    document.querySelector('.textTransmission').value = cars.transmission;
+    document.querySelector('.textFuel').value = cars.fuel;
+    document.querySelector('.textPriceCar').value = cars.price;
+    document.querySelector('.textQuantityCars').value = cars.quantity;
 
     const btnSaveCar = document.querySelector('.btnSaveCar');
     btnSaveCar.style.display = 'none';
@@ -27,7 +27,7 @@ function editCars(event) {
 }
 
 function saveNewEditCar(event) {
-    const button =  +(event.target.getAttribute('id'));
+    const button = +(event.target.getAttribute('id'));
 
     const cars = carInf.find(x => x.id === button);
 
@@ -40,7 +40,7 @@ function saveNewEditCar(event) {
         const newFuel = document.querySelector('.textFuel').value;
         const newPrice = document.querySelector('.textPriceCar').value;
         const newQuantity = document.querySelector('.textQuantityCars').value;
-    
+
         cars.model = newModel;
         cars.body = newBody;
         cars.color = newColor;
@@ -49,29 +49,29 @@ function saveNewEditCar(event) {
         cars.fuel = newFuel;
         cars.price = newPrice;
         cars.quantity = newQuantity;
-    
+
         localStorage.setItem('cars', JSON.stringify(carInf));
         const form = document.querySelector('.editAddCar');
         hideForm();
         form.style.display = 'none';
         showCars();
     }
-   
+
 }
 
 function editGoods(event) {
-    const button =  +(event.target.getAttribute('id'));
+    const button = +(event.target.getAttribute('id'));
 
     const form = document.querySelector('.editAddGoods');
     form.style.display = 'block';
 
     const accesserios = goodsInf.find(x => x.id === button);
 
-    document.querySelector('.textProduct').value = goodsInf.product || accesserios.product;
-    document.querySelector('.textPartNumber').value = goodsInf.part_number || accesserios.part_number;
-    document.querySelector('.textIntendeForCars').value = goodsInf.intended_for_cars || accesserios.intended_for_cars;
-    document.querySelector('.textPriceAccessories').value = goodsInf.price || accesserios.price;
-    document.querySelector('.textQuantityGoods').value = goodsInf.quantity || accesserios.quantity;
+    document.querySelector('.textProduct').value = accesserios.product;
+    document.querySelector('.textPartNumber').value = accesserios.part_number;
+    document.querySelector('.textIntendeForCars').value = accesserios.intended_for_cars;
+    document.querySelector('.textPriceAccessories').value = accesserios.price;
+    document.querySelector('.textQuantityGoods').value = accesserios.quantity;
 
     const btnSaveGoods = document.querySelector('.btnSaveGoods');
     btnSaveGoods.style.display = 'none';
@@ -85,7 +85,7 @@ function editGoods(event) {
 }
 
 function saveNewEditGoods(event) {
-    const button =  +(event.target.getAttribute('id'));
+    const button = +(event.target.getAttribute('id'));
 
     const accesserios = goodsInf.find(x => x.id === button);
 
@@ -108,23 +108,23 @@ function saveNewEditGoods(event) {
         form.style.display = 'none';
         showGoods();
     }
-    
+
 }
 
 function editPerson(event) {
-    const button =  +(event.target.getAttribute('id'));
+    const button = +(event.target.getAttribute('id'));
 
     const form = document.querySelector('.editAddPeople');
     form.style.display = 'block';
 
     const person = peopleInf.find(x => x.id === button);
 
-    document.querySelector('.textName').value = peopleInf.name || person.name;
-    document.querySelector('.textSurname').value = peopleInf.surname || person.surname;
-    document.querySelector('.textAge').value = peopleInf.age || person.age;
-    document.querySelector('.textAddress').value = peopleInf.address || person.address;
-    document.querySelector('.textEmail').value = peopleInf.email || person.email;
-    document.querySelector('.textPhone').value = peopleInf.phone_number || person.phone_number;
+    document.querySelector('.textName').value = person.name;
+    document.querySelector('.textSurname').value = person.surname;
+    document.querySelector('.textAge').value = person.age;
+    document.querySelector('.textAddress').value = person.address;
+    document.querySelector('.textEmail').value = person.email;
+    document.querySelector('.textPhone').value = person.phone_number;
 
     const btnSavePeople = document.querySelector('.btnSavePeople');
     btnSavePeople.style.display = 'none';
@@ -138,7 +138,7 @@ function editPerson(event) {
 }
 
 function saveNewEditPerson(event) {
-    const button =  +(event.target.getAttribute('id'));
+    const button = +(event.target.getAttribute('id'));
 
     const person = peopleInf.find(x => x.id === button);
 
@@ -165,5 +165,5 @@ function saveNewEditPerson(event) {
         addPurchaseCarsInData();
         addPurchaseGoogsInData();
     }
-    
+
 }

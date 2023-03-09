@@ -41,7 +41,6 @@ async function initApplication() {
         showFilterCars(carInf);
     });
 
-    showFilterCars(carInf);
 
     const btnFilterGoods = document.querySelector('.searchFilterGoods');
     btnFilterGoods.addEventListener('click', function (event) {
@@ -49,7 +48,6 @@ async function initApplication() {
         showFilterGoods(goodsInf);
     });
 
-    showFilterGoods(goodsInf);
 
     const btnFilterPeople = document.querySelector('.searchFilterPeople');
     btnFilterPeople.addEventListener('click', function (event) {
@@ -57,7 +55,6 @@ async function initApplication() {
         showFilterPeople(peopleInf);
     });
 
-    showFilterPeople(peopleInf);
 
     const btnFilterPurchasesCars = document.querySelector('.searchfilterBoughtCars');
     btnFilterPurchasesCars.addEventListener('click', function (event) {
@@ -65,7 +62,6 @@ async function initApplication() {
         showFilterPurchasesCars(purchaseCarsInf);
     });
 
-    showFilterPurchasesCars(purchaseCarsInf);
 
     const btnFilterPurchasesGoods = document.querySelector('.searchFilterPurchasesGoods');
     btnFilterPurchasesGoods.addEventListener('click', function (event) {
@@ -73,5 +69,5 @@ async function initApplication() {
         showFilterPurchasesGoods(purchaseGoodsInf);
     });
 
-    showFilterPurchasesGoods(purchaseGoodsInf);
+
 }
