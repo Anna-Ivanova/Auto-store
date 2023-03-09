@@ -24,14 +24,14 @@ function createNewCar() {
 
 function saveNewCar() {
     if (validateFormCars()) {
-        const newModel = document.querySelector('.textModel').value;
-        const newBody = document.querySelector('.textBody').value;
-        const newColor = document.querySelector('.textColor').value;
-        const newEngine = document.querySelector('.textEngine').value;
-        const newTransmission = document.querySelector('.textTransmission').value;
-        const newFuel = document.querySelector('.textFuel').value;
-        const newPrice = document.querySelector('.textPriceCar').value;
-        const newQuantity = document.querySelector('.textQuantityCars').value;
+        const newModel = document.querySelector('.textModel').value.trim();
+        const newBody = document.querySelector('.textBody').value.trim().toLowerCase();
+        const newColor = document.querySelector('.textColor').value.trim().toLowerCase();
+        const newEngine = document.querySelector('.textEngine').value.trim();
+        const newTransmission = document.querySelector('.textTransmission').value.trim();
+        const newFuel = document.querySelector('.textFuel').value.trim().toLowerCase();
+        const newPrice = document.querySelector('.textPriceCar').value.trim();
+        const newQuantity = document.querySelector('.textQuantityCars').value.trim();
 
         if (carInf.length <= 0) {
             const newCar = {
@@ -96,11 +96,11 @@ function createNewAccessories() {
 
 function saveNewAccessories() {
     if (validateFormGoods()) {
-        const newProduct = document.querySelector('.textProduct').value;
-        const newPartNumber = document.querySelector('.textPartNumber').value;
-        const newIntendeForCars = document.querySelector('.textIntendeForCars').value;
-        const newPriceAccessories = document.querySelector('.textPriceAccessories').value;
-        const newQuantity = document.querySelector('.textQuantityGoods').value;
+        const newProduct = document.querySelector('.textProduct').value.trim().toLowerCase();
+        const newPartNumber = document.querySelector('.textPartNumber').value.trim();
+        const newIntendeForCars = document.querySelector('.textIntendeForCars').value.trim().toLowerCase();
+        const newPriceAccessories = document.querySelector('.textPriceAccessories').value.trim();
+        const newQuantity = document.querySelector('.textQuantityGoods').value.trim();
         goodsInf.sort((a, b) => a.id - b.id);
 
         if (goodsInf.length <= 0) {
@@ -157,7 +157,7 @@ function createNewPeople() {
 
     clickButton('.btnSavePeople', saveNewPeople);
     clickButton('.btnClose', closeForm);
-    
+
 }
 
 function saveNewPeople() {

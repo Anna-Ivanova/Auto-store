@@ -26,7 +26,7 @@ const isValidSurname = surname => {
 }
 
 const isValidAge = age => {
-    const re = /^\d{2}$/;
+    const re = /^\d{2,3}$/;
     return re.test(String(age).toLowerCase());
 }
 
